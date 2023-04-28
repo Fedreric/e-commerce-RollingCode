@@ -6,3 +6,18 @@
     --detalles: #6246ea;
     --resaltados: #e45858;
 }
+
+/*Mauro - error 404 */
+.gifFondo{
+    background-image: url('/img/error404/Error404.gif');
+    background-size: cover;
+    background-repeat: repeat;
+    background-position: center center;
+    height: 100vh;
+  }
+
+  @media (max-width: 768px) {
+    .gifFondo {
+      background-image: url('/img/error404/Error404.gif');
+    }
+  }
