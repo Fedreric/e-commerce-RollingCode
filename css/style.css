@@ -43,7 +43,7 @@ footer{
 }
 
 /*Mauro - error 404 */
-.gifFondo{
+.gif-fondo{
   background-image: url('/img/error404/Error404.gif');
   background-size: cover;
   background-repeat: repeat;
@@ -52,7 +52,7 @@ footer{
 }
 
 @media (max-width: 768px) {
-  .gifFondo {
+  .gif-fondo {
     background-image: url('/img/error404/Error404.gif');
   }
 }
