@@ -6,3 +6,26 @@
     --detalles: #6246ea;
     --resaltados: #e45858;
 }
+/*inicio de css Administrador*/
+
+table {
+    table-layout: fixed;
+    /*nos permite que el texto no rompa la columna de la tabla*/  
+}
+ .fila-Producto td {
+    max-width: 300px;
+    color: var(--texto);
+    background: var(--fondo);
+}
+.boton-Editar-Administrador{
+    background-color: #ecd590;
+}
+.boton-Eliminar-Administrador{
+    background-color: #c12828;
+    color: #d1d1e9;
+}
+
+
+
+
+/*fin de css Administrador*/
