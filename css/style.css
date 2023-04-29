@@ -108,6 +108,18 @@ footer{
   height: 100vh;
 }
 
+/*Color de texto violeta (color principal de la pagina)*/
+.texto-violeta
+{
+  color: #6246ea;
+}
+
+/*Cards de sobre nosotros centradas*/
+.sobreNosotros-card
+{
+  justify-content: center;
+}
+
 @media (max-width: 768px) {
   .gif-fondo {
     background-image: url('/img/error404/Error404.gif');
