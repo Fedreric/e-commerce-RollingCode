@@ -108,6 +108,10 @@ footer{
   height: 100vh;
 }
 
+.link-404-inicio{ 
+  color: #ffc0cb 
+}
+
 /*Color de texto violeta (color principal de la pagina)*/
 .texto-violeta
 {
@@ -125,4 +129,3 @@ footer{
     background-image: url('/img/error404/Error404.gif');
   }
 }
-
