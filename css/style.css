@@ -134,6 +134,10 @@ footer {
   height: 100vh;
 }
 
+.link-404-inicio{
+  color: #ffc0cb
+}
+
 /*Color de texto violeta (color principal de la pagina)*/
 .texto-violeta {
   color: #6246ea;
