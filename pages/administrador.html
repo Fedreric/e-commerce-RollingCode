@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="author" content=" " />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../css/style.css" />
+    <title>TecnoTuc-Componentes</title>
+  </head>
+  <body>
+    <div class="container">
+      <h3 class="text-center">Lista de productos</h3>
+      <hr />
+      <section>
+        <p>
+          Agregar:  <button
+            type="button"
+            class="btn btn-primary"
+            data-bs-toggle="modal"
+            data-bs-target="#modal-Registro-Productos"
+          >
+          <i class="bi bi-clipboard-plus"></i>
+          </button>
+        </p>
+      </section>
+      <aside>
+        <table class=" table tabla-Administrador">
+          <thead>
+            <tr>
+              <th>Img</th>
+              <th>Nombre</th>
+              <th>Categoria</th>
+              <th>Detalle</th>
+              <th>Stock</th>
+              <th>#</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="fila-Producto">
+              <td class="text-truncate">
+                https://http2.mlstatic.com/D_NQ_NP_910752-MLA51984578586_102022-O.webp
+              </td>
+              <td class="text-truncate">
+                Teclado Bluetooth Redragon Fizz Pro Argentina K616-rgb-ar 
+              </td>
+              <td class="text-truncate">teclado mecanico</td>
+              <td class="text-truncate">
+                Imagen 2 de 4 de Teclado Bluetooth Redragon Fizz Pro Argentina
+                K616-rgb-ar Qwerty Red Español Color Celeste Y Blanco Con Luz
+                Rgb Imagen 3 de 4 de Teclado Bluetooth Redragon Fizz Pro
+                Argentina K616-rgb-ar Qwerty Red Español Color Celeste Y Blanco
+                Con Luz Rgb Imagen 4 de 4 de Teclado Bluetooth Redragon Fizz Pro
+                Argentina K616-rgb-ar Qwerty Red Español Color Celeste Y Blanco
+                Con Luz Rgb Nuevo | +1000 vendidos Teclado Bluetooth Redragon
+                Fizz Pro Argentina K616-rgb-ar Qwerty Red Español Color Celeste
+                Y Blanco Con Luz Rgb
+              </td>
+              <td class=" ">100</td>
+              <td class=" ">
+                <button
+                  class="bi bi-pencil-square boton-Editar-Administrador btn"
+                ></button>
+                <button
+                  class="bi bi-x-lg boton-Eliminar-Administrador btn"
+                ></button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </aside>
+    </div>
+    <div>
+      <!-- Button trigger modal -->
+
+      <!-- Modal -->
+      <div
+        class="modal fade"
+        id="modal-Registro-Productos"
+        data-bs-backdrop="static"
+        data-bs-keyboard="false"
+        tabindex="-1"
+        aria-labelledby="staticBackdropLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5 " id="staticBackdropLabel">
+                Administrador
+              </h1>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+                <form id="formAdministrarPelicula">
+                    <div class="mb-3">
+                      <label for="inputCodigo" class="form-label ">Codigo</label>
+                      <input type="number" class="form-control" id="input-Codigo" placeholder="" disabled> 
+                    </div>
+                    <div class="mb-3">
+                      <label for="input-Nombre-Articulo" class="form-label">Nombre</label>
+                      <input type="text" class="form-control" id="input-Nombre-Articulo"  placeholder="Ej: Teclado Noga Net" required minlength="3" maxlength="100"> 
+                    </div>
+                    <div class="mb-3">
+                      <label for="input-Descripcion-Articulo" class="form-label">Detalle <span class="text-muted text-sm" > disponible: <span id="contadorCaracteres">400</span></span></label>
+                      <textarea class="form-control" placeholder="Brebe Descripcion de los detalles del producto" id="input-Descripcion-Articulo" maxlength="400"></textarea>
+                    </div>
+                    <div class="mb-3">
+                      <label for="input-Imagen-Articulo" class="form-label">Imagen</label>
+                      <input type="text" class="form-control" id="input-Imagen-Articulo"  placeholder="Ej: http://127.0.0.1:5500/pages/administrador.html" required > 
+                    </div>
+                    <div class="mb-3">
+                      <label for="input-Categoria-Articulo" class="form-label" >Categoria</label>
+                      <select class="form-select" aria-label="Elegir la Categoria del Producto" id="inputGenero" required>
+                        <option selected value="">Selecione una Opcion</option>
+                        <option value="teclados">Teclados</option>
+                        <option value="monitores">Monitores</option>
+                        <option value="mouse">Mouse</option>
+                        <option value="fuentes">Fuentes</option>
+                        <option value="conbo-Teclado-Mouse">Conbo Teclado Mouse</option>
+  
+                      </select>     
+                    </div>
+                    <div class="mb-3">
+                      <label for="input-Stock-Articulo" class="form-label">Stock</label>
+                      <input type="number" class="form-control" id="input-Stock-Articulo"  placeholder="Ej: 100"  min="0" > 
+                    </div>
+                    
+                    <div class="justify-content-start">
+                      <button type="submit" class="btn btn-primary" >
+                        Enviar
+                      </button>
+                    </div>
+                    <div class="alert alert-danger mt-3 d-none" role="alert" id="msjFormulario">
+                     
+                    </div>
+                    
+                   
+                  </form>
+
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+      crossorigin="anonymous"
+    ></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>
