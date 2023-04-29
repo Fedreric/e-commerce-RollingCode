@@ -8,15 +8,11 @@
 }
 /*inicio de css Administrador*/
 
-table {
+.tabla-Administrador {
     table-layout: fixed;
     /*nos permite que el texto no rompa la columna de la tabla*/  
 }
- .fila-Producto td {
-    max-width: 300px;
-    color: var(--texto);
-    background: var(--fondo);
-}
+
 .boton-Editar-Administrador{
     background-color: #ecd590;
 }
