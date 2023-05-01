@@ -153,3 +153,24 @@ footer {
     background-image: url("/img/error404/Error404.gif");
   }
 }
+/*Administrador*/
+.tabla-Administrador {
+  table-layout: fixed;
+  /*nos permite que el texto no rompa la columna de la tabla*/
+}
+.boton-Eliminar-Administrador{
+  background-color:#e45858;
+  color: white;
+}
+.boton-Eliminar-Administrador:hover{
+  background-color:#ff0000;
+  color: rgb(0, 0, 0);
+}
+.boton-Editar-Administrador{
+  background-color:var(--detalles);
+  color: #fffffe;
+}
+.boton-Editar-Administrador:hover{
+  background-color:grey;
+  color: #fffffe;
+}
