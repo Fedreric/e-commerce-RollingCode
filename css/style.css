@@ -44,7 +44,7 @@
   
   /*Mauro - error 404 */
   .gif-fondo{
-    background-image: url('../img/error404/Error404.gif');
+    background-image: url('/img/error404/Error404.gif');
     background-size: cover;
     background-repeat: repeat;
     background-position: center center;
@@ -53,7 +53,7 @@
   
   @media (max-width: 768px) {
     .gif-fondo {
-      background-image: url('../img/error404/Error404.gif');
+      background-image: url('/img/error404/Error404.gif');
     }
   }
 * {
@@ -101,7 +101,7 @@ footer{
 
 /*Mauro - error 404 */
 .gif-fondo{
-  background-image: url('../img/error404/Error404.gif');
+  background-image: url('/img/error404/Error404.gif');
   background-size: cover;
   background-repeat: repeat;
   background-position: center center;
@@ -122,7 +122,7 @@ footer{
 
 @media (max-width: 768px) {
   .gif-fondo {
-    background-image: url('../img/error404/Error404.gif');
+    background-image: url('/img/error404/Error404.gif');
   }
 }
 
