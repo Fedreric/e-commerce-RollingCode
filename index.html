@@ -57,8 +57,111 @@
         </div>
       </nav>
     </header>
-    <main>
-      <!--modal articulos deseados-->
+    <main>     
+        <div id="carousel" class="carousel slide">
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            <button type="button" data-bs-target="#carousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+          </div>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="./img/control.png" class="d-block w-100" alt="...">
+              <div class="carousel-caption d-none d-md-block">
+                <h5>First slide label</h5>
+                <p>Some representative placeholder content for the first slide.</p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src="./img/monitor.png" class="d-block w-100" alt="...">
+              <div class="carousel-caption d-none d-md-block">
+                <h5>Second slide label</h5>
+                <p>Some representative placeholder content for the second slide.</p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src="./img/cpu.png" class="d-block w-100" alt="...">
+              <div class="carousel-caption d-none d-md-block">
+                <h5>Third slide label</h5>
+                <p>Some representative placeholder content for the third slide.</p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src="./img/cerezo.png" class="d-block w-100" alt="...">
+              <div class="carousel-caption d-none d-md-block">
+                <h5>Third slide label</h5>
+                <p>Some representative placeholder content for the third slide.</p>
+              </div>
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Atrás</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Siguiente</span>
+          </button>
+        </div>
+        <hr class="mx-5 mt-5">
+        <section class="container py-3">
+          <h1 class="text-center fs-2 pt-5">Productos</h1>
+            <section class="py-5">
+                <form class="d-flex" role="search">
+                  <input class="form-control me-2" type="search" id="buscador" oninput="buscar()" placeholder="Buscar" aria-label="Search">
+                  <button class="btn btn-outline-primary" type="submit"><i class="bi bi-search"></i></button>
+                </form>
+            </section>
+            <div class="container text-center">
+              <article class="row">
+                <aside class="col-md-6 col-lg-4">
+                  <div class="card text-bg-dark">
+                    <img src="./img/CarritoCompras/auriculares.webp" class="card-img" alt="...">
+                    <div class="card-img-overlay">
+                      <h5 class="card-title text-dark">Audiculares</h5>
+                    </div>
+                  </div>
+                  <div class="d-flex mb-3 text-secondary fw-semibold fs-5">
+                    <p class="me-auto p-2">Precio: $5.000</p>
+                    <p class="p-2">Stock: 10ui</p>
+                  </div>
+                </aside>
+                <aside class="col-md-6 col-lg-4">
+                  <div class="card text-bg-dark">
+                    <img src="./img/CarritoCompras/auriculares.webp" class="card-img" alt="...">
+                    <div class="card-img-overlay">
+                      <h5 class="card-title text-dark">Audiculares</h5>
+                    </div>
+                  </div>
+                  <div class="d-flex mb-3 text-secondary fw-semibold fs-5">
+                    <p class="me-auto p-2">Precio: $5.000</p>
+                    <p class="p-2">Stock: 10ui</p>
+                  </div>
+                </aside>
+                <aside class="col-md-6 col-lg-4">
+                  <div class="card text-bg-dark">
+                    <img src="./img/CarritoCompras/auriculares.webp" class="card-img" alt="...">
+                    <div class="card-img-overlay">
+                      <h5 class="card-title text-dark">Audiculares</h5>
+                    </div>
+                  </div>
+                  <div class="d-flex mb-3 text-secondary fw-semibold fs-5">
+                    <p class="me-auto p-2">Precio: $5.000</p>
+                    <p class="p-2">Stock: 10ui</p>
+                  </div>
+                </aside>
+              </article>
+            </div>
+  
+            <hr class="m-5">
+             
+            <article>
+              <h2 class="text-center fw-semibold fst-italic fs-1 mb-3">Encontra lo ultimo en tecnología</h2>
+            <p class="text-center fst-italic fs-5">"En Tectuc nos encargamos de que la realidad supere la ficción. Tenemos los precios mas competitivos del mercado y la mejor calidad en productos."</p>
+            </p>
+            </article>
+
       <section class="modal fade" id="modalDeseados" abindex="-1" aria-labelledby="agregarModalLabel" aria-hidden="true">
         <article class="modal-dialog">
           <div class="modal-content" id="agregaCards">
