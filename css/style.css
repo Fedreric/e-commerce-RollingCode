@@ -77,7 +77,7 @@ footer {
   color: var(--detalles);
 }
 
-/*Mauro - error 404 */
+/*Error 404 */
 .gif-fondo {
   background-image: url("../img/error404/Error404.gif");
   background-size: cover;
@@ -88,6 +88,11 @@ footer {
 
 .link-404-inicio{ 
   color: #ffc0cb 
+}
+
+.error-404-texto{
+  color: #ffc0cb;
+  font-weight: bold;
 }
 
 /*Color de texto violeta (color principal de la pagina)*/
