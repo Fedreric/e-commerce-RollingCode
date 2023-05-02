@@ -86,13 +86,8 @@ footer {
   height: 100vh;
 }
 
-<<<<<<< HEAD
 .link-404-inicio{ 
   color: #ffc0cb 
-=======
-.link-404-inicio{
-  color: #ffc0cb
->>>>>>> 13f1ddce931147e44d8a57c048b7c6ae72276b41
 }
 
 /*Color de texto violeta (color principal de la pagina)*/
@@ -131,7 +126,6 @@ footer {
   .gif-fondo {
     background-image: url("../img/error404/Error404.gif");
   }
-<<<<<<< HEAD
+
 }
-=======
->>>>>>> 13f1ddce931147e44d8a57c048b7c6ae72276b41
+
