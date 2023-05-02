@@ -57,6 +57,11 @@ textarea{
   font-size: 2.5rem;
   color: var(--resaltados);
 }
+.stock{
+  font-size: 1.5rem;
+  margin-left: 20px;
+  color: var(--resaltados);
+}
 /* Footer */
 .lista-footer {
   list-style: none;
