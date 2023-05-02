@@ -62,6 +62,10 @@ textarea{
   margin-left: 20px;
   color: var(--resaltados);
 }
+.link-volver{
+  font-size: 2rem;
+  color: var(--detalles);
+}
 /* Footer */
 .lista-footer {
   list-style: none;
