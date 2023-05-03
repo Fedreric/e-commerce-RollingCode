@@ -1,4 +1,5 @@
 let lista_Productos = JSON.parse(localStorage.getItem("lista_Producto")) || [];
+console.log(lista_Productos);
 
 const formulario_Busqueda = document.getElementById("buscarProducto");
 const input_Buscador = document.getElementById("buscador");
@@ -15,15 +16,16 @@ boton_Buscar.addEventListener('click', function(e) {
   if (productoBuscado) {
     console.log("El producto fue encontrado:");
     console.log(productoBuscado);
+
+    const productoEncontradoDiv = document.getElementById("producto-encontrado");
+    productoEncontradoDiv.innerHTML = `
+      <h2>Producto encontrado:</h2>
+      <p>Nombre: ${productoBuscado.nombre}</p>
+      <p>Descripción: ${productoBuscado.detalle}</p>
+      <p>Categoría: ${productoBuscado.categoria}</p>
+      <p>Stock: ${productoBuscado.stock}</p>
+    `;
   } else {
     console.log("El producto no fue encontrado.");
   }
 });
-
-//productoHTML.innerHTML = `
-  //<h2>${producto.nombre}</h2>
-  //<img src="${producto.imagen}" alt="${producto.nombre}">
-  //<p>${producto.detalle}</p>
-  //<p>Categoría: ${producto.categoria}</p>
-  //p>Stock: ${producto.stock}</p>
-//`;
