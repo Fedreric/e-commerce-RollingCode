@@ -13,13 +13,14 @@
     <meta name="author3" content="Santilli Mauro" />
     <meta name="author4" content="Serrano Martin" />
     <meta name="author5" content="Lobo Agustin" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="wth=device-width, initial-scale=1.0" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ"
       crossorigin="anonymous"
     />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link rel="stylesheet" href="../css/style.css" />
     <title>TecnoTuc-Componentes</title>
   </head>
@@ -181,7 +182,7 @@
             <button
               type="button"
               class="btn btn-primary"
-              id="btn-Agregar"
+              id="btnAgregar"
             >
               <i class="bi bi-clipboard-plus"></i>
             </button>
@@ -199,36 +200,8 @@
                 <th>#</th>
               </tr>
             </thead>
-            <tbody>
-              <tr class="fila-Producto">
-                <td class="text-truncate">
-                  https://http2.mlstatic.com/D_NQ_NP_910752-MLA51984578586_102022-O.webp
-                </td>
-                <td class="text-truncate">
-                  Teclado Bluetooth Redragon Fizz Pro Argentina K616-rgb-ar
-                </td>
-                <td class="text-truncate">teclado mecanico</td>
-                <td class="text-truncate">
-                  Imagen 2 de 4 de Teclado Bluetooth Redragon Fizz Pro Argentina
-                  K616-rgb-ar Qwerty Red Español Color Celeste Y Blanco Con Luz
-                  Rgb Imagen 3 de 4 de Teclado Bluetooth Redragon Fizz Pro
-                  Argentina K616-rgb-ar Qwerty Red Español Color Celeste Y
-                  Blanco Con Luz Rgb Imagen 4 de 4 de Teclado Bluetooth Redragon
-                  Fizz Pro Argentina K616-rgb-ar Qwerty Red Español Color
-                  Celeste Y Blanco Con Luz Rgb Nuevo | +1000 vendidos Teclado
-                  Bluetooth Redragon Fizz Pro Argentina K616-rgb-ar Qwerty Red
-                  Español Color Celeste Y Blanco Con Luz Rgb
-                </td>
-                <td class=" ">100</td>
-                <td class=" ">
-                  <button
-                    class="bi bi-pencil-square boton-Editar-Administrador btn"
-                  ></button>
-                  <button
-                    class="bi bi-x-lg boton-Eliminar-Administrador btn"
-                  ></button>
-                </td>
-              </tr>
+            <tbody id="tablaAdministrador">
+             
             </tbody>
           </table>
         </aside>
@@ -238,7 +211,7 @@
         <!-- Modal -->
         <div
           class="modal fade"
-          id="modal-Registro-Productos"
+          id="modalRegistroProductos"
           tabindex="-1"
           aria-labelledby="exampleModalLabel"
           aria-hidden="true"
@@ -258,13 +231,13 @@
                 ></button>
               </div>
               <div class="modal-body">
-                <form id="formAdministrarPelicula">
+                <form id="formAdministrarProducto">
                   <div class="mb-3">
                     <label for="inputCodigo" class="form-label">Codigo</label>
                     <input
                       type="number"
                       class="form-control"
-                      id="input-Codigo"
+                      id="inputCodigo"
                       placeholder=""
                       disabled
                     />
@@ -276,7 +249,7 @@
                     <input
                       type="text"
                       class="form-control"
-                      id="input-Nombre-Articulo"
+                      id="inputNombreArticulo"
                       placeholder="Ej: Teclado Noga Net"
                       required
                       minlength="3"
@@ -294,7 +267,7 @@
                     <textarea
                       class="form-control"
                       placeholder="Brebe Descripcion de los detalles del producto"
-                      id="input-Descripcion-Articulo"
+                      id="inputDescripcionArticulo"
                       maxlength="400"
                     ></textarea>
                   </div>
@@ -305,7 +278,7 @@
                     <input
                       type="text"
                       class="form-control"
-                      id="input-Imagen-Articulo"
+                      id="inputImagenArticulo"
                       placeholder="Ej: http://127.0.0.1:5500/pages/administrador.html"
                       required
                     />
@@ -317,7 +290,7 @@
                     <select
                       class="form-select"
                       aria-label="Elegir la Categoria del Producto"
-                      id="input-Categoria-Articulo"
+                      id="inputCategoriaArticulo"
                       required
                     >
                       <option selected value="">Selecione una Opcion</option>
@@ -337,9 +310,10 @@
                     <input
                       type="number"
                       class="form-control"
-                      id="input-Stock-Articulo"
+                      id="inputStockArticulo"
                       placeholder="Ej: 100"
                       min="0"
+                      required
                     />
                   </div>
 
@@ -347,7 +321,7 @@
                     <button
                       type="submit"
                       class="btn btn-primary"
-                      id="btn-Enviar-Formulario"
+                      id="btnEnviarFormulario"
                     >
                       Enviar
                     </button>
