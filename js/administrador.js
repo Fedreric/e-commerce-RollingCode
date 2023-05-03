@@ -10,6 +10,7 @@ const input_Imagen = document.getElementById("input-Imagen-Articulo");
 const input_Categoria = document.getElementById("input-Categoria-Articulo");
 const input_Stock = document.getElementById("input-Stock-Articulo");
 const btn_Agregar = document.getElementById("btn-Agregar");
+
 let lista_Productos = JSON.parse(localStorage.getItem("lista_Producto")) || [];
 
 btn_Agregar.addEventListener("click", mostrar_Modal_Producto);
@@ -42,6 +43,8 @@ function carga_Productos(e) {
   limpiar_Formulario();
   //cerrar formulario
   modal_Producto.hide();
+  //cargamos la ultima fila en la tabla para actualizar la misma que se muestra
+  dibujar_Filas_Productos(nuevo_Producto);
 }
 //funcion para guardar los datos en la key lista producto
 function guardar_Productos_Local_Storage() {
@@ -52,3 +55,48 @@ function limpiar_Formulario() {
   formulario_Administrador.reset();
 }
 //fin del la logica de Carga de datos en el local Storage
+//READ del administrador
+// funcion que nos permite cargar los datos del local storage en la clase para convertirlos de tipo objeto 
+carga_De_Datos_Inicial()
+if (lista_Productos) {
+  lista_Productos = lista_Productos.map((prod)=>  { return (
+    new Producto(prod.codigo,prod.nombre,prod.detalle,prod.imagen,prod.categoria,prod.stock)
+    )
+  }
+  );
+}
+//funcion que nos permite tener una carga de datos inicial
+function carga_De_Datos_Inicial(){
+  if(lista_Productos.length>0){
+    //recorre el array y en cada iten del array llama la funcion dibujar para poder dibujar las filas correspondientes
+    lista_Productos.map((prod)=> dibujar_Filas_Productos(prod))
+  }
+}
+//funcion para dibujar las filas de los producto
+function dibujar_Filas_Productos(prod){
+  let datosTabla = document.getElementById('tabla_Administrador');
+  //aqui se dubuja la tabla
+ datosTabla.innerHTML+=`
+ <tr class="fila-Producto">
+ <td class="text-truncate">
+   ${prod.nombre}
+ </td>
+ <td class="text-truncate">
+   ${prod.nombre}
+ </td>
+ <td class="text-truncate">${prod.categoria}</td>
+ <td class="text-truncate">
+  ${prod.detalle}
+ </td>
+ <td class=" ">${prod.stock}</td>
+ <td class=" ">
+   <button
+     class="bi bi-pencil-square boton-Editar-Administrador btn"
+   ></button>
+   <button
+     class="bi bi-x-lg boton-Eliminar-Administrador btn"
+   ></button>
+ </td>
+</tr>`
+}
+//fin del READ
