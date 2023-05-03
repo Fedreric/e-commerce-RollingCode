@@ -116,8 +116,8 @@ window.borrarProducto = (codigo) => {
           //Aqui hago todo lo necesario para borrar
           console.log(codigo, typeof (codigo));
           //busco en el array de pelicula, la peli que quiero borrar con el codigo
-          // let posicionPeli = listaPeliculas.findIndex(pelicula => pelicula.codigo === codigo);
-          // console.log(posicionPeli);
+           let posicionProducto = listaProductos.findIndex(prod => prod.codigo === codigo);
+           console.log(posicionProducto);
           // //borrar del array la peli
           // listaPeliculas.splice(posicionPeli, 1);
           // //igualar los datos del local storage
