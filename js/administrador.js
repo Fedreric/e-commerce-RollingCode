@@ -43,7 +43,7 @@ function carga_Productos(e) {
   limpiar_Formulario();
   //cerrar formulario
   modal_Producto.hide();
-  //cargamos la ultima fila en la tabla
+  //cargamos la ultima fila en la tabla para actualizar la misma que se muestra
   dibujar_Filas_Productos(nuevo_Producto);
 }
 //funcion para guardar los datos en la key lista producto
@@ -56,6 +56,7 @@ function limpiar_Formulario() {
 }
 //fin del la logica de Carga de datos en el local Storage
 //READ del administrador
+// funcion que nos permite cargar los datos del local storage en la clase para convertirlos de tipo objeto 
 carga_De_Datos_Inicial()
 if (lista_Productos) {
   lista_Productos = lista_Productos.map((prod)=>  { return (
@@ -64,12 +65,14 @@ if (lista_Productos) {
   }
   );
 }
+//funcion que nos permite tener una carga de datos inicial
 function carga_De_Datos_Inicial(){
   if(lista_Productos.length>0){
-    //dibujes los datos en la tabla   
+    //recorre el array y en cada iten del array llama la funcion dibujar para poder dibujar las filas correspondientes
     lista_Productos.map((prod)=> dibujar_Filas_Productos(prod))
   }
 }
+//funcion para dibujar las filas de los producto
 function dibujar_Filas_Productos(prod){
   let datosTabla = document.getElementById('tabla_Administrador');
   //aqui se dubuja la tabla
