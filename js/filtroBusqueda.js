@@ -1,31 +1,35 @@
-let lista_Productos = JSON.parse(localStorage.getItem("lista_Producto")) || [];
-console.log(lista_Productos);
+// obtener los datos del almacenamiento local al cargar la página
+let listaProductos = JSON.parse(localStorage.getItem("listaProductos")) || [];
 
-const formulario_Busqueda = document.getElementById("buscarProducto");
-const input_Buscador = document.getElementById("buscador");
+// obtener referencias a los elementos relevantes del DOM
+const formularioBusqueda = document.getElementById("buscarProducto");
+const inputBuscador = document.getElementById("buscador");
+const productoEncontradoDiv = document.getElementById("producto-encontrado");
 
-const boton_Buscar = document.querySelector('#buscarProducto button[type="submit"]');
+// agregar un manejador de eventos para el formulario de búsqueda
+formularioBusqueda.addEventListener("submit", function(event) {
+  // prevenir la recarga de la página
+  event.preventDefault();
 
-boton_Buscar.addEventListener('click', function(e) {
-  e.preventDefault();
-
-  let productoBuscado = lista_Productos.find(function(producto) {
-    return producto.nombre.toLowerCase() === input_Buscador.value.toLowerCase();
-  });
+  // buscar el producto en la lista de productos
+  let productoBuscado = listaProductos.find(producto => producto.nombre.toLowerCase() === inputBuscador.value.toLowerCase());
 
   if (productoBuscado) {
-    console.log("El producto fue encontrado:");
-    console.log(productoBuscado);
-
-    const productoEncontradoDiv = document.getElementById("producto-encontrado");
-    productoEncontradoDiv.innerHTML = `
+    // crear un elemento para mostrar la información del producto encontrado
+    const productoEncontradoEl = document.createElement("div");
+    productoEncontradoEl.innerHTML = `
       <h2>Producto encontrado:</h2>
       <p>Nombre: ${productoBuscado.nombre}</p>
       <p>Descripción: ${productoBuscado.detalle}</p>
       <p>Categoría: ${productoBuscado.categoria}</p>
       <p>Stock: ${productoBuscado.stock}</p>
     `;
+
+    // agregar el elemento al DOM
+    productoEncontradoDiv.innerHTML = "";
+    productoEncontradoDiv.appendChild(productoEncontradoEl);
   } else {
-    console.log("El producto no fue encontrado.");
+    // si no se encuentra el producto, mostrar un mensaje de error
+    productoEncontradoDiv.innerHTML = "<p>No se encontró ningún producto con ese nombre.</p>";
   }
 });
