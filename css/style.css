@@ -18,7 +18,8 @@ body {
 }
 .card{
   border-color: var(--detalles);
-  border-width: 2px;
+  border-width: 1px;
+  background-color: var(--fondo-cards);
 }
 hr{
   color: var(--detalles);
