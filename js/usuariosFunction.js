@@ -14,6 +14,8 @@ const iframe_RegistroUsuario_contenido = iframe_RegistroUsuario.contentWindow.do
 const form_registroUsuario = iframe_RegistroUsuario_contenido.getElementById('form_registraUsuario');
 form_registroUsuario.addEventListener('submit', creaUsuario);
 
+const msj_Error_Registro = document.getElementById('msjErrorFormRegistro');
+
 const nombreUsuario = iframe_RegistroUsuario_contenido.getElementById('nombre-registro');
 const contrasenia = iframe_RegistroUsuario_contenido.getElementById('contrasenia-Registro');
 const correo = iframe_RegistroUsuario_contenido.getElementById('correo-Registro');
@@ -104,7 +106,11 @@ function creaUsuario(e)
         limpiarFormularioRegistro();
         modalRegistrarse.hide();
         modalLogin.show();
-    }    
+    }else
+    {
+        msj_Error_Registro.className='alert alert-danger mt-2';
+        msj_Error_Registro.innerHTML = resumen;
+    }  
 }
 
 function guardaEnLocalStorage()
