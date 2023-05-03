@@ -95,8 +95,43 @@ function dibujar_Filas_Productos(prod){
    ></button>
    <button
      class="bi bi-x-lg boton-Eliminar-Administrador btn"
-   ></button>
+   onclick="borrarProducto('${prod.codigo}')"></button>
  </td>
 </tr>`
 }
 //fin del READ
+//Eliminar producto
+window.borrarProducto = (codigo) => {
+  Swal.fire({
+      title: 'Estas seguro de eliminar la pelicula?',
+      text: "No podras revertir este cambio",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Si, eliminar!',
+      cancelButtonText: 'Cancelar'
+  }).then((result) => {
+      if (result.isConfirmed) {
+          //Aqui hago todo lo necesario para borrar
+          console.log(codigo, typeof (codigo));
+          //busco en el array de pelicula, la peli que quiero borrar con el codigo
+          // let posicionPeli = listaPeliculas.findIndex(pelicula => pelicula.codigo === codigo);
+          // console.log(posicionPeli);
+          // //borrar del array la peli
+          // listaPeliculas.splice(posicionPeli, 1);
+          // //igualar los datos del local storage
+          // guardarEnLocalStorage();
+          // //quitar la fila de la tabla
+          // let datosTabla = document.querySelector('tbody');
+          // // console.log(datosTabla.children[posicionPeli]);
+          // datosTabla.removeChild(datosTabla.children[posicionPeli]);
+          // //Actualizar tabla
+          Swal.fire(
+              'Listo!',
+              'La pelicula fue eliminada',
+              'success'
+          )
+      }
+  })
+};
