@@ -16,6 +16,11 @@ body {
   display: flex;
   flex-direction: column;
 }
+.card{
+  border-color: var(--detalles);
+  border-width: 1px;
+  background-color: var(--fondo-cards);
+}
 hr{
   color: var(--detalles);
 }
