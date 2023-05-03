@@ -1,7 +1,7 @@
 import Producto from "./class-Producto.js";
 
 const formularioAdministrador = document.getElementById(
-  "formAdministrarPelicula"
+  "formAdministrarProducto"
 );
 const inputCodigo = document.getElementById("inputCodigo");
 const inputNombre = document.getElementById("inputNombreArticulo");
