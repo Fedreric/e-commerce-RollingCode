@@ -95,41 +95,32 @@ function dibujarFilasProductos(prod){
    ></button>
    <button
      class="bi bi-x-lg boton-Eliminar-Administrador btn"
-   onclick="borrarProducto('${prod.codigo}')"></button>
+   onclick="eliminarProducto('${prod.codigo}')"></button>
  </td>
 </tr>`
 }
 //fin del READ
+
 //Eliminar producto
-window.borrarProducto = (codigo) => {
+window.eliminarProducto = (codigo) => {
   Swal.fire({
-      title: 'Estas seguro de eliminar la pelicula?',
-      text: "No podras revertir este cambio",
+      title: 'Estas seguro de eliminar el producto?',
       icon: 'warning',
       showCancelButton: true,
-      confirmButtonColor: '#3085d6',
-      cancelButtonColor: '#d33',
+      confirmButtonColor: '#6246ea',
+      cancelButtonColor: '#e45858',
       confirmButtonText: 'Si, eliminar!',
       cancelButtonText: 'Cancelar'
   }).then((result) => {
       if (result.isConfirmed) {
-          //Aqui hago todo lo necesario para borrar
-          console.log(codigo, typeof (codigo));
-          //busco en el array de pelicula, la peli que quiero borrar con el codigo
            let posicionProducto = listaProductos.findIndex(prod => prod.codigo === codigo);
-           console.log(posicionProducto);
-          // //borrar del array la peli
-          // listaPeliculas.splice(posicionPeli, 1);
-          // //igualar los datos del local storage
-          // guardarEnLocalStorage();
-          // //quitar la fila de la tabla
-          // let datosTabla = document.querySelector('tbody');
-          // // console.log(datosTabla.children[posicionPeli]);
-          // datosTabla.removeChild(datosTabla.children[posicionPeli]);
-          // //Actualizar tabla
+          listaProductos.splice(posicionProducto, 1);
+          guardarProductosLocalStorage();
+          let datosTabla = document.getElementById('tablaAdministrador');
+          datosTabla.removeChild(datosTabla.children[posicionProducto]);
           Swal.fire(
               'Listo!',
-              'La pelicula fue eliminada',
+              'Producto eliminado.',
               'success'
           )
       }
