@@ -16,6 +16,10 @@ body {
   display: flex;
   flex-direction: column;
 }
+.card{
+  border-color: var(--detalles);
+  border-width: 2px;
+}
 hr{
   color: var(--detalles);
 }
