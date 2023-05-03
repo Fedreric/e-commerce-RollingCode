@@ -1,4 +1,4 @@
-const buscador = document.getElementById('buscaArticulo');
+const buscador = document.getElementById('buscador');
 buscador.addEventListener('submit', buscarArticulo);
 const articuloBusca = document.getElementById('articuloBuscado');
 const etiquetas = document.getElementsByTagName('h4');
