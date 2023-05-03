@@ -1,19 +1,11 @@
-const barraBusqueda = document.getElementById("buscarProducto")
-const inputBusqueda = document.getElementById("buscador")
+const productoHTML = document.getElementById("producto");
+const listaProductos = JSON.parse(localStorage.getItem("lista_Producto"));
+const producto = listaProductos[0]; // Suponiendo que el producto que quieres mostrar es el primero de la lista
 
-barraBusqueda.addEventListener("submit", function(e){
-    e.preventDefault()
-
-    const resultadoBusqueda = inputBusqueda.value.toLowerCase()
-
-    const productosFiltro = JSON.parse(localStorage.getItem("productos")).filter(producto => {
-        const nombreProducto = producto.nombre.toLowerCase()
-        return nombreProducto.includes(resultadoBusqueda)
-    })
-
-    // aquí puedes hacer algo con los resultados de la búsqueda, como mostrarlos en pantalla
-    console.log(productosFiltro)
-})
-
-//|| []
-
+productoHTML.innerHTML = `
+  <h2>${producto.nombre}</h2>
+  <img src="${producto.imagen}" alt="${producto.nombre}">
+  <p>${producto.detalle}</p>
+  <p>Categoría: ${producto.categoria}</p>
+  <p>Stock: ${producto.stock}</p>
+`;
