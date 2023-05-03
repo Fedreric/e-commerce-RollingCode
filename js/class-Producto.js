@@ -60,4 +60,15 @@ export default class Producto{
     set stock(stock) {
         this.#stock = stock;
       }
+      toJSON(){
+        return {
+          codigo: this.#codigo,
+            nombre: this.#nombre,
+            detalle: this.#detalle,
+            imagen: this.#imagen,
+            categoria: this.#categoria,
+            stock: this.#stock,
+            
+        }
+      }
 }
