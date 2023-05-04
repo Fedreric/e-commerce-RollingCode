@@ -1,7 +1,9 @@
+// import filltrarProducto from "./carritoDeCompras.js";
 //extraer el codigo del producto del url
 const codigoProd = new URLSearchParams(window.location.search);
 //buscar producto
 let listaProductos = JSON.parse(localStorage.getItem('listaProductos')) || [];
+// let listaCarrito = JSON.parse(localStorage.getItem("listaCarrito")) || [];
 const producto = listaProductos.find(prod => prod.codigo === codigoProd.get('codigo'));
 //mostrar los datos del producto
 const detalle = document.getElementById('contenedorDetalle');
@@ -23,7 +25,10 @@ detalle.innerHTML = `
     <div class="my-3">
         <span class="precio-poducto">$${producto.precio}</span>
     </div>
-    <button class="boton text-light my-3">Agregar al carrito</button>
+    <button class="boton text-light my-3" onClick="agregarCarrito()">Agregar al carrito</button>
     <span class="stock">Stock: ${producto.stock}</span>
 </aside> 
 `
+function agregarCarrito(){
+ console.log(producto);
+}
