@@ -100,90 +100,7 @@
               <th scope="col">x</th>
             </tr>
           </thead>
-          <tbody>
-            <tr>
-              <td class="w-25">
-                  <img
-                  src="../img/CarritoCompras/monitor.webp"
-                  class="img-fluid rounded float-start w-75 mx-auto"
-                  alt="monitor flat m5"
-                />
-              </td>
-              <td class="align-middle">
-                <p class="text-secondary text-truncate">
-                  Mirá, jugá y viví con estilo Todo lo que necesitás está en tu
-                  Monitor. Mirá contenido, trabajá y chateá, todo sin conectar
-                  una PC, gracias a Smart Monitor. Tus aplicaciones favoritas de
-                  video y productividad están integradas para lograr un
-                  escritorio más ordenado y elegante, que siempre es un placer
-                  usar.
-                </p>
-              </td>
-              <td class="align-middle">
-                <p class="precio-poducto fs-5">$163.295</p>
-              </td>
-              <td class="align-middle">
-                <button
-                class="bi bi-x-lg boton-Eliminar-Administrador btn"
-                onclick="eliminarProducto('${prod.codigo}')"
-                ></button>
-              </td>
-            </tr>
-            <tr>
-              <td class="w-25">
-                <img
-                  src="../img/CarritoCompras/procesadorAMD.webp"
-                  class="img-fluid rounded float-start w-75 mx-auto"
-                  alt="procesador AMD ryzen 5"
-                />
-              </td>
-              <td class="align-middle">
-                <p class="text-secondary text-truncate">
-                  Acerca de este producto: -Procesador AMD Ryzen 9 5900X;
-                  -Mother A520M (consulte marca y modelo disponible); -Memoria
-                  16Gb (consulte marca y modelo disponible)
-                </p>
-              </td>
-              <td class="align-middle">
-                <p class="precio-poducto fs-5">$421.322</p>
-              </td>
-              <td class="align-middle">
-                <button
-                class="bi bi-x-lg boton-Eliminar-Administrador btn"
-                onclick="eliminarProducto('${prod.codigo}')"
-                ></button>
-              </td>
-            </tr>
-            <tr>
-              <td class="w-25">
-                <img
-                  src="../img/CarritoCompras/auriculares.webp"
-                  class="img-fluid rounded float-start w-75 mx-auto"
-                  alt="auriculares"
-                />
-              </td>
-              <td class="align-middle">
-                <p class="text-secondary text-truncate">
-                  El audio de alta calidad es un camino indiscutiblemente
-                  maravilloso, como los auriculares Sona, que cuentan con sonido
-                  7.1 Virtual configurable por software, para que alcances ese
-                  nivel de detalle sonoro que siempre haz deseado. Y como no
-                  solo se trata de escuchar, especialmente si lideras a las
-                  tropas, también incluye un micrófono a la altura de las
-                  circunstancias para que puedas alzar tu voz y guiar a las
-                  tropas.
-                </p>
-              </td>
-              <td class="align-middle">
-                <p class="precio-poducto fs-5">$9.500</p>
-              </td>
-              <td class="align-middle">
-                <button
-                class="bi bi-x-lg boton-Eliminar-Administrador btn"
-                onclick="eliminarProducto('${prod.codigo}')"
-                ></button>
-              </td>
-            </tr>
+          <tbody id="contenedorCarrito">
             <tr>
               <td colspan="3" class="text-end fs-4">
                 Total:
@@ -385,5 +302,6 @@
       integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
       crossorigin="anonymous"
     ></script>
+    <script src="../js/readCarrito.js"></script>
   </body>
 </html>
