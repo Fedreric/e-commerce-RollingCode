@@ -243,7 +243,7 @@
                     />
                   </div>
                   <div class="mb-3">
-                    <label for="input-Nombre-Articulo" class="form-label"
+                    <label for="inputNombreArticulo" class="form-label"
                       >Nombre</label
                     >
                     <input
@@ -257,7 +257,7 @@
                     />
                   </div>
                   <div class="mb-3">
-                    <label for="input-Descripcion-Articulo" class="form-label"
+                    <label for="inputDescripcionArticulo" class="form-label"
                       >Detalle
                       <span class="text-muted text-sm">
                         disponible:
@@ -272,7 +272,7 @@
                     ></textarea>
                   </div>
                   <div class="mb-3">
-                    <label for="input-Imagen-Articulo" class="form-label"
+                    <label for="inputImagenArticulo" class="form-label"
                       >Imagen</label
                     >
                     <input
@@ -284,7 +284,7 @@
                     />
                   </div>
                   <div class="mb-3">
-                    <label for="input-Categoria-Articulo" class="form-label"
+                    <label for="inputCategoriaArticulo" class="form-label"
                       >Categoria</label
                     >
                     <select
@@ -304,13 +304,26 @@
                     </select>
                   </div>
                   <div class="mb-3">
-                    <label for="input-Stock-Articulo" class="form-label"
+                    <label for="inputStockArticulo" class="form-label"
                       >Stock</label
                     >
                     <input
                       type="number"
                       class="form-control"
                       id="inputStockArticulo"
+                      placeholder="Ej: 100"
+                      min="0"
+                      required
+                    />
+                  </div>
+                  <div class="mb-3">
+                    <label for="inputPrecioArticulo" class="form-label"
+                      >Precio</label
+                    >
+                    <input
+                      type="number"
+                      class="form-control"
+                      id="inputPrecioArticulo"
                       placeholder="Ej: 100"
                       min="0"
                       required
