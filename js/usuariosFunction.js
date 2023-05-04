@@ -5,6 +5,11 @@ const btnIniciarSecion = document.getElementById('btnIniciarSecion');
 btnIniciarSecion.addEventListener('click', mostrarModalLogin);
 const modalLogin = new bootstrap.Modal(document.getElementById('inicioSecion'));
 
+const iframe_LoginUsuario = document.getElementById('iframe_loginUsuario');
+const iframe_LoginUsuario_contenido = iframe_LoginUsuario.contentWindow.document;
+const form_LoginUsuario = iframe_LoginUsuario_contenido.getElementById('form_loginUsuario');
+form_LoginUsuario.addEventListener('submit', iniciaSecion);
+
 const btnRegistrarse = document.getElementById('btnRegistrarse');
 btnRegistrarse.addEventListener('click', mostrarModalRegistrarse);
 const modalRegistrarse = new bootstrap.Modal(document.getElementById('registro'));
@@ -15,7 +20,11 @@ const form_registroUsuario = iframe_RegistroUsuario_contenido.getElementById('fo
 form_registroUsuario.addEventListener('submit', creaUsuario);
 
 const msj_Error_Registro = document.getElementById('msjErrorFormRegistro');
+/*Recuperacion de los elementos ingresados en el formulario de login*/
+const correoSesion = iframe_LoginUsuario_contenido.getElementById('email-usuario');
+const contraseniaSesion = iframe_LoginUsuario_contenido.getElementById('contrasenia-usuario');
 
+/*Recuperacion de los elemetnos ingresados en el formulario de registro*/
 const nombreUsuario = iframe_RegistroUsuario_contenido.getElementById('nombre-registro');
 const contrasenia = iframe_RegistroUsuario_contenido.getElementById('contrasenia-Registro');
 const correo = iframe_RegistroUsuario_contenido.getElementById('correo-Registro');
@@ -121,4 +130,9 @@ function guardaEnLocalStorage()
 function limpiarFormularioRegistro()
 {
     form_registroUsuario.reset();
+}
+
+function iniciaSecion()
+{
+    e.preventDefault();
 }
