@@ -188,14 +188,15 @@
             </button>
           </p>
         </section>
-        <aside>
-          <table class="table tabla-Administrador">
+        <aside class="table-responsive">
+          <table class="table tabla-Administrador table-striped ">
             <thead>
               <tr>
                 <th>Img</th>
                 <th>Nombre</th>
                 <th>Categoria</th>
                 <th>Detalle</th>
+                <th>precio</th>
                 <th>Stock</th>
                 <th>#</th>
               </tr>
@@ -243,7 +244,7 @@
                     />
                   </div>
                   <div class="mb-3">
-                    <label for="input-Nombre-Articulo" class="form-label"
+                    <label for="inputNombreArticulo" class="form-label"
                       >Nombre</label
                     >
                     <input
@@ -257,7 +258,7 @@
                     />
                   </div>
                   <div class="mb-3">
-                    <label for="input-Descripcion-Articulo" class="form-label"
+                    <label for="inputDescripcionArticulo" class="form-label"
                       >Detalle
                       <span class="text-muted text-sm">
                         disponible:
@@ -272,7 +273,7 @@
                     ></textarea>
                   </div>
                   <div class="mb-3">
-                    <label for="input-Imagen-Articulo" class="form-label"
+                    <label for="inputImagenArticulo" class="form-label"
                       >Imagen</label
                     >
                     <input
@@ -284,7 +285,7 @@
                     />
                   </div>
                   <div class="mb-3">
-                    <label for="input-Categoria-Articulo" class="form-label"
+                    <label for="inputCategoriaArticulo" class="form-label"
                       >Categoria</label
                     >
                     <select
@@ -298,19 +299,44 @@
                       <option value="monitores">Monitores</option>
                       <option value="mouse">Mouse</option>
                       <option value="fuentes">Fuentes</option>
-                      <option value="conbo-Teclado-Mouse">
+                      <option value="combos">
                         Conbo Teclado Mouse
+                      </option>
+                      <option value="memorias-Rams">
+                        Memorias Ram
+                      </option>
+                      <option value="parlantes">
+                        Parlantes
+                      </option>
+                      <option value="auriculares">
+                        Auriculares
+                      </option>
+                      <option value="discos-Duros">
+                        Discos Duros
                       </option>
                     </select>
                   </div>
                   <div class="mb-3">
-                    <label for="input-Stock-Articulo" class="form-label"
+                    <label for="inputStockArticulo" class="form-label"
                       >Stock</label
                     >
                     <input
                       type="number"
                       class="form-control"
                       id="inputStockArticulo"
+                      placeholder="Ej: 100"
+                      min="0"
+                      required
+                    />
+                  </div>
+                  <div class="mb-3">
+                    <label for="inputPrecioArticulo" class="form-label"
+                      >Precio</label
+                    >
+                    <input
+                      type="number"
+                      class="form-control"
+                      id="inputPrecioArticulo"
                       placeholder="Ej: 100"
                       min="0"
                       required
