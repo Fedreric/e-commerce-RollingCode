@@ -3,7 +3,7 @@
 const codigoProd = new URLSearchParams(window.location.search);
 //buscar producto
 let listaProductos = JSON.parse(localStorage.getItem('listaProductos')) || [];
-// let listaCarrito = JSON.parse(localStorage.getItem("listaCarrito")) || [];
+let listaCarrito = JSON.parse(localStorage.getItem("listaCarrito")) || [];
 const producto = listaProductos.find(prod => prod.codigo === codigoProd.get('codigo'));
 //mostrar los datos del producto
 const detalle = document.getElementById('contenedorDetalle');
@@ -30,5 +30,10 @@ detalle.innerHTML = `
 </aside> 
 `
 function agregarCarrito(){
- console.log(producto);
+    listaCarrito.push(producto);
+    console.log(listaCarrito);
+    agregarProductoCarritoLocalStorage();
+}
+function agregarProductoCarritoLocalStorage(){
+    localStorage.setItem("listaCarrito", JSON.stringify(listaCarrito));
 }
