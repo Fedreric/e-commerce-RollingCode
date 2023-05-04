@@ -113,41 +113,41 @@
                   <button class="btn btn-outline-primary" type="submit" id="botonBuscar"><i class="bi bi-search"></i></button>
                 </form>
 
-                <div id="resultado"></div>
+          <div id="resultado"></div>
 
-          <!-- Modal para producto encontrado -->
-<div class="modal fade" id="productoEncontradoModal" tabindex="-1" aria-labelledby="productoEncontradoModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="productoEncontradoModalLabel">Producto encontrado</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body" id="modalBody"></div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-      </div>
-    </div>
-  </div>
-</div>
+          
+         <div class="modal fade" id="modalpEncontrado" tabindex="-1" aria-labelledby="tituloEncontrado" aria-hidden="true">
+             <div class="modal-dialog modal-dialog-centered">
+                  <div class="modal-content">
+                       <div class="modal-header">
+                         <h5 class="modal-title" id="tituloEncontrado">Producto encontrado</h5>
+                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+              <div class="modal-body" id="modalBody"></div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                            </div>
+                     </div>
+                  </div>
+           </div>
 
-<!-- Modal para producto no encontrado -->
-<div class="modal fade" id="productoNoEncontradoModal" tabindex="-1" aria-labelledby="productoNoEncontradoModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="productoNoEncontradoModalLabel">Producto no encontrado</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <p>No se encontró ningún producto con ese nombre.</p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-      </div>
-    </div>
-  </div>
-</div>
+
+        <div class="modal fade" id="modalpNoEncontrado" tabindex="-1" aria-labelledby="tituloNoEncontrado" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title" id="tituloNoEncontrado">Producto no encontrado</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+         </div>
+           <div class="modal-body">
+               <p>No se encontró ningún producto con ese nombre.</p>
+          </div>
+         <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+         </div>
+           </div>
+          </div>
+        </div>
 
             </section>
             <div class="container text-center">

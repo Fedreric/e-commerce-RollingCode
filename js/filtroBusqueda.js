@@ -7,10 +7,8 @@ filtrarBusqueda.addEventListener("submit", function(event) {
     event.preventDefault();
     let productoBuscado = listaProductos.find(producto => producto.nombre.toLowerCase() === inputBuscador.value.toLowerCase());
     if (productoBuscado) {
-      // Mostrar el modal de producto encontrado
-      const modalProductoEncontrado = new bootstrap.Modal(document.getElementById('productoEncontradoModal'), {});
+      const modalProductoEncontrado = new bootstrap.Modal(document.getElementById('modalpEncontrado'), {});
       
-      // Eliminar el contenido anterior del modal
       document.getElementById("modalBody").innerHTML = "";
       
       const productoEncontrado = document.createElement("div");
@@ -24,8 +22,7 @@ filtrarBusqueda.addEventListener("submit", function(event) {
       document.getElementById("modalBody").appendChild(productoEncontrado);
       modalProductoEncontrado.show();
     } else {
-      // Mostrar el modal de producto no encontrado
-      const modalProductoNoEncontrado = new bootstrap.Modal(document.getElementById('productoNoEncontradoModal'), {});
+      const modalProductoNoEncontrado = new bootstrap.Modal(document.getElementById('modalpNoEncontrado'), {});
       modalProductoNoEncontrado.show();
     }
   });
