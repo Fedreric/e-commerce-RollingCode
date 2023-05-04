@@ -33,6 +33,6 @@ function agregarCarrito(){
     console.log(listaCarrito);
     agregarProductoCarritoLocalStorage();
 }
-function agregarProductoCarritoLocalStorage(){
+export default function agregarProductoCarritoLocalStorage(){
     localStorage.setItem("listaCarrito", JSON.stringify(listaCarrito));
 }
