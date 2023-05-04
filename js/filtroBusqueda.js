@@ -18,7 +18,7 @@ function mostrarProductosBuscados(arrayFiltrado) {
             resultadoBusqueda.innerHTML += `
             <div class="col-md-6 col-lg-4 card text-bg-light my-3 p-0">
                 <a href="pages/detalle.html">
-                    <img src="${producto.imagen}" alt="${producto.nombre}" class="w-auto">
+                    <img src="${producto.imagen}" alt="${producto.nombre}" class="w-auto img-fluid mt-5">
                     <div class="card-img-overlay tituloCard ">
                         <h5 class="card-title">${producto.nombre.toUpperCase()}</h5>
                     </div>
