@@ -91,6 +91,7 @@ function dibujarFilasProductos(prod){
  <td class="text-truncate">
   ${prod.detalle}
  </td>
+ <td class=" ">${prod.precio}</td>
  <td class=" ">${prod.stock}</td>
  <td class=" ">
    <button
