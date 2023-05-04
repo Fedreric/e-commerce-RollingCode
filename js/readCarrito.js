@@ -1,12 +1,10 @@
 let listaCarrito = JSON.parse(localStorage.getItem("listaCarrito")) || [];
 let contenedorCarrito = document.getElementById("contenedorCarrito");
-
+let total = 0;
 readCarrito();
-
+subTotalCarrito();
 function readCarrito(){
-    console.log(listaCarrito);
     listaCarrito.forEach(producto => {
-        console.log(producto);
         contenedorCarrito.innerHTML +=`
         <tr>
         <td class="align-middle">
@@ -32,5 +30,17 @@ function readCarrito(){
         </td>
       </tr>
         `
+        total = total + parseInt(producto.precio);
     });
+}
+
+function subTotalCarrito(){
+        contenedorCarrito.innerHTML +=`
+        <tr>
+            <td colspan="3" class="text-end fs-4">
+                Total:
+                <p class="badge precio-poducto fs-4">$${total}</p>
+            </td>
+        </tr>
+        `
 }
