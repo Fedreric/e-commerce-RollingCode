@@ -20,6 +20,16 @@ if (!listaProductos) {
   );
 }
 
+cargarCards();
+
+function cargarCards(){
+ // verificar si listaProductos tiene datos
+ if (listaProductos.length > 0) {
+    //dibujes los datos en las cards
+    listaProductos.map((producto, indice) => crearCardProductos(producto, indice));
+  }
+}
+
 function crearCardProductos(producto){
     let datosProductos = document.getElementById('cardsProductos');
     datosProductos.innerHTML += `
