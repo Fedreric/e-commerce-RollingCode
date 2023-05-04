@@ -4,7 +4,8 @@ const resultadoBusqueda = document.getElementById("resultado");
 const formBuscarProducto = document.getElementById("buscarProducto");
 const botonBuscar = document.getElementById("botonBuscar");
 
-botonBuscar.addEventListener("click", function() {
+botonBuscar.addEventListener("click", function(event) {
+  event.preventDefault(); // evita la recarga de la página
   buscar();
   inputBuscador.focus();
 });
@@ -17,7 +18,7 @@ function buscar() {
   const terminoBusc = inputBuscador.value.toLowerCase();
   
   if (terminoBusc === '') {
-    resultadoBusqueda.innerHTML = `<p class="mt-3 text-center fs-3 fw-bold">Ingresa un término de búsqueda</p>`;
+    resultadoBusqueda.innerHTML = `<p class="mt-3 text-center fs-3 fw-light">Ingresa un término de búsqueda</p>`;
     return;
   }
   
@@ -39,7 +40,7 @@ function mostrarProductosBuscados(arrayFiltrado) {
             <p class= "text-center fw-light">${producto.categoria.toUpperCase()}</p>
             <a href="pages/detalle.html">
               <div class="card-img-overlay">
-                <h5 class="card-title mt-3">${producto.nombre.toUpperCase()}</h5>
+                <h5 class="card-title mt-3 text-center">${producto.nombre.toUpperCase()}</h5>
               </div>
             </a>
             <img src="${producto.imagen}" alt="${producto.nombre}" class="img-fluid mt-5">
