@@ -1,4 +1,28 @@
+import { Usuario } from "./usuariosClase.js";
 const paisesLatinoamerica = ["ARGENTINA","BOLIVIA","BRASIL","CHILE","COLOMBIA","COSTA RICA","CUBA","ECUADOR","EL SALVADOR","GUATEMALA","HAITI","HONDURAS","MEXICO","NICARAGUA","PANAMA","PARAGUAY","PERU","PUERTO RICO","REPUBLICA DOMINICANA","URUGUAY","VENEZUELA"];
+
+let usuariosAlmacenados = localStorage.getItem('listadoUsuarios');
+//Realizo la carga de los usuarios almacenados
+if(usuariosAlmacenados)
+{
+    usuariosAlmacenados = JSON.parse(usuariosAlmacenados).map(
+        (usuario) => 
+        {
+            return new Usuario(
+                usuario.idUsuario,
+                usuario.nombreUsuario,
+                usuario.contrasenia,
+                usuario.email,
+                usuario.pais,
+                usuario.provincia,
+                usuario.localidad,
+                usuario.codPostal,
+                usuario.direccion,
+                usuario.tipo
+            )
+        }
+    )
+}
 
 function cantidadCaracteres(texto, min, max)
 {
@@ -47,20 +71,63 @@ function validaNumeros(value, max)
     }
 }
 
+function validaContrasenia(value)
+{
+    const expReg = /^(?=.*[A-Z])(?=.*[!@#$&*])(?=.*[0-9]).{8,}$/;
+    if(expReg.test(value))
+    {
+        return true;
+    }else
+    {
+        console.log(value);
+        return false;
+    }
+}
+
+function existeUsuario(value)
+{
+    let existeNombUsuario = usuariosAlmacenados.map((usuario) => usuario.nombUsuario).includes(value);
+    if(existeNombUsuario)
+    {
+        return true;
+    }else
+    {
+        return false;
+    }
+}   
+
+function existeCorreo(value)
+{
+    let existeMailUsuario = usuariosAlmacenados.map((usuario) => usuario.email).includes(value);
+    if(existeMailUsuario)
+    {
+        return true;
+    }else
+    {
+        return false;  
+    }
+}
+
 export function sumarioValidaciones(nombUsuario, contrasenia, correo, pais, provincia, localidad, codPostal, calle, alt_calle, pisoDpto, nroDpto)
 {
     let resumen = '';
     if(!cantidadCaracteres(nombUsuario,3,100))
     {
-        resumen+='->Se ingreso un nombre de usuario no valido.</br>';
-    }
-    if(!cantidadCaracteres(contrasenia, 6,15))
+        resumen+='-> Se ingreso un nombre de usuario no valido.</br>';
+    }else if(existeUsuario(nombUsuario))
     {
-        resumen+='-> La contraseña ingresada no es valida (debe contener entre 6 y 15 caracteres).</br>';
+        resumen+='-> El nombre de usuario ingresado ya esta siendo usado.</br>';
+    }
+    if(!validaContrasenia(contrasenia))
+    {
+        resumen+='-> La contraseña ingresada no es valida (la misma debe contener al menos 1 mayuscula; 1 caracter especia; 1 numero).</br>';
     }
     if(!validaCorreo(correo))
     {
         resumen+='-> Se ingreso un correo invalido.</br>';
+    }else if(existeCorreo(correo))
+    {
+        resumen+='-> El correo ingresado ya esta en uso por otro usuario.</br>';
     }
     if(!validarPais(pais))
     {
@@ -100,3 +167,8 @@ export function sumarioValidaciones(nombUsuario, contrasenia, correo, pais, prov
     }
     return resumen;
 }
+/*
+function validaSesion(value, contrasenia)
+{
+
+}*/
