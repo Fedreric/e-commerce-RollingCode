@@ -110,9 +110,50 @@
             <section class="py-5">
                 <form class="d-flex" role="search" id="buscarProducto">
                   <input class="form-control me-2" type="search" id="buscador" placeholder="Buscar" aria-label="Search">
-                  <button class="btn btn-outline-primary" type="submit"><i class="bi bi-search"></i></button>
-                  <div id="resultado"></div>
+                  <button class="btn btn-outline-primary" type="submit" id="botonBuscar"><i class="bi bi-search"></i></button>
                 </form>
+                
+                <div id="resultado"></div>
+
+          <!-- Modal para producto encontrado -->
+<div class="modal fade" id="productoEncontradoModal" tabindex="-1" aria-labelledby="productoEncontradoModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="productoEncontradoModalLabel">Producto encontrado</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body" id="modalBody">
+        <p><strong>Nombre:</strong> <span id="nombreProducto"></span></p>
+        <p><strong>Descripción:</strong> <span id="descripcionProducto"></span></p>
+        <p><strong>Categoría:</strong> <span id="categoriaProducto"></span></p>
+        <p><strong>Stock:</strong> <span id="stockProducto"></span></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal para producto no encontrado -->
+<div class="modal fade" id="productoNoEncontradoModal" tabindex="-1" aria-labelledby="productoNoEncontradoModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="productoNoEncontradoModalLabel">Producto no encontrado</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>No se encontró ningún producto con ese nombre.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
             </section>
             <div class="container text-center">
               <article class="row">
