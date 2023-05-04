@@ -111,9 +111,9 @@ footer {
 }
 
 /*Administrador*/
-.tabla-Administrador {
-  table-layout: fixed;
-  /*nos permite que el texto no rompa la columna de la tabla*/
+
+.tabla-Administrador td {
+  max-width: 200px;
 }
 .boton-Eliminar-Administrador{
   background-color:#e45858;
