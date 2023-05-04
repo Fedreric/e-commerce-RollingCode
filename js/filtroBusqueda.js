@@ -26,3 +26,9 @@ filtrarBusqueda.addEventListener("submit", function(event) {
       modalProductoNoEncontrado.show();
     }
   });
+
+  const botonDetalle = document.getElementById("btnDetalle");
+
+botonDetalle.addEventListener("click", function() {
+  window.location.href = "./pages/detalle.html";
+});
