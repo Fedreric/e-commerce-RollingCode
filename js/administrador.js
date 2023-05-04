@@ -9,6 +9,7 @@ const inputDescripcion = document.getElementById("inputDescripcionArticulo");
 const inputImagen = document.getElementById("inputImagenArticulo");
 const inputCategoria = document.getElementById("inputCategoriaArticulo");
 const inputStock = document.getElementById("inputStockArticulo");
+const inputPreio = document.getElementById("inputPrecioArticulo");
 const btnAgregar = document.getElementById("btnAgregar");
 
 let listaProductos = JSON.parse(localStorage.getItem("listaProductos")) || [];
@@ -36,7 +37,8 @@ function cargaProductos(e) {
     inputDescripcion.value,
     inputImagen.value,
     inputCategoria.value,
-    inputStock.value
+    inputStock.value,
+    inputPreio.value
   );
   listaProductos.push(nuevoProducto);
   guardarProductosLocalStorage();
@@ -60,7 +62,7 @@ function limpiarFormulario() {
 cargaDeDatosInicial()
 if (listaProductos) {
   listaProductos = listaProductos.map((prod)=>  { return (
-    new Producto(prod.codigo,prod.nombre,prod.detalle,prod.imagen,prod.categoria,prod.stock)
+    new Producto(prod.codigo,prod.nombre,prod.detalle,prod.imagen,prod.categoria,prod.stock,prod.precio)
     )
   }
   );
@@ -79,7 +81,8 @@ function dibujarFilasProductos(prod){
  datosTabla.innerHTML+=`
  <tr class="fila-Producto">
  <td class="text-truncate">
-   ${prod.nombre}
+ <img src="${prod.imagen}" alt=""  width="80px" height="80px">
+ 
  </td>
  <td class="text-truncate">
    ${prod.nombre}

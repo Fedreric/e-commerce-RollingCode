@@ -5,13 +5,15 @@ export default class Producto{
     #imagen
     #categoria
     #stock
-    constructor(codigo=uuidv4(),nombre,detalle,imagen,categoria,stock){
+    #precio
+    constructor(codigo=uuidv4(),nombre,detalle,imagen,categoria,stock,precio){
         this.#codigo=codigo
         this.#nombre=nombre
         this.#detalle=detalle
         this.#imagen=imagen
         this.#categoria=categoria
         this.#stock=stock
+        this.#precio=precio
     }
 
     get codigo(){
@@ -60,6 +62,12 @@ export default class Producto{
     set stock(stock) {
         this.#stock = stock;
       }
+    get precio(){
+        return this.#precio;
+      }
+    set precio(precio) {
+        this.#precio = precio;
+      }
       toJSON(){
         return {
           codigo: this.#codigo,
@@ -68,6 +76,7 @@ export default class Producto{
             imagen: this.#imagen,
             categoria: this.#categoria,
             stock: this.#stock,
+            precio: this.#precio,
             
         }
       }
