@@ -81,7 +81,8 @@ function dibujarFilasProductos(prod){
  datosTabla.innerHTML+=`
  <tr class="fila-Producto">
  <td class="text-truncate">
- ${prod.imagen}
+ <img src="${prod.imagen}" alt=""  width="80px" height="80px">
+ 
  </td>
  <td class="text-truncate">
    ${prod.nombre}
