@@ -9,20 +9,17 @@ filtrarBusqueda.addEventListener("submit", function(event) {
   if (productoBuscado) {
     // Mostrar el modal de producto encontrado
     const modalProductoEncontrado = new bootstrap.Modal(document.getElementById('productoEncontradoModal'), {});
-    modalProductoEncontrado.show();
-  } else {
-    // Mostrar el modal de producto no encontrado
-    const modalProductoNoEncontrado = new bootstrap.Modal(document.getElementById('productoNoEncontradoModal'), {});
-    modalProductoNoEncontrado.show();
-  }
-});
-
-const botonBuscar = document.getElementById("botonBuscar");
-botonBuscar.addEventListener("click", function() {
-  let productoBuscado = listaProductos.find(producto => producto.nombre.toLowerCase() === inputBuscador.value.toLowerCase());
-  if (productoBuscado) {
-    // Mostrar el modal de producto encontrado
-    const modalProductoEncontrado = new bootstrap.Modal(document.getElementById('productoEncontradoModal'), {});
+    
+    const productoEncontrado = document.createElement("div");
+    productoEncontrado.innerHTML = `
+      <h2>Producto encontrado:</h2>
+      <p>Nombre: ${productoBuscado.nombre}</p>
+      <p>Descripción: ${productoBuscado.detalle}</p>
+      <p>Categoría: ${productoBuscado.categoria}</p>
+      <p>Stock: ${productoBuscado.stock}</p>
+    `;
+    
+    document.getElementById("modalBody").appendChild(productoEncontrado);
     modalProductoEncontrado.show();
   } else {
     // Mostrar el modal de producto no encontrado
