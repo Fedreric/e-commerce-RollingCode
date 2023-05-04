@@ -1,4 +1,3 @@
-// import filltrarProducto from "./carritoDeCompras.js";
 //extraer el codigo del producto del url
 const codigoProd = new URLSearchParams(window.location.search);
 //buscar producto
