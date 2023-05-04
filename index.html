@@ -7,7 +7,7 @@
     <meta name="description" content="Pagina de venta de componentes gaming para PC"/>
     <meta name="author1" content="Ledesma Federico"/>
     <meta name="author2" content="Finsinger Aixa"/>
-    <meta name="author3" content="Santilli Mauro"/>
+    <meta name="author3" content="Diaz Santilli Mauro"/>
     <meta name="author4" content="Serrano Martin"/>
     <meta name="author5" content="Lobo Agustin"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -108,10 +108,44 @@
         <section class="container py-3">
           <h1 class="text-center fs-2 pt-5">Productos</h1>
             <section class="py-5">
-                <form class="d-flex" role="search">
-                  <input class="form-control me-2" type="search" id="buscador" oninput="buscar()" placeholder="Buscar" aria-label="Search">
-                  <button class="btn btn-outline-primary" type="submit"><i class="bi bi-search"></i></button>
+                <form class="d-flex" role="search" id="buscarProducto">
+                  <input class="form-control me-2" type="search" id="buscador" placeholder="Buscar" aria-label="Search">
+                  <button class="btn btn-outline-primary" type="submit" id="botonBuscar"><i class="bi bi-search"></i></button>
                 </form>
+
+          <div id="resultado"></div>
+
+          
+         <div class="modal fade" id="modalpEncontrado" tabindex="-1" aria-labelledby="tituloEncontrado" aria-hidden="true">
+             <div class="modal-dialog modal-dialog-centered">
+                  <div class="modal-content">
+                       <div class="modal-header">
+                         <h5 class="modal-title" id="tituloEncontrado">Producto encontrado</h5>
+                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+              <div class="modal-body" id="modalBody"></div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" id="btnDetalle">Ir a detalle</button>
+                            </div>
+                     </div>
+                  </div>
+           </div>
+
+
+        <div class="modal fade" id="modalpNoEncontrado" tabindex="-1" aria-labelledby="tituloNoEncontrado" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title" id="tituloNoEncontrado">Producto no encontrado</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+         </div>
+           <div class="modal-body">
+               <p>No se encontró ningún producto con ese nombre.</p>
+          </div>
+           </div>
+          </div>
+        </div>
+
             </section>
             <div class="container text-center">
               <article class="row" id="cardsProductos">
@@ -233,5 +267,6 @@
     ></script>
     <script src="js/app.js"></script>
     <script src="./js/pagPrincipal.js" type="module"></script>
+    <script src="js/filtroBusqueda.js"></script>
   </body>
 </html>
