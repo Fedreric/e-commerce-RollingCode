@@ -39,7 +39,7 @@ if(!listadoUsuarios)
     listadoUsuarios = JSON.parse(listadoUsuarios).map( 
         (usuario) =>
         {
-            new Usuario
+            return new Usuario
             (
                 usuario.idUsuario,
                 usuario.nombreUsuario,
@@ -86,7 +86,7 @@ function mostrarModalRegistrarse()
 
 function cargaAdministrador()
 {
-    let admin = new Usuario(undefined ,'admin', '1234', 'admin@admin', 'Argentina', 'Tucuman', 'San Miguel de Tucuman', 4000, 'General Paz;576', 'admin');
+    let admin = new Usuario(undefined ,'admin', '1234', 'admin@admin', 'Argentina', 'Tucuman', 'San Miguel de Tucuman', "4000", 'General Paz;576;;', 'admin');
     listadoUsuarios.push(admin);
     console.log(listadoUsuarios);
     guardaEnLocalStorage();
