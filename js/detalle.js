@@ -2,8 +2,8 @@
 const codigoProd = new URLSearchParams(window.location.search);
 console.log(codigoProd.get('codigo'));
 //buscar la pelicula 
-// let listaPeliculas = JSON.parse(localStorage.getItem('ListaPeliculas')) || [];
-// console.log(listaPeliculas);
+ let listaProductos = JSON.parse(localStorage.getItem('listaProductos')) || [];
+ console.log(listaProductos);
 // const peliBuscada = listaPeliculas.find(pelicula => pelicula.codigo === parametroCodigo.get('codigo'));
 // console.log(peliBuscada);
 // //mostrar los datos de la peli
