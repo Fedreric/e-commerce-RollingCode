@@ -71,6 +71,9 @@ textarea{
   font-size: 2rem;
   color: var(--detalles);
 }
+.btn-deshabilitado{
+  pointer-events:none;
+}
 /* Footer */
 .lista-footer {
   list-style: none;
