@@ -1,10 +1,11 @@
 let listaCarrito = JSON.parse(localStorage.getItem("listaCarrito")) || [];
 let contenedorCarrito = document.getElementById("contenedorCarrito");
-let total = 0;
+let contenedorSubtotal = document.getElementById("contenedorSubtotal");
+
 readCarrito();
-subTotalCarrito();
 
 function readCarrito(){
+    let total = 0;
     listaCarrito.forEach(producto => {
         contenedorCarrito.innerHTML +=`
         <tr>
@@ -29,22 +30,19 @@ function readCarrito(){
           onclick="eliminarProductoCarrito('${producto.codigo}')"
           ></button>
         </td>
-      </tr>
-        `
-        total = total + parseInt(producto.precio);
+      </tr>        `
     });
+    subTotalCarrito();
+    function subTotalCarrito(){
+        listaCarrito.forEach(producto => {
+            total = total + parseInt(producto.precio);
+        });
+        contenedorSubtotal.innerHTML =`
+                    <p class="precio-poducto fs-4">Sub Total: $${total}</p>
+            `
+    }
 }
 
-function subTotalCarrito(){
-        contenedorCarrito.innerHTML +=`
-        <tr>
-            <td colspan="3" class="text-end fs-4">
-                Total:
-                <p class="badge precio-poducto fs-4">$${total}</p>
-            </td>
-        </tr>
-        `
-}
 
 function eliminarProductoCarrito(codigo){
     Swal.fire({
@@ -62,6 +60,8 @@ function eliminarProductoCarrito(codigo){
             localStorage.setItem("listaCarrito", JSON.stringify(listaCarrito));
             let productosCarrito = document.getElementById('contenedorCarrito');
             productosCarrito.removeChild(productosCarrito.children[posicionProducto]);
+            productosCarrito.innerHTML = "";
+            readCarrito();
             Swal.fire(
                 'Listo!',
                 'Producto eliminado.',
