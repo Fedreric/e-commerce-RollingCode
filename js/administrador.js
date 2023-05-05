@@ -12,6 +12,8 @@ const inputStock = document.getElementById("inputStockArticulo");
 const inputPreio = document.getElementById("inputPrecioArticulo");
 const btnAgregar = document.getElementById("btnAgregar");
 
+let estadoProducto = true; // se crea el producto en 'true', se edita el producto en 'false'
+
 let listaProductos = JSON.parse(localStorage.getItem("listaProductos")) || [];
 
 btnAgregar.addEventListener("click", mostrarModalProducto);
@@ -30,7 +32,17 @@ function mostrarModalProducto() {
 //funcion para cargar los datos en el local storage
 function cargaProductos(e) {
   e.preventDefault();
+  if(estadoProducto){
+     crearProducto();
 
+  }else{
+
+    actualizarProducto();
+  }
+  
+}
+
+function crearProducto (){
   let nuevoProducto = new Producto(
     undefined,
     inputNombre.value,
@@ -47,6 +59,7 @@ function cargaProductos(e) {
   modalProducto.hide();
   //cargamos la ultima fila en la tabla para actualizar la misma que se muestra
   dibujarFilasProductos(nuevoProducto);
+
 }
 //funcion para guardar los datos en la key lista producto
 function guardarProductosLocalStorage() {
@@ -137,7 +150,7 @@ window.eliminarProducto = (codigo) => {
 //Editar producto
 window.editarProducto = (codigoUnico) => {
   const producto = listaProductos.find((prod) => prod.codigo === codigoUnico);
-  console.log(producto);
+  
   modalProducto.show();
   inputCodigo.value = producto.codigo;
   inputNombre.value = producto.nombre;
@@ -146,4 +159,18 @@ window.editarProducto = (codigoUnico) => {
   inputCategoria.value = producto.categoria;
   inputStock.value = producto.stock;
   inputPreio.value = producto.precio;
+  // cambio el estado de la variable bandera
+  estadoProducto = false;
 };
+ 
+function actualizarProducto(){
+ //necesito el producto que estoy editando
+ let posicionProducto = listaProductos.findIndex(prod => prod.codigo === inputCodigo.value);
+ console.log(posicionProducto)
+
+ // actualizar las propiedades de ese producto
+
+ //actuaizar el localstorage
+
+ // actualizar la tabla
+}
