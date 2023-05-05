@@ -96,7 +96,7 @@ function dibujarFilasProductos(prod){
  <td class=" ">
    <button
      class="bi bi-pencil-square boton-Editar-Administrador btn"
-     onclick = "editarProducto('${prod.codigo}')"
+     onclick="editarProducto('${prod.codigo}')"
    ></button>
    <button
      class="bi bi-x-lg boton-Eliminar-Administrador btn"
@@ -105,6 +105,24 @@ function dibujarFilasProductos(prod){
 </tr>`
 }
 //fin del READ
+
+//Editar producto 
+window.editarProducto = (codigoUnico) => {
+  // mostrar la ventana modal
+  let producto = listaProductos.find(produc => produc.codigo === codigoUnico)
+  modalProducto.show()
+  //completar los datos en el modal
+  codigo.value = prod.codigo;
+  titulo.value = prodnombre;
+  detalle.value = prod.detalle;
+  imagen.value = prod.imagen;
+  categoria.value = prod.categoria;
+  stock.value = prod.stock;
+  precio.value = prod.precio;
+  
+  //cambiar el estado de la variable bandera
+  //estadoPelicula = false;
+}
 
 //Eliminar producto
 window.eliminarProducto = (codigo) => {
