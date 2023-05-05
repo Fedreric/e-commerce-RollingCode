@@ -44,6 +44,12 @@ function agregarProductoCarritoLocalStorage(){
     localStorage.setItem("listaCarrito", JSON.stringify(listaCarrito));
 }
 function controlStock(codigo){
+    //se consigue la posicion del producto en la lista de los productos en el localstorage
     let posicionProducto = listaProductos.findIndex(producto => producto.codigo === codigo)
     console.log(posicionProducto);
+    //se resta en uno el stock
+    listaProductos[posicionProducto].stock = parseInt(listaProductos[posicionProducto].stock) - 1;
+    //se guarda el nuevo valor en el local storage
+    localStorage.setItem("listaProductos", JSON.stringify(listaProductos));
+    
 }
