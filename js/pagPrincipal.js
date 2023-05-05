@@ -44,7 +44,7 @@ function crearCardProductos(producto) {
                       <h5 class="card-title">${producto.nombre}</h5>
                       <div class="d-flex mb-3 text-secondary-emphasis fw-semibold fs-5 card-text">
                         <p class="me-auto p-2">Precio: $${producto.precio} </p>
-                        <p class="p-2">Stock: ${producto.stock} ui</p>
+                        <p class="p-2">Stock: ${producto.stock}</p>
                       </div>
                       <button class="btn boton" onClick="detalleProducto('${producto.codigo}')">Ver más</button>
                     </div>
@@ -54,12 +54,13 @@ function crearCardProductos(producto) {
     datosProductos.innerHTML += `
         <aside class="col-md-6 col-lg-4 my-3">
                       <div class="card h-100">
+                      
                         <img src="${producto.imagen}" class="card-img-top" alt="${producto.nombre}">
                         <div class="card-body">
                           <h5 class="card-title">${producto.nombre}</h5>
                           <div class="d-flex mb-3 text-secondary-emphasis fw-semibold fs-5 card-text">
                             <p class="me-auto p-2">Precio: $${producto.precio} </p>
-                            <p class="p-2">Stock: ${producto.stock} ui</p>
+                            <p class="p-2">Stock: ${producto.stock}</p>
                           </div>
                           <button class="btn boton" onClick="detalleProducto('${producto.codigo}')">Ver más</button>
                         </div>

@@ -20,6 +20,7 @@ body {
   border-color: var(--detalles);
   border-width: 1px;
   background-color: var(--fondo-cards);
+  
 }
 hr{
   color: var(--detalles);
