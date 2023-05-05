@@ -9,7 +9,7 @@ function readCarrito(){
     listaCarrito.forEach(producto => {
         contenedorCarrito.innerHTML +=`
         <tr>
-        <td class="align-middle">
+        <td class="w-25">
             <img
             src="${producto.imagen}"
             class="img-fluid rounded float-start w-75 mx-auto"
