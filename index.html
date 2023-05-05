@@ -46,7 +46,7 @@
                 <button class="nav-link" data-bs-toggle="modal" data-bs-target="#inicioSecion">Ingresar</button>
               </li>
               <li class="nav-item p-1">
-                <a href="pages/carritoCompras.html" class="btn-carrito"><i class="bi bi-cart fs-5 text-light"></i></a>
+                <a href="pages/carritoCompras.html" class="btn-carrito"><i class="bi bi-cart fs-5 text-light"></i><span id="contadorCarrito">0</span></a>
               </li>
               <li class="nav-item p-1">
                 <a href="" class="btn-carrito" data-bs-toggle="modal" data-bs-target="#modalDeseados"><i
@@ -119,39 +119,7 @@
                   <button class="btn btn-outline-primary" type="submit" id="botonBuscar"><i class="bi bi-search"></i></button>
                 </form>
 
-          <div id="resultado"></div>
-
-          
-         <div class="modal fade" id="modalpEncontrado" tabindex="-1" aria-labelledby="tituloEncontrado" aria-hidden="true">
-             <div class="modal-dialog modal-dialog-centered">
-                  <div class="modal-content">
-                       <div class="modal-header">
-                         <h5 class="modal-title" id="tituloEncontrado">Producto encontrado</h5>
-                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-              <div class="modal-body" id="modalBody"></div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" id="btnDetalle">Ir a detalle</button>
-                            </div>
-                     </div>
-                  </div>
-           </div>
-
-
-        <div class="modal fade" id="modalpNoEncontrado" tabindex="-1" aria-labelledby="tituloNoEncontrado" aria-hidden="true">
-          <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-            <div class="modal-header">
-            <h5 class="modal-title" id="tituloNoEncontrado">Producto no encontrado</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-         </div>
-           <div class="modal-body">
-               <p>No se encontró ningún producto con ese nombre.</p>
-          </div>
-           </div>
-          </div>
-        </div>
-
+          <div id="resultado" class="container mt-5"></div>
             </section>
             <div class="container text-center">
               <article class="row" id="cardsProductos">
@@ -267,6 +235,5 @@
     ></script>
     <script src="js/app.js"></script>
     <script src="./js/pagPrincipal.js" type="module"></script>
-    <script src="js/filtroBusqueda.js"></script>
   </body>
 </html>
