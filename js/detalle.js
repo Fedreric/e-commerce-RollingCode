@@ -35,6 +35,7 @@ function readDetalle(){
 }
 
 function agregarCarrito(codigo){
+    //confirma que haya productos en el stock y recien carga el prod al carrito
     if(controlStock(codigo)){
         Swal.fire({
             position: 'top-end',
@@ -57,6 +58,7 @@ function controlStock(codigo){
     //se consigue la posicion del producto en la lista de los productos en el localstorage
     let posicionProducto = listaProductos.findIndex(producto => producto.codigo === codigo)
     let productoStock = parseInt(listaProductos[posicionProducto].stock);
+    //se verifica si el producto esta agotado
     if(parseInt(listaProductos[posicionProducto].stock) === 0){
         btnAgregarCarrito.className = "boton text-light my-3 btn-deshabilitado"
         return false;
@@ -69,7 +71,7 @@ function controlStock(codigo){
         return true;
     }
 }
-
+//modifica el span en el maquetado con la cantidad de productos cargados en el carrito
 function contadorCarritoAct(){
     contadorCarrito.innerText = listaCarrito.length;
   }
