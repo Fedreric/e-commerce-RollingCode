@@ -96,6 +96,7 @@ function dibujarFilasProductos(prod){
  <td class=" ">
    <button
      class="bi bi-pencil-square boton-Editar-Administrador btn"
+     onclick = "editarProducto('${prod.codigo}')"
    ></button>
    <button
      class="bi bi-x-lg boton-Eliminar-Administrador btn"
