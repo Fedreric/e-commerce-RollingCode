@@ -1,4 +1,5 @@
 let listaCarrito = JSON.parse(localStorage.getItem("listaCarrito")) || [];
+let listaProductos = JSON.parse(localStorage.getItem('listaProductos')) || [];
 let contenedorCarrito = document.getElementById("contenedorCarrito");
 let contenedorSubtotal = document.getElementById("contenedorSubtotal");
 let contadorCarrito = document.getElementById("contadorCarrito");
@@ -47,6 +48,8 @@ function readCarrito(){
 
 
 function eliminarProductoCarrito(codigo){
+  let indiceProducto = listaProductos.findIndex(producto => producto.codigo === codigo)
+  let productoStock = parseInt(listaProductos[indiceProducto].stock);
     Swal.fire({
         title: 'Estas seguro de eliminar el producto?',
         icon: 'warning',
@@ -62,6 +65,11 @@ function eliminarProductoCarrito(codigo){
             localStorage.setItem("listaCarrito", JSON.stringify(listaCarrito));
             let productosCarrito = document.getElementById('contenedorCarrito');
             productosCarrito.removeChild(productosCarrito.children[posicionProducto]);
+            //se agrega de nuevo el producto al stock
+            listaProductos[indiceProducto].stock = productoStock + 1;
+            //se guarda el nuevo valor en el local storage
+            localStorage.setItem("listaProductos", JSON.stringify(listaProductos));  
+            readDetalle(); 
             productosCarrito.innerHTML = "";
             readCarrito();
             Swal.fire(
