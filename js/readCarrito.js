@@ -68,10 +68,10 @@ function eliminarProductoCarrito(codigo){
             //se agrega de nuevo el producto al stock
             listaProductos[indiceProducto].stock = productoStock + 1;
             //se guarda el nuevo valor en el local storage
-            localStorage.setItem("listaProductos", JSON.stringify(listaProductos));  
-            readDetalle(); 
+            localStorage.setItem("listaProductos", JSON.stringify(listaProductos));   
             productosCarrito.innerHTML = "";
             readCarrito();
+            contadorCarritoAct();
             Swal.fire(
                 'Listo!',
                 'Producto eliminado.',
@@ -82,5 +82,5 @@ function eliminarProductoCarrito(codigo){
 };
 
 function contadorCarritoAct(){
-    contadorCarrito.innerText = listaCarrito.length;
+  contadorCarrito.innerText = listaCarrito.length;
 }

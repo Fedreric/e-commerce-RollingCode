@@ -6,9 +6,10 @@ let listaCarrito = JSON.parse(localStorage.getItem("listaCarrito")) || [];
 const producto = listaProductos.find(prod => prod.codigo === codigoProd.get('codigo'));
 //mostrar los datos del producto
 const detalle = document.getElementById('contenedorDetalle');
+let contadorCarrito = document.getElementById("contadorCarrito");
 
 readDetalle();
-
+contadorCarritoAct();
 function readDetalle(){
     detalle.innerHTML = `        
     <aside class="col-md-6">
@@ -44,6 +45,7 @@ function agregarCarrito(codigo){
           })
         listaCarrito.push(producto);
         agregarProductoCarritoLocalStorage();
+        contadorCarritoAct();
     }
 }
 function agregarProductoCarritoLocalStorage(){
@@ -67,3 +69,7 @@ function controlStock(codigo){
         return true;
     }
 }
+
+function contadorCarritoAct(){
+    contadorCarrito.innerText = listaCarrito.length;
+  }
