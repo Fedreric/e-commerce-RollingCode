@@ -34,20 +34,22 @@ function readDetalle(){
 }
 
 function agregarCarrito(codigo){
-    Swal.fire({
-        position: 'top-end',
-        icon: 'success',
-        title: 'Listo <i class="bi bi-cart"></i>',
-        showConfirmButton: false,
-        timer: 1500
-      })
-    listaCarrito.push(producto);
-    controlStock(codigo);
-    agregarProductoCarritoLocalStorage();
+    if(controlStock(codigo)){
+        Swal.fire({
+            position: 'top-end',
+            icon: 'success',
+            title: 'Listo <i class="bi bi-cart"></i>',
+            showConfirmButton: false,
+            timer: 1500
+          })
+        listaCarrito.push(producto);
+        agregarProductoCarritoLocalStorage();
+    }
 }
 function agregarProductoCarritoLocalStorage(){
     localStorage.setItem("listaCarrito", JSON.stringify(listaCarrito));
 }
+
 function controlStock(codigo){
     const btnAgregarCarrito = document.getElementById('btnAgregarCarrito');
     //se consigue la posicion del producto en la lista de los productos en el localstorage
@@ -55,11 +57,13 @@ function controlStock(codigo){
     let productoStock = parseInt(listaProductos[posicionProducto].stock);
     if(parseInt(listaProductos[posicionProducto].stock) === 0){
         btnAgregarCarrito.className = "boton text-light my-3 btn-deshabilitado"
+        return false;
     }else{
         //se resta en uno el stock
         listaProductos[posicionProducto].stock = productoStock - 1;
         //se guarda el nuevo valor en el local storage
         localStorage.setItem("listaProductos", JSON.stringify(listaProductos));  
         readDetalle(); 
+        return true;
     }
 }
