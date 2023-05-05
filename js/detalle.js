@@ -29,8 +29,14 @@ detalle.innerHTML = `
 </aside> 
 `
 function agregarCarrito(){
+    Swal.fire({
+        position: 'top-end',
+        icon: 'success',
+        title: 'Listo <i class="bi bi-cart"></i>',
+        showConfirmButton: false,
+        timer: 1500
+      })
     listaCarrito.push(producto);
-    console.log(listaCarrito);
     agregarProductoCarritoLocalStorage();
 }
 function agregarProductoCarritoLocalStorage(){
