@@ -121,6 +121,9 @@ function mostrarProductosBuscados(arrayFiltrado) {
         </div>
          `;
     });
+    resultadoBusqueda.innerHTML += `
+        <hr class= "text-dark m-5 border-3">
+            `;
 } else {
     resultadoBusqueda.innerHTML = `<p class="mt-3 text-center fs-3 fw-bold">No se encontraron productos asociados con: ${inputBuscador.value}</p>`;
 }
