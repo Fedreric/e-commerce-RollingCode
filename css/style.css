@@ -33,6 +33,7 @@ hr{
   padding: 0.375rem 0.75rem;
   font-size: 1rem;
   background-color: var(--detalles);
+  text-decoration: none;
 }
 .boton {
   background-color: #6246ea;
@@ -73,6 +74,10 @@ textarea{
 }
 .btn-deshabilitado{
   pointer-events:none;
+}
+/*CARRITO DE COMPRAS*/
+#contadorCarrito{
+  color: var(--resaltados);
 }
 /* Footer */
 .lista-footer {

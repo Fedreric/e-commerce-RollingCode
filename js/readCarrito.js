@@ -1,10 +1,12 @@
 let listaCarrito = JSON.parse(localStorage.getItem("listaCarrito")) || [];
 let contenedorCarrito = document.getElementById("contenedorCarrito");
 let contenedorSubtotal = document.getElementById("contenedorSubtotal");
+let contadorCarrito = document.getElementById("contadorCarrito");
 
 readCarrito();
 
 function readCarrito(){
+    contadorCarritoAct();
     let total = 0;
     listaCarrito.forEach(producto => {
         contenedorCarrito.innerHTML +=`
@@ -70,3 +72,7 @@ function eliminarProductoCarrito(codigo){
         }
     })
 };
+
+function contadorCarritoAct(){
+    contadorCarrito.innerText = listaCarrito.length;
+}
