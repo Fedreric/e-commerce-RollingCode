@@ -58,27 +58,33 @@ function limpiarFormulario() {
 }
 //fin del la logica de Carga de datos en el local Storage
 //READ del administrador
-// funcion que nos permite cargar los datos del local storage en la clase para convertirlos de tipo objeto 
-cargaDeDatosInicial()
+// funcion que nos permite cargar los datos del local storage en la clase para convertirlos de tipo objeto
+cargaDeDatosInicial();
 if (listaProductos) {
-  listaProductos = listaProductos.map((prod)=>  { return (
-    new Producto(prod.codigo,prod.nombre,prod.detalle,prod.imagen,prod.categoria,prod.stock,prod.precio)
-    )
-  }
-  );
+  listaProductos = listaProductos.map((prod) => {
+    return new Producto(
+      prod.codigo,
+      prod.nombre,
+      prod.detalle,
+      prod.imagen,
+      prod.categoria,
+      prod.stock,
+      prod.precio
+    );
+  });
 }
 //funcion que nos permite tener una carga de datos inicial
-function cargaDeDatosInicial(){
-  if(listaProductos.length>0){
+function cargaDeDatosInicial() {
+  if (listaProductos.length > 0) {
     //recorre el array y en cada iten del array llama la funcion dibujar para poder dibujar las filas correspondientes
-    listaProductos.map((prod)=> dibujarFilasProductos(prod))
+    listaProductos.map((prod) => dibujarFilasProductos(prod));
   }
 }
 //funcion para dibujar las filas de los producto
-function dibujarFilasProductos(prod){
-  let datosTabla = document.getElementById('tablaAdministrador')
+function dibujarFilasProductos(prod) {
+  let datosTabla = document.getElementById("tablaAdministrador");
   //aqui se dubuja la tabla
- datosTabla.innerHTML+=`
+  datosTabla.innerHTML += `
  <tr class="fila-Producto">
  <td class="text-truncate">
  <img src="${prod.imagen}" alt=""  width="80px" height="80px">
@@ -95,57 +101,49 @@ function dibujarFilasProductos(prod){
  <td class=" ">${prod.stock}</td>
  <td class=" ">
    <button
-     class="bi bi-pencil-square boton-Editar-Administrador btn"
-     onclick="editarProducto('${prod.codigo}')"
-   ></button>
+     class="bi bi-pencil-square boton-Editar-Administrador btn" onclick="editarProducto('${prod.codigo}')"></button>
    <button
      class="bi bi-x-lg boton-Eliminar-Administrador btn"
    onclick="eliminarProducto('${prod.codigo}')"></button>
  </td>
-</tr>`
+</tr>`;
 }
 //fin del READ
-
-//Editar producto 
-window.editarProducto = (codigoUnico) => {
-  // mostrar la ventana modal
-  let producto = listaProductos.find(produc => produc.codigo === codigoUnico)
-  modalProducto.show()
-  //completar los datos en el modal
-  codigo.value = prod.codigo;
-  titulo.value = prodnombre;
-  detalle.value = prod.detalle;
-  imagen.value = prod.imagen;
-  categoria.value = prod.categoria;
-  stock.value = prod.stock;
-  precio.value = prod.precio;
-  
-  //cambiar el estado de la variable bandera
-  //estadoPelicula = false;
-}
 
 //Eliminar producto
 window.eliminarProducto = (codigo) => {
   Swal.fire({
-      title: 'Estas seguro de eliminar el producto?',
-      icon: 'warning',
-      showCancelButton: true,
-      confirmButtonColor: '#6246ea',
-      cancelButtonColor: '#e45858',
-      confirmButtonText: 'Si, eliminar!',
-      cancelButtonText: 'Cancelar'
+    title: "Estas seguro de eliminar el producto?",
+    icon: "warning",
+    showCancelButton: true,
+    confirmButtonColor: "#6246ea",
+    cancelButtonColor: "#e45858",
+    confirmButtonText: "Si, eliminar!",
+    cancelButtonText: "Cancelar",
   }).then((result) => {
-      if (result.isConfirmed) {
-           let posicionProducto = listaProductos.findIndex(prod => prod.codigo === codigo);
-          listaProductos.splice(posicionProducto, 1);
-          guardarProductosLocalStorage();
-          let datosTabla = document.getElementById('tablaAdministrador');
-          datosTabla.removeChild(datosTabla.children[posicionProducto]);
-          Swal.fire(
-              'Listo!',
-              'Producto eliminado.',
-              'success'
-          )
-      }
-  })
+    if (result.isConfirmed) {
+      let posicionProducto = listaProductos.findIndex(
+        (prod) => prod.codigo === codigo
+      );
+      listaProductos.splice(posicionProducto, 1);
+      guardarProductosLocalStorage();
+      let datosTabla = document.getElementById("tablaAdministrador");
+      datosTabla.removeChild(datosTabla.children[posicionProducto]);
+      Swal.fire("Listo!", "Producto eliminado.", "success");
+    }
+  });
+};
+
+//Editar producto
+window.editarProducto = (codigoUnico) => {
+  const producto = listaProductos.find((prod) => prod.codigo === codigoUnico);
+  console.log(producto);
+  modalProducto.show();
+  inputCodigo.value = producto.codigo;
+  inputNombre.value = producto.nombre;
+  inputDescripcion.value = producto.detalle;
+  inputImagen.value = producto.imagen;
+  inputCategoria.value = producto.categoria;
+  inputStock.value = producto.stock;
+  inputPreio.value = producto.precio;
 };
