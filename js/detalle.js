@@ -24,11 +24,11 @@ detalle.innerHTML = `
     <div class="my-3">
         <span class="precio-poducto">$${producto.precio}</span>
     </div>
-    <button class="boton text-light my-3" onClick="agregarCarrito()">Agregar al carrito</button>
+    <button class="boton text-light my-3" onClick="agregarCarrito('${producto.codigo}')">Agregar al carrito</button>
     <span class="stock">Stock: ${producto.stock}</span>
 </aside> 
 `
-function agregarCarrito(){
+function agregarCarrito(codigo){
     Swal.fire({
         position: 'top-end',
         icon: 'success',
@@ -37,8 +37,13 @@ function agregarCarrito(){
         timer: 1500
       })
     listaCarrito.push(producto);
+    controlStock(codigo);
     agregarProductoCarritoLocalStorage();
 }
 function agregarProductoCarritoLocalStorage(){
     localStorage.setItem("listaCarrito", JSON.stringify(listaCarrito));
+}
+function controlStock(codigo){
+    let posicionProducto = listaProductos.findIndex(producto => producto.codigo === codigo)
+    console.log(posicionProducto);
 }
