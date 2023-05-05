@@ -61,7 +61,7 @@ function crearCardProductos(producto) {
                             <p class="me-auto p-2">Precio: $${producto.precio} </p>
                             <p class="p-2">Stock: ${producto.stock} ui</p>
                           </div>
-                          <button class="btn boton" onClick="detalleProducto('${producto.codigo}')">Ver más</button>
+                          <button class="btn boton" onClick="detalleProducto('${producto.codigo}')" id="btnDetalleProducto">Ver más</button>
                         </div>
                       </div>
                     </aside>`;
