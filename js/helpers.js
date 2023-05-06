@@ -57,7 +57,7 @@ export function conjuntoValidaciones(nombre,descripcion,imagen,categoria,stock,p
     }
     if(!cantidadCaracteres(descripcion,10,500))
     {
-        validacion += 'Corregir la cantidad de caracteres de la descripción <br>';
+        validacion += 'Debes corregir la cantidad de caracteres de la descripción <br>';
     }
     if(stock.length !== 0 && !validarStock(stock))
     {
