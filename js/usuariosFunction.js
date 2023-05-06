@@ -114,6 +114,7 @@ function creaUsuario(e)
         guardaEnLocalStorage(); //Se almacena el nuevo usuario
         limpiarFormularioRegistro();
         modalRegistrarse.hide();
+        location.reload();
         modalLogin.show();
     }else
     {
