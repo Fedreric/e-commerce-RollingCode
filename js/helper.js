@@ -176,7 +176,7 @@ export function validaSesion(value, contrasenia)
         resumen+='El usuario '+value+' no se encuentra registrado en la pagina.';
     }else
     {
-        let buscoUsuario = usuariosAlmacenados.map(
+        let buscoUsuario = usuariosAlmacenados.find(
             (usuario) => {
                 if(usuario.nombreUsuario === value || usuario.email === value)
                 {
@@ -184,9 +184,16 @@ export function validaSesion(value, contrasenia)
                 }
             }
         )
+        console.log(buscoUsuario);
         if(buscoUsuario.contrasenia != contrasenia)
         {
             resumen += 'Error al ingresar el correo/usuario o la contraseña.';
+        }else
+        {
+            //Se almacena el usuario ingresado en el sessionstorage
+            console.log("Usuario ingresado");
+            sessionStorage.setItem("user",JSON.stringify(buscoUsuario));
+            return resumen;
         }
     }
     return resumen;
