@@ -49,34 +49,34 @@ function validarPrecio(value){
 }
 
 
-export function validacionesTotales(nombre,descripcion,imagen,categoria,stock,precio){
-    let resumen = '';
+export function conjuntoValidaciones(nombre,descripcion,imagen,categoria,stock,precio){
+    let validacion = '';
     if(!cantidadCaracteres(nombre,3,100))
     {
-        resumen += 'Debes corregir el campo del nombre. Este debe contener entre 3 y 100 caracteres <br>';
+        validacion += 'Debes corregir el campo del nombre. Este debe contener entre 3 y 100 caracteres <br>';
     }
     if(!cantidadCaracteres(descripcion,10,500))
     {
-        resumen += 'Corregir la cantidad de caracteres de la descripción <br>';
+        validacion += 'Corregir la cantidad de caracteres de la descripción <br>';
     }
     if(stock.length !== 0 && !validarStock(stock))
     {
-        resumen += 'Corregir el stock, debe ser un numero de 3 digitos como maximo <br>';
+        validacion += 'Corregir el stock, debe ser un numero de 3 digitos como maximo <br>';
     }
     if(precio.length !== 0 && !validarPrecio(precio))
     {
-        resumen += 'Corregir el precio, debe ser un numero de 6 digitos como maximo <br>';
+        validacion += 'Corregir el precio, debe ser un numero de 6 digitos como maximo <br>';
     }
     if(!validarURLImagen(imagen))
     {
-        resumen += 'Corregir la URL de la imagen, la extension debe ser .jpg, .gif, .png o .webp <br>';
+        validacion += 'Corregir la URL de la imagen, la extension debe ser .jpg, .gif, .png o .webp <br>';
     }
     if(!validarCategoria(categoria)){
-        resumen += 'Seleccione un categoria de la lista de opciones de productos <br>'
+        validacion += 'Seleccione un categoria de la lista de opciones de productos <br>'
     }
     
-    if(resumen.length !== 0){
-        return resumen;
+    if(validacion.length !== 0){
+        return validacion;
     }else{
         console.log('El formulario es correcto');
         return '';
