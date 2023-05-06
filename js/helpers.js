@@ -57,36 +57,31 @@ function validarPrecio(value){
 }
 
 
-export function conjuntoValidaciones(inputNombre,inputDescripcion,inputImagen,inputCategoria,inputStock,inputPrecio){
+export function conjuntoValidaciones(inputNombre, inputDescripcion, inputImagen, inputCategoria, inputStock, inputPrecio){
     let validacion = '';
-    if(!cantidadCaracteres(inputNombre,3,100))
+    if(!cantidadCaracteres(inputNombre.value,3,100))
     {
         validacion += 'Debes corregir el campo del nombre. Este debe contener entre 3 y 100 caracteres <br>';
     }
-    if(!cantidadCaracteres(inputDescripcion,10,500))
+    if(!cantidadCaracteres(inputDescripcion.value,10,500))
     {
         validacion += 'Debes corregir la cantidad de caracteres de la descripción <br>';
     }
-    if(inputStock.length !== 0 && !validarStock(inputStock))
+    if(inputStock.value.length !== 0 && !validarStock(inputStock.value))
     {
         validacion += 'Corregir el stock, debe ser un numero de 3 digitos como maximo <br>';
     }
-    if(inputPrecio.length !== 0 && !validarPrecio(inputPrecio))
+    if(inputPrecio.value.length !== 0 && !validarPrecio(inputPrecio.value))
     {
-        validacion += 'Corregir el precio, debe ser un numero de 6 digitos como maximo <br>';
+        validacion += 'Corregir el precio, debe ser un numero de 1 a 6 digitos <br>';
     }
-    if(!validarURLImagen(inputImagen))
+    if(inputImagen.value.length !== 0 && !validarURLImagen(inputImagen.value))
     {
-        validacion += 'Corregir la URL de la imagen, la extension debe ser .jpg, .gif, .png o .webp <br>';
+        validacion += 'La URL de la imagen no es valida <br>';
     }
-    if(!validarCategoria(inputCategoria)){
-        validacion += 'Seleccione un categoria de la lista de opciones de productos <br>'
+    if(inputCategoria.value.length !== 0 && !validarCategoria(inputCategoria.value))
+    {
+        validacion += 'La categoría seleccionada no es valida <br>';
     }
-    
-    if(validacion.length !== 0){
-        return validacion;
-    }else{
-        console.log('El formulario es correcto');
-        return '';
-    }
+    return validacion;
 }
