@@ -86,6 +86,15 @@ function validaContrasenia(value)
 
 function existeUsuario(value)
 {
+    for(let i = 0; i < usuariosAlmacenados.length; i++)
+    {
+        if(usuariosAlmacenados[i].nombreUsuario === value)
+        {
+            return true
+        }
+    }
+    return false;
+    /*
     let existeNombUsuario = usuariosAlmacenados.map((usuario) => usuario.nombUsuario).includes(value);
     if(existeNombUsuario)
     {
@@ -93,11 +102,20 @@ function existeUsuario(value)
     }else
     {
         return false;
-    }
+    }*/
 }   
 
 function existeCorreo(value)
 {
+    for(let i = 0; i < usuariosAlmacenados.length; i++)
+    {
+        if(usuariosAlmacenados[i].email === value)
+        {
+            return true
+        }
+    }
+    return false;
+    /*
     let existeMailUsuario = usuariosAlmacenados.map((usuario) => usuario.email).includes(value);
     if(existeMailUsuario)
     {
@@ -105,7 +123,7 @@ function existeCorreo(value)
     }else
     {
         return false;  
-    }
+    }*/
 }
 
 export function sumarioValidaciones(nombUsuario, contrasenia, correo, pais, provincia, localidad, codPostal, calle, alt_calle, pisoDpto, nroDpto)
