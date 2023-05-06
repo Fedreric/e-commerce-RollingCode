@@ -97,7 +97,7 @@ export function sumarioValidaciones(titulo,descripcion,imagen,duracion,genero,an
     if(resumen.length !== 0){
         return resumen;
     }else{
-        console.log('todo esta ok con el formulario');
+        console.log('todo esta ok con el formulario.');
         return '';
     }
 }
