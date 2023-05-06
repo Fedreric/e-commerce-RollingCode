@@ -141,7 +141,6 @@ function dibujarFilasProductos(prod) {
 </tr>`;
 }
 //fin del READ
-
 //Eliminar producto
 window.eliminarProducto = (codigo) => {
   Swal.fire({
@@ -194,10 +193,10 @@ function actualizarProducto(){
  listaProductos[posicionProducto].imagen = inputImagen.value;
  listaProductos[posicionProducto].categoria = inputCategoria.value;
  listaProductos[posicionProducto].stock = inputStock.value;
- listaProductos[posicionProducto].precio = inputPreio.value;
+ listaProductos[posicionProducto].precio = inputPrecio.value;
  
 
- //actuaizar el localstorage
+ //actualizar el localstorage
   guardarProductosLocalStorage();
 
 // actualizar la tabla
