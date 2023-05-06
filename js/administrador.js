@@ -45,44 +45,43 @@ function cargaProductos(e) {
   
 }
 
-function crearProducto (){
-  let validaciones = conjuntoValidaciones(inputNombre,inputDescripcion,inputImagen,inputCategoria,inputStock,inputPrecio)
-  if(validaciones.length === 0){
-
-  let nuevoProducto = new Producto(
-    undefined,
-    inputNombre.value,
-    inputDescripcion.value,
-    inputImagen.value,
-    inputCategoria.value,
-    inputStock.value,
-    inputPrecio.value
-  );
-  listaProductos.push(nuevoProducto);
-  guardarProductosLocalStorage();
-  limpiarFormulario();
-  //cerrar formulario
-  modalProducto.hide();
-  //cargamos la ultima fila en la tabla para actualizar la misma que se muestra
-  dibujarFilasProductos(nuevoProducto);
-  Swal.fire(
-    'Producto cargado',
-    'El producto fue agregado con exito',
-    'success'
-  )
-}else{
-  msjFormulario.className = 'alert alert-danger mt-3';
-        msjFormulario.innerHTML = validaciones;
-        setTimeout(() => {
-            msjFormulario.style.display = 'none'
-        },3000)
-        msjFormulario.style.display = 'block'
+function crearProducto() {
+  let validaciones = conjuntoValidaciones(inputNombre, inputDescripcion, inputImagen, inputCategoria, inputStock, inputPrecio);
+  if (validaciones.length === 0) {
+    let nuevoProducto = new Producto(
+      undefined,
+      inputNombre.value,
+      inputDescripcion.value,
+      inputImagen.value,
+      inputCategoria.value,
+      inputStock.value,
+      inputPrecio.value
+    );
+    listaProductos.push(nuevoProducto);
+    guardarProductosLocalStorage();
+    limpiarFormulario();
+    //cerrar formulario
+    modalProducto.hide();
+    //cargamos la ultima fila en la tabla para actualizar la misma que se muestra
+    dibujarFilasProductos(nuevoProducto);
+    Swal.fire(
+      'Producto cargado',
+      'El producto fue agregado con éxito',
+      'success'
+    )
+  } else {
+    msjFormulario.className = 'alert alert-danger mt-3';
+    msjFormulario.innerHTML = validaciones;
+    setTimeout(() => {
+      msjFormulario.style.display = 'none'
+    }, 3000)
+    msjFormulario.style.display = 'block'
+  }
 }
 //funcion para guardar los datos en la key lista producto
 function guardarProductosLocalStorage() {
   localStorage.setItem("listaProductos", JSON.stringify(listaProductos));
 }
-   }
 
 //nos sirve para resetar los datos del formulario
 function limpiarFormulario() {
