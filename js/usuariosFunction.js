@@ -1,5 +1,5 @@
 import {Usuario} from "./usuariosClase.js";
-import {sumarioValidaciones} from './helper.js';
+import {sumarioValidaciones, validaSesion} from './helper.js';
 
 const btnIniciarSecion = document.getElementById('btnIniciarSecion');
 btnIniciarSecion.addEventListener('click', mostrarModalLogin);
@@ -19,6 +19,7 @@ const iframe_RegistroUsuario_contenido = iframe_RegistroUsuario.contentWindow.do
 const form_registroUsuario = iframe_RegistroUsuario_contenido.getElementById('form_registraUsuario');
 form_registroUsuario.addEventListener('submit', creaUsuario);
 
+const msj_Error_Login = document.getElementById('msjErrorFormLogin');
 const msj_Error_Registro = document.getElementById('msjErrorFormRegistro');
 /*Recuperacion de los elementos ingresados en el formulario de login*/
 const correoSesion = iframe_LoginUsuario_contenido.getElementById('email-usuario');
@@ -82,13 +83,13 @@ iframe_RegistroUsuario.addEventListener('load' ,function(){
 
 function mostrarModalLogin()
 {
-    console.log('muestra modal login');
+    //console.log('muestra modal login');
     modalLogin.show();
 }
 
 function mostrarModalRegistrarse()
 {
-    console.log('muestra modal registro');
+    //console.log('muestra modal registro');
     modalLogin.hide();
     modalRegistrarse.show();
 }
@@ -97,18 +98,18 @@ function cargaAdministrador()
 {
     let admin = new Usuario(undefined ,'admin', '1234', 'admin@admin', 'Argentina', 'Tucuman', 'San Miguel de Tucuman', "4000", 'General Paz;576;;', 'admin');
     listadoUsuarios.push(admin);
-    console.log(listadoUsuarios);
+    //console.log(listadoUsuarios);
     guardaEnLocalStorage();
 }
 
 function creaUsuario(e)
 {
     e.preventDefault();
-    console.log('Se va a crear un nuevo usuario.');
+    //console.log('Se va a crear un nuevo usuario.');
     let resumen = sumarioValidaciones(nombreUsuario.value, contrasenia.value, correo.value, pais.value, provincia.value, localidad.value, codPostal.value, calle.value, altura_calle.value, pisoDpto.value, nroDpto.value);
     if(resumen.length === 0)
     {
-        console.log('Se esta ingresando el usuario.');
+        //console.log('Se esta ingresando el usuario.');
         let nuevoUsuario = new Usuario(undefined, nombreUsuario.value, contrasenia.value, correo.value, pais.value, provincia.value, localidad.value,codPostal.value, calle.value+';'+altura_calle.value+';'+pisoDpto.value+';'+nroDpto.value, 'usuario');
         listadoUsuarios.push(nuevoUsuario);
         guardaEnLocalStorage(); //Se almacena el nuevo usuario
@@ -133,7 +134,20 @@ function limpiarFormularioRegistro()
     form_registroUsuario.reset();
 }
 
-function iniciaSecion()
+function iniciaSecion(e)
 {
     e.preventDefault();
+    console.log(correoSesion.value);
+    console.log(contraseniaSesion.value);
+    let validacionSecion = validaSesion(correoSesion.value, contraseniaSesion.value);
+    if(validaSesion.length === 0)
+    {
+        console.log('Se ingresa con un usuario');
+    }else
+    {
+        msj_Error_Login.className = 'alert alert-danger mt-2';
+        msj_Error_Login.innerHTML = validacionSecion;
+        correoSesion.className = 'is-invalid';
+        contraseniaSesion.className = 'is-invalid';
+    }
 }
