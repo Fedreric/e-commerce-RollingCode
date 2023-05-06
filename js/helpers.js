@@ -65,15 +65,15 @@ export function conjuntoValidaciones(inputNombre, inputDescripcion, inputImagen,
     }
     if(!cantidadCaracteres(inputDescripcion.value,10,500))
     {
-        validacion += 'Debes corregir la cantidad de caracteres de la descripción <br>';
+        validacion += 'Debes corregir la cantidad de caracteres de la descripción. Minimos: 10 caracteres <br>';
     }
     if(inputStock.value.length !== 0 && !validarStock(inputStock.value))
     {
-        validacion += 'Corregir el stock, debe ser un numero de 3 digitos como maximo <br>';
+        validacion += 'Debes corregir el stock, debe ser un numero de 3 digitos como maximo <br>';
     }
     if(inputPrecio.value.length !== 0 && !validarPrecio(inputPrecio.value))
     {
-        validacion += 'Corregir el precio, debe ser un numero de 1 a 6 digitos <br>';
+        validacion += 'Debes corregir el precio, debe ser un numero de 1 a 6 digitos <br>';
     }
     if(inputImagen.value.length !== 0 && !validarURLImagen(inputImagen.value))
     {
