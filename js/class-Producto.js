@@ -6,7 +6,7 @@ export default class Producto{
     #categoria
     #stock
     #precio
-    constructor(codigo=uuidv4(),nombre,detalle,imagen,categoria,stock,precio){
+    constructor(codigo = uuidv4(),nombre,detalle,imagen,categoria,stock,precio){
         this.#codigo=codigo
         this.#nombre=nombre
         this.#detalle=detalle
@@ -70,13 +70,13 @@ export default class Producto{
       }
       toJSON(){
         return {
-          codigo: this.#codigo,
-            nombre: this.#nombre,
-            detalle: this.#detalle,
-            imagen: this.#imagen,
-            categoria: this.#categoria,
-            stock: this.#stock,
-            precio: this.#precio,
+          codigo: this.codigo,
+            nombre: this.nombre,
+            detalle: this.detalle,
+            imagen: this.imagen,
+            categoria: this.categoria,
+            stock: this.stock,
+            precio: this.precio,
             
         }
       }

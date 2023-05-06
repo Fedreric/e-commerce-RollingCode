@@ -16,10 +16,18 @@ body {
   display: flex;
   flex-direction: column;
 }
+@media all and (min-width: 992px){
+  .carrusel{
+  height: 700px;
+  object-fit: cover;
+}
+}
+
 .card{
   border-color: var(--detalles);
   border-width: 1px;
   background-color: var(--fondo-cards);
+  
 }
 hr{
   color: var(--detalles);

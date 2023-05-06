@@ -57,8 +57,9 @@
         </div>
       </nav>
     </header>
-    <main>     
-        <div id="carousel" class="carousel slide">
+    <main>   
+      <div >
+        <section id="carousel" class="carousel slide carousel-fade" data-bs-ride="true">
           <div class="carousel-indicators">
             <button type="button" data-bs-target="#carousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
             <button type="button" data-bs-target="#carousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -67,28 +68,28 @@
           </div>
           <div class="carousel-inner">
             <div class="carousel-item active">
-              <img src="./img/control.png" class="d-block w-100" alt="...">
+              <img src="./img/control.png" class="d-block w-100 carrusel" alt="...">
               <div class="carousel-caption d-none d-md-block">
                 <h5 class="display-1 fw-semibold">20% Off</h5>
                 <p class="fst-italic fs-5">En Joystick, desde 02/05 hasta 22/05.</p>
               </div>
             </div>
             <div class="carousel-item">
-              <img src="./img/monitor.png" class="d-block w-100" alt="...">
+              <img src="./img/monitor.png" class="d-block w-100 carrusel" alt="...">
               <div class="carousel-caption d-none d-md-block">
                 <h5 class="display-1 fw-semibold">Monitor 24" Full HD</h5>
                 <p class="fst-italic fs-5">Ahora hasta en 12 cuotas Sin interés.</p>
               </div>
             </div>
             <div class="carousel-item">
-              <img src="./img/cpu.png" class="d-block w-100" alt="...">
+              <img src="./img/cpu.png" class="d-block w-100 carrusel" alt="...">
               <div class="carousel-caption d-none d-md-block">
                 <h5 class="display-1 fw-semibold">Pc Armada Gamer Amd Ryzen 7 4750g Ssd 480gb 16gb Ddr4</h5>
                 <p class="fst-italic fs-5">Encontrala en TecTuc.</p>
               </div>
             </div>
             <div class="carousel-item">
-              <img src="./img/cerezo.png" class="d-block w-100" alt="...">
+              <img src="./img/cerezo.png" class="d-block w-100 carrusel" alt="...">
               <div class="carousel-caption d-none d-md-block">
                 <h5 class="display-1 fw-semibold">MSI PRO MP341CQW 34" 1440p</h5>
                 <p class="fst-italic fs-5">Sorpréndete con lo nuevo en TecTuc.</p>
@@ -103,13 +104,15 @@
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Siguiente</span>
           </button>
-        </div>
-        <hr class="mx-5 mt-5">
+        </section>
+      </div>  
+        
+       
         <section class="container py-3">
           <h1 class="text-center fs-2 pt-5">Productos</h1>
             <section class="py-5">
                 <form class="d-flex" role="search" id="buscarProducto">
-                  <input class="form-control me-2" type="search" id="buscador" placeholder="Buscar" aria-label="Search">
+                  <input class="form-control me-2 bg-dark-subtle" type="search" id="buscador" placeholder="Buscar" aria-label="Search">
                   <button class="btn btn-outline-primary" type="submit" id="botonBuscar"><i class="bi bi-search"></i></button>
                 </form>
 
@@ -120,7 +123,6 @@
               
               </article>
             </div>
-  
             <hr class="m-5 border-3">
              
             <article class="piePagina">
@@ -128,6 +130,8 @@
             <p class="text-center fst-italic fs-5">"En Tectuc nos encargamos de que la realidad supere la ficción. Tenemos los precios mas competitivos del mercado y la mejor calidad en productos."</p>
             </p>
             </article>
+  
+            
 
       <section class="modal fade" id="modalDeseados" abindex="-1" aria-labelledby="agregarModalLabel" aria-hidden="true">
         <article class="modal-dialog">
