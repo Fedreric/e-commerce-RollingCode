@@ -94,15 +94,6 @@ function existeUsuario(value)
         }
     }
     return false;
-    /*
-    let existeNombUsuario = usuariosAlmacenados.map((usuario) => usuario.nombUsuario).includes(value);
-    if(existeNombUsuario)
-    {
-        return true;
-    }else
-    {
-        return false;
-    }*/
 }   
 
 function existeCorreo(value)
@@ -115,15 +106,6 @@ function existeCorreo(value)
         }
     }
     return false;
-    /*
-    let existeMailUsuario = usuariosAlmacenados.map((usuario) => usuario.email).includes(value);
-    if(existeMailUsuario)
-    {
-        return true;
-    }else
-    {
-        return false;  
-    }*/
 }
 
 export function sumarioValidaciones(nombUsuario, contrasenia, correo, pais, provincia, localidad, codPostal, calle, alt_calle, pisoDpto, nroDpto)
@@ -185,8 +167,27 @@ export function sumarioValidaciones(nombUsuario, contrasenia, correo, pais, prov
     }
     return resumen;
 }
-/*
-function validaSesion(value, contrasenia)
-{
 
-}*/
+export function validaSesion(value, contrasenia)
+{
+    let resumen = '';
+    if(!existeUsuario(value) && !existeCorreo(value))
+    {
+        resumen+='El usuario '+value+' no se encuentra registrado en la pagina.';
+    }else
+    {
+        let buscoUsuario = usuariosAlmacenados.map(
+            (usuario) => {
+                if(usuario.nombreUsuario === value || usuario.email === value)
+                {
+                    return usuario;
+                }
+            }
+        )
+        if(buscoUsuario.contrasenia != contrasenia)
+        {
+            resumen += 'Error al ingresar el correo/usuario o la contraseña.';
+        }
+    }
+    return resumen;
+}
