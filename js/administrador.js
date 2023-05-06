@@ -175,7 +175,7 @@ window.editarProducto = (codigoUnico) => {
   inputImagen.value = producto.imagen;
   inputCategoria.value = producto.categoria;
   inputStock.value = producto.stock;
-  inputPrecio.value = producto.precio;
+  inputPreio.value = producto.precio;
   
   // cambio el estado de la variable bandera
   estadoProducto = false;
@@ -193,10 +193,10 @@ function actualizarProducto(){
  listaProductos[posicionProducto].imagen = inputImagen.value;
  listaProductos[posicionProducto].categoria = inputCategoria.value;
  listaProductos[posicionProducto].stock = inputStock.value;
- listaProductos[posicionProducto].precio = inputPrecio.value;
+ listaProductos[posicionProducto].precio = inputPreio.value;
  
 
- //actualizar el localstorage
+ //actuaizar el localstorage
   guardarProductosLocalStorage();
 
 // actualizar la tabla
@@ -205,7 +205,7 @@ datosTabla.children[posicionProducto].children[0].innerHTML= `<img src="${inputI
 datosTabla.children[posicionProducto].children[1].innerHTML= inputNombre.value;
 datosTabla.children[posicionProducto].children[2].innerHTML= inputCategoria.value;
 datosTabla.children[posicionProducto].children[3].innerHTML= inputDescripcion.value;
-datosTabla.children[posicionProducto].children[4].innerHTML= inputPrecio.value;
+datosTabla.children[posicionProducto].children[4].innerHTML= inputPreio.value;
 datosTabla.children[posicionProducto].children[5].innerHTML= inputStock.value;
 
 //mostrar mensaje
@@ -221,6 +221,6 @@ Swal.fire(
 //cerrar modal
 modalProducto.hide();
 
+
  
 }
-
