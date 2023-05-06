@@ -184,7 +184,7 @@ function actualizarProducto(){
 
 // actualizar la tabla
 let datosTabla = document.getElementById("tablaAdministrador");
-datosTabla.children[posicionProducto].children[0].innerHTML= inputImagen.value;
+datosTabla.children[posicionProducto].children[0].innerHTML= `<img src="${inputImagen.value}" alt="${inputImagen.value}" width="80px" height="80px">`
 datosTabla.children[posicionProducto].children[1].innerHTML= inputNombre.value;
 datosTabla.children[posicionProducto].children[2].innerHTML= inputCategoria.value;
 datosTabla.children[posicionProducto].children[3].innerHTML= inputDescripcion.value;
