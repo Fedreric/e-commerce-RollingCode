@@ -9,6 +9,18 @@ export function cantidadCaracteres(texto,min,max){
     }
 }
 
+
+function validarURLImagen(value){
+    let patron = /^(http(s?):)([/|.|\w|\s|-])*\.(?:jpg|gif|png|webp)$/
+    if(patron.test(value)){
+        console.log('url valida');
+        return true;
+    }else{
+        console.log('url invalida');
+        return false;
+    }
+}
+
 function validarStock(value){
     let patron = /^[0-9]{1,3}$/;
     if(patron.test(value))
@@ -22,82 +34,51 @@ function validarStock(value){
     }
 }
 
-function validarURLImagen(value){
-    let patron = /^(http(s?):)([/|.|\w|\s|-])*\.(?:jpg|gif|png|webp)$/;
-    if(patron.test(value)){
-        console.log('url valida');
-        return true;
-    }else{
-        console.log('url invalida');
-        return false;
-    }
-}
 
-
-//agregar la validacion año 1895 - (año actual + 1)
-function validarAnio(value){
-    let patron = /^[0-9]{4}$/;
-    if(patron.test(value) && value >= 1895 && value <= 2024)
+function validarPrecio(value){
+    let patron = /^[0-9]{1,6}$/;
+    if(patron.test(value))
     {
-        console.log('anio correcto');
-        return true;
-    }
-    else
-    {
-        console.log(value);
-        console.log('anio incorrecto')
-        return false;
-    }
-}
-
-//validacion para el reparto
-function validarReparto(texto){
-    let patron = /([A-Z])[a-z]+[$,]{1}[\s]/
-    if(texto.length > 0 && patron.test(texto))
-    {
-        console.log("reparto correcto");
+        console.log('digito valido de 1 a 3 caracteres');
         return true;
     }
     else{
-        console.log("reparto incorrecto");
+        console.log('no paso la expresion regular del tiempo')
         return false;
     }
 }
 
-export function sumarioValidaciones(titulo,descripcion,imagen,duracion,genero,anio,pais,reparto){
+
+export function sumarioValidaciones(nombre,descripcion,imagen,categoria,stock,precio){
     let resumen = '';
-    if(!cantidadCaracteres(titulo,3,100))
+    if(!cantidadCaracteres(nombre,3,100))
     {
-        resumen += 'Corregir el campo del titulo debe contener entre 3 y 100 caracteres <br>';
+        resumen += 'Debes corregir el campo del nombre. Este debe contener entre 3 y 100 caracteres <br>';
     }
     if(!cantidadCaracteres(descripcion,10,500))
     {
         resumen += 'Corregir la cantidad de caracteres de la descripción <br>';
     }
-    if(duracion.length !== 0 && !validarStock(duracion))
+    if(stock.length !== 0 && !validarStock(stock))
     {
-        resumen += 'Corregir la duracion, debe ser un numero de 3 digitos como maximo <br>';
+        resumen += 'Corregir el stock, debe ser un numero de 3 digitos como maximo <br>';
+    }
+    if(precio.length !== 0 && !validarPrecio(precio))
+    {
+        resumen += 'Corregir la stock, debe ser un numero de 6 digitos como maximo <br>';
     }
     if(!validarURLImagen(imagen))
     {
-        resumen += 'Corregir la URL de la imagen, la extension debe ser .jpg, .gif o .png <br>';
+        resumen += 'Corregir la URL de la imagen, la extension debe ser .jpg, .gif, .png o .webp <br>';
     }
-    if(!validarGenero(genero)){
-        resumen += 'Seleccione un genero de la lista de opciones <br>'
+    if(!validarCategoria(categoria)){
+        resumen += 'Seleccione un Categoria de la lista de opciones <br>'
     }
-    if(anio.length !== 0 && !validarAnio(anio)){
-        resumen += 'Ingrese un año válido entre 1895 y 2024 <br>'
-    }
-    if(pais.length !== 0 && !validarPais(pais)){
-        resumen += 'Ingrese el pais con la primera letra mayúscula <br>'
-    }
-    if(reparto.length !== 0 && !validarReparto(reparto)){
-        resumen += 'Ingrese el reparto usando una coma al final de cada actor/actriz <br>'
-    }
+    
     if(resumen.length !== 0){
         return resumen;
     }else{
-        console.log('todo esta ok con el formulario.');
+        console.log('todo esta ok con el formulario');
         return '';
     }
 }
