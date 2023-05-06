@@ -6,7 +6,7 @@ if (!listaProductos) {
   //si lista productos no existe en Localstorage
   listaProductos = [];
 } else {
-  //si lista productos tiene datos, quiero transformarlo en un array de objetos Pelicula
+  //si lista productos tiene datos, quiero transformarlo en un array de objetos Producto
   listaProductos = JSON.parse(listaProductos).map(
     (producto) =>
       new Producto(
@@ -62,7 +62,12 @@ function crearCardProductos(producto) {
                             <p class="me-auto p-2">Precio: $${producto.precio} </p>
                             <p class="p-2">Stock: ${producto.stock}</p>
                           </div>
-                          <button class="btn boton" onClick="detalleProducto('${producto.codigo}')" id="btnDetalleProducto">Ver más</button>
+                          <div>
+                          <button class="btn boton fs-5" onClick="detalleProducto('${producto.codigo}')" id="btnDetalleProducto">Ver más</button>
+                          <button class="btn boton" onClick="listaDeseados('${producto.codigo}')" id="btnListaDeseados"><i class="bi bi-bookmark-heart-fill fs-5"></i></button>
+                        </div>
+                          
+                          
                         </div>
                       </div>
                     </aside>`;
