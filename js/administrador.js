@@ -10,7 +10,7 @@ const inputDescripcion = document.getElementById("inputDescripcionArticulo");
 const inputImagen = document.getElementById("inputImagenArticulo");
 const inputCategoria = document.getElementById("inputCategoriaArticulo");
 const inputStock = document.getElementById("inputStockArticulo");
-const inputPreio = document.getElementById("inputPrecioArticulo");
+const inputPrecio = document.getElementById("inputPrecioArticulo");
 const btnAgregar = document.getElementById("btnAgregar");
 const msjFormulario = document.getElementById('msjFormulario');
 
@@ -64,8 +64,18 @@ function crearProducto (){
     modalProducto.hide();
     //cargamos la ultima fila en la tabla para actualizar la misma que se muestra
     dibujarFilasProductos(nuevoProducto);
+    Swal.fire(
+      'Producto cargado',
+      'El producto fue agregado con exito',
+      'success'
+    )
   } else {
-    // mostrar los errores al usuario
+    msjFormulario.className = 'alert alert-danger mt-3';
+        msjFormulario.innerHTML = validaciones;
+        setTimeout(() => {
+            msjFormulario.style.display = 'none'
+        },3000)
+        msjFormulario.style.display = 'block'
   }
 }
 //funcion para guardar los datos en la key lista producto
