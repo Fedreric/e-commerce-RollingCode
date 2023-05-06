@@ -1,9 +1,11 @@
 import {Usuario} from "./usuariosClase.js";
 import {sumarioValidaciones, validaSesion} from './helper.js';
 
+//Boton para iniciar secion
 const btnIniciarSecion = document.getElementById('btnIniciarSecion');
 btnIniciarSecion.addEventListener('click', mostrarModalLogin);
 const modalLogin = new bootstrap.Modal(document.getElementById('inicioSecion'));
+
 
 const iframe_LoginUsuario = document.getElementById('iframe_loginUsuario');
 const iframe_LoginUsuario_contenido = iframe_LoginUsuario.contentWindow.document;
@@ -84,7 +86,13 @@ iframe_RegistroUsuario.addEventListener('load' ,function(){
 function mostrarModalLogin()
 {
     //console.log('muestra modal login');
-    modalLogin.show();
+    if(btnIniciarSecion.innerHTML === 'Ingresar')
+    {
+        modalLogin.show();
+    }else
+    {
+        cerrarSesion();
+    }
 }
 
 function mostrarModalRegistrarse()
@@ -140,14 +148,24 @@ function iniciaSecion(e)
     console.log(correoSesion.value);
     console.log(contraseniaSesion.value);
     let validacionSecion = validaSesion(correoSesion.value, contraseniaSesion.value);
-    if(validaSesion.length === 0)
+    console.log(validacionSecion);
+    if(validacionSecion.length === 0)
     {
         console.log('Se ingresa con un usuario');
+        btnIniciarSecion.innerHTML = 'Cerrar Sesion';
+        modalLogin.hide();
     }else
     {
         msj_Error_Login.className = 'alert alert-danger mt-2';
         msj_Error_Login.innerHTML = validacionSecion;
-        correoSesion.className = 'is-invalid';
-        contraseniaSesion.className = 'is-invalid';
+        correoSesion.className = 'form-control-plaintext border border-danger-subtle rounded p-2';
+        contraseniaSesion.className = 'form-control-plaintext border border-danger-subtle rounded p-2';
     }
+}
+
+function cerrarSesion()
+{
+    sessionStorage.removeItem('user');
+    btnIniciarSecion.innerHTML = 'Ingresar';
+    console.log('Se esta por cerrar la sesion');
 }
