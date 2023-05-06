@@ -193,7 +193,7 @@ function actualizarProducto(){
  listaProductos[posicionProducto].imagen = inputImagen.value;
  listaProductos[posicionProducto].categoria = inputCategoria.value;
  listaProductos[posicionProducto].stock = inputStock.value;
- listaProductos[posicionProducto].precio = inputPreio.value;
+ listaProductos[posicionProducto].precio = inputPrecio.value;
  
 
  //actuaizar el localstorage
