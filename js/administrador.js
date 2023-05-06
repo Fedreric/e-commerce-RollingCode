@@ -205,7 +205,7 @@ datosTabla.children[posicionProducto].children[0].innerHTML= `<img src="${inputI
 datosTabla.children[posicionProducto].children[1].innerHTML= inputNombre.value;
 datosTabla.children[posicionProducto].children[2].innerHTML= inputCategoria.value;
 datosTabla.children[posicionProducto].children[3].innerHTML= inputDescripcion.value;
-datosTabla.children[posicionProducto].children[4].innerHTML= inputPreio.value;
+datosTabla.children[posicionProducto].children[4].innerHTML= inputPrecio.value;
 datosTabla.children[posicionProducto].children[5].innerHTML= inputStock.value;
 
 //mostrar mensaje
