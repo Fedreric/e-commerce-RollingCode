@@ -150,8 +150,7 @@ window.eliminarProducto = (codigo) => {
 
 //Editar producto
 window.editarProducto = (codigoUnico) => {
-  const producto = listaProductos.find((prod) => prod.codigo === codigoUnico);
-  
+  const producto = listaProductos.find(prod => prod.codigo === codigoUnico);
   modalProducto.show();
   inputCodigo.value = producto.codigo;
   inputNombre.value = producto.nombre;
@@ -160,6 +159,7 @@ window.editarProducto = (codigoUnico) => {
   inputCategoria.value = producto.categoria;
   inputStock.value = producto.stock;
   inputPreio.value = producto.precio;
+  
   // cambio el estado de la variable bandera
   estadoProducto = false;
 };
@@ -167,7 +167,7 @@ window.editarProducto = (codigoUnico) => {
 function actualizarProducto(){
   //validar los datos
  //necesito el producto que estoy editando
- let posicionProducto = listaProductos.findIndex(prod => prod.codigo === inputCodigo.value);
+ let posicionProducto = listaProductos.findIndex( prod => prod.codigo === inputCodigo.value);
  console.log(posicionProducto)
 
  // actualizar las propiedades de ese producto
@@ -177,15 +177,19 @@ function actualizarProducto(){
  listaProductos[posicionProducto].categoria = inputCategoria.value;
  listaProductos[posicionProducto].stock = inputStock.value;
  listaProductos[posicionProducto].precio = inputPreio.value;
-
+ 
 
  //actuaizar el localstorage
   guardarProductosLocalStorage();
 
-//limpiar form
-  limpiarFormulario();
-//cerrar modal
-modalProducto.hide();
+// actualizar la tabla
+let datosTabla = document.getElementById("tablaAdministrador");
+datosTabla.children[posicionProducto].children[0].innerHTML= inputImagen.value;
+datosTabla.children[posicionProducto].children[1].innerHTML= inputNombre.value;
+datosTabla.children[posicionProducto].children[2].innerHTML= inputCategoria.value;
+datosTabla.children[posicionProducto].children[3].innerHTML= inputDescripcion.value;
+datosTabla.children[posicionProducto].children[4].innerHTML= inputPreio.value;
+datosTabla.children[posicionProducto].children[5].innerHTML= inputStock.value;
 
 //mostrar mensaje
 
@@ -195,5 +199,11 @@ Swal.fire(
   "success"
 );
 
- // actualizar la tabla
+//limpiar form
+  limpiarFormulario();
+//cerrar modal
+modalProducto.hide();
+
+
+ 
 }
