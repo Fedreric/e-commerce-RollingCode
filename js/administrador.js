@@ -175,7 +175,7 @@ window.editarProducto = (codigoUnico) => {
   inputImagen.value = producto.imagen;
   inputCategoria.value = producto.categoria;
   inputStock.value = producto.stock;
-  inputPreio.value = producto.precio;
+  inputPrecio.value = producto.precio;
   
   // cambio el estado de la variable bandera
   estadoProducto = false;
