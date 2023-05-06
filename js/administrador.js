@@ -26,6 +26,7 @@ const modalProducto = new bootstrap.Modal(
 
 //funcion que nos permite mostrar el modal
 function mostrarModalProducto() {
+  estadoProducto= true;
   //modalPelicula nos sirve para crear un intancia de un modal desde JS
   modalProducto.show();
 }
@@ -164,13 +165,35 @@ window.editarProducto = (codigoUnico) => {
 };
  
 function actualizarProducto(){
+  //validar los datos
  //necesito el producto que estoy editando
  let posicionProducto = listaProductos.findIndex(prod => prod.codigo === inputCodigo.value);
  console.log(posicionProducto)
 
  // actualizar las propiedades de ese producto
+ listaProductos[posicionProducto].nombre = inputNombre.value;
+ listaProductos[posicionProducto].detalle = inputDescripcion.value;
+ listaProductos[posicionProducto].imagen = inputImagen.value;
+ listaProductos[posicionProducto].categoria = inputCategoria.value;
+ listaProductos[posicionProducto].stock = inputStock.value;
+ listaProductos[posicionProducto].precio = inputPreio.value;
+
 
  //actuaizar el localstorage
+  guardarProductosLocalStorage();
+
+//limpiar form
+  limpiarFormulario();
+//cerrar modal
+modalProducto.hide();
+
+//mostrar mensaje
+
+Swal.fire(
+  "Producto editado",
+  "El producto fue editado con exito",
+  "success"
+);
 
  // actualizar la tabla
 }
