@@ -1,5 +1,4 @@
 import Producto from "./class-Producto.js";
-import { conjuntoValidaciones } from "./helpers.js";
 
 const formularioAdministrador = document.getElementById(
   "formAdministrarProducto"
@@ -46,9 +45,6 @@ function cargaProductos(e) {
 }
 
 function crearProducto (){
-  let validaciones = conjuntoValidaciones(nombre.value ,descripcion.value ,imagen.value ,categoria.value ,stock.value ,precio.value)
-  if(validaciones.length === 0) {
-
   let nuevoProducto = new Producto(
     undefined,
     inputNombre.value,
@@ -70,7 +66,7 @@ function crearProducto (){
 //funcion para guardar los datos en la key lista producto
 function guardarProductosLocalStorage() {
   localStorage.setItem("listaProductos", JSON.stringify(listaProductos));
-} 
+}
 //nos sirve para resetar los datos del formulario
 function limpiarFormulario() {
   formularioAdministrador.reset();
@@ -210,6 +206,5 @@ Swal.fire(
 modalProducto.hide();
 
 
- }
-
+ 
 }
