@@ -1,4 +1,5 @@
 import Producto from "./class-Producto.js";
+import { conjuntoValidaciones } from "./helpers.js";
 
 const formularioAdministrador = document.getElementById(
   "formAdministrarProducto"
@@ -45,23 +46,27 @@ function cargaProductos(e) {
 }
 
 function crearProducto (){
-  let nuevoProducto = new Producto(
-    undefined,
-    inputNombre.value,
-    inputDescripcion.value,
-    inputImagen.value,
-    inputCategoria.value,
-    inputStock.value,
-    inputPreio.value
-  );
-  listaProductos.push(nuevoProducto);
-  guardarProductosLocalStorage();
-  limpiarFormulario();
-  //cerrar formulario
-  modalProducto.hide();
-  //cargamos la ultima fila en la tabla para actualizar la misma que se muestra
-  dibujarFilasProductos(nuevoProducto);
-
+  let validaciones = conjuntoValidaciones(inputNombre.value, inputDescripcion.value, inputImagen.value, inputCategoria.value, inputStock.value, inputPrecio.value);
+  if (validaciones.length === 0) {
+    let nuevoProducto = new Producto(
+      undefined,
+      inputNombre.value,
+      inputDescripcion.value,
+      inputImagen.value,
+      inputCategoria.value,
+      inputStock.value,
+      inputPrecio.value
+    );
+    listaProductos.push(nuevoProducto);
+    guardarProductosLocalStorage();
+    limpiarFormulario();
+    //cerrar formulario
+    modalProducto.hide();
+    //cargamos la ultima fila en la tabla para actualizar la misma que se muestra
+    dibujarFilasProductos(nuevoProducto);
+  } else {
+    // mostrar los errores al usuario
+  }
 }
 //funcion para guardar los datos en la key lista producto
 function guardarProductosLocalStorage() {
