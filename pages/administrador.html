@@ -235,49 +235,114 @@
                 <form id="formAdministrarProducto">
                   <div class="mb-3">
                     <label for="inputCodigo" class="form-label">Codigo</label>
-                    <input type="text" class="form-control" id="inputCodigo" placeholder="" disabled>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="inputCodigo"
+                      placeholder=""
+                      disabled
+                    />
                   </div>
                   <div class="mb-3">
-                    <label for="inputNombreArticulo" class="form-label">Nombre</label>
-                    <input type="text" class="form-control" id="inputNombreArticulo" placeholder="Ej: Teclado Noga Net" required minlength="3" maxlength="100">
-                    <div id="msjNombre" class="invalid-feedback"></div>
+                    <label for="inputNombreArticulo" class="form-label"
+                      >Nombre</label
+                    >
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="inputNombreArticulo"
+                      placeholder="Ej: Teclado Noga Net"
+                      required
+                      minlength="3"
+                      maxlength="100"
+                    />
                   </div>
                   <div class="mb-3">
-                    <label for="inputDescripcionArticulo" class="form-label">Detalle <span class="text-muted text-sm">disponible: <span id="contadorCaracteres">400</span></span></label>
-                    <textarea class="form-control" placeholder="Breve Descripcion de los detalles del producto" id="inputDescripcionArticulo" maxlength="400"></textarea>
-                    <div id="msjDescripcion" class="invalid-feedback"></div>
+                    <label for="inputDescripcionArticulo" class="form-label"
+                      >Detalle
+                      <span class="text-muted text-sm">
+                        disponible:
+                        <span id="contadorCaracteres">400</span></span
+                      ></label
+                    >
+                    <textarea
+                      class="form-control"
+                      placeholder="Breve Descripcion de los detalles del producto"
+                      id="inputDescripcionArticulo"
+                      maxlength="400"
+                    ></textarea>
                   </div>
                   <div class="mb-3">
-                    <label for="inputImagenArticulo" class="form-label">Imagen</label>
-                    <input type="text" class="form-control" id="inputImagenArticulo" placeholder="Ej: http://127.0.0.1:5500/pages/administrador.html" required>
-                    <div id="msjImagen" class="invalid-feedback"></div>
+                    <label for="inputImagenArticulo" class="form-label"
+                      >Imagen</label
+                    >
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="inputImagenArticulo"
+                      placeholder="Ej: http://127.0.0.1:5500/pages/administrador.html"
+                      required
+                    />
                   </div>
                   <div class="mb-3">
-                    <label for="inputCategoriaArticulo" class="form-label">Categoria</label>
-                    <select class="form-select" aria-label="Elegir la Categoria del Producto" id="inputCategoriaArticulo" required>
+                    <label for="inputCategoriaArticulo" class="form-label"
+                      >Categoria</label
+                    >
+                    <select
+                      class="form-select"
+                      aria-label="Elegir la Categoria del Producto"
+                      id="inputCategoriaArticulo"
+                      required
+                    >
                       <option selected value="">Selecione una Opcion</option>
                       <option value="Teclado">Teclado</option>
                       <option value="Monitor">Monitor</option>
                       <option value="Mouse">Mouse</option>
                       <option value="Fuente">Fuente</option>
-                      <option value="Combo">Combo Teclado + Mouse</option>
-                      <option value="RAM">Memorias Ram</option>
-                      <option value="Parlante">Parlante</option>
-                      <option value="Auricular">Auricular</option>
-                      <option value="Discos-Duros">Disco Duro</option>
+                      <option value="Combo">
+                        Combo Teclado + Mouse
+                      </option>
+                      <option value="RAM">
+                        Memorias Ram
+                      </option>
+                      <option value="Parlante">
+                        Parlante
+                      </option>
+                      <option value="Auricular">
+                        Auricular
+                      </option>
+                      <option value="Discos-Duros">
+                        Disco Duro
+                      </option>
                     </select>
-                    <div id="msjCategoria" class="invalid-feedback"></div>
                   </div>
                   <div class="mb-3">
-                    <label for="inputStockArticulo" class="form-label">Stock</label>
-                    <input type="number" class="form-control" id="inputStockArticulo" placeholder="Ej: 100" min="0" required>
-                    <div id="msjStock" class="invalid-feedback"></div>
+                    <label for="inputStockArticulo" class="form-label"
+                      >Stock</label
+                    >
+                    <input
+                      type="number"
+                      class="form-control"
+                      id="inputStockArticulo"
+                      placeholder="Ej: 100"
+                      min="0"
+                      required
+                    />
                   </div>
                   <div class="mb-3">
-                    <label for="inputPrecioArticulo" class="form-label">Precio</label>
-                    <input type="number" class="form-control" id="inputPrecioArticulo" placeholder="Ej: 100" min="0" required>
-                    <div id="msjPrecio" class="invalid-feedback"></div>
+                    <label for="inputPrecioArticulo" class="form-label"
+                      >Precio</label
+                    >
+                    <input
+                      type="number"
+                      class="form-control"
+                      id="inputPrecioArticulo"
+                      placeholder="Ej: 100"
+                      min="0"
+                      required
+                    />
                   </div>
+
                   <div class="justify-content-start">
                     <button
                       type="submit"
