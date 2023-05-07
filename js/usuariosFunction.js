@@ -124,7 +124,7 @@ function creaUsuario(e)
         limpiarFormularioRegistro();
         modalRegistrarse.hide();
         location.reload();
-        modalLogin.show();
+        mostrarModalLogin();
     }else
     {
         msj_Error_Registro.className='alert alert-danger mt-2';
