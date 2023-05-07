@@ -16,6 +16,19 @@ body {
   display: flex;
   flex-direction: column;
 }
+@media all and (min-width: 992px){
+  .carrusel{
+  height: 700px;
+  object-fit: cover;
+}
+}
+
+.card{
+  border-color: var(--detalles);
+  border-width: 1px;
+  background-color: var(--fondo-cards);
+  
+}
 hr{
   color: var(--detalles);
 }
@@ -28,6 +41,7 @@ hr{
   padding: 0.375rem 0.75rem;
   font-size: 1rem;
   background-color: var(--detalles);
+  text-decoration: none;
 }
 .boton {
   background-color: #6246ea;
@@ -65,6 +79,13 @@ textarea{
 .link-volver{
   font-size: 2rem;
   color: var(--detalles);
+}
+.btn-deshabilitado{
+  pointer-events:none;
+}
+/*CARRITO DE COMPRAS*/
+#contadorCarrito{
+  color: var(--resaltados);
 }
 /* Footer */
 .lista-footer {
@@ -106,9 +127,9 @@ footer {
 }
 
 /*Administrador*/
-.tabla-Administrador {
-  table-layout: fixed;
-  /*nos permite que el texto no rompa la columna de la tabla*/
+
+.tabla-Administrador td {
+  max-width: 200px;
 }
 .boton-Eliminar-Administrador{
   background-color:#e45858;
