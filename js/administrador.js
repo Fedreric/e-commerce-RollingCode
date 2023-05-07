@@ -72,10 +72,8 @@ function crearProducto() {
   } else {
     msjFormulario.className = 'alert alert-danger mt-3';
     msjFormulario.innerHTML = validaciones;
-    setTimeout(() => {
-      msjFormulario.style.display = 'none'
-    }, 15000)
-msjFormulario.style.display = 'block'
+    msjFormulario.style.display = 'block'
+      
   }
 }
 //funcion para guardar los datos en la key lista producto
