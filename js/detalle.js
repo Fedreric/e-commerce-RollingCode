@@ -144,8 +144,7 @@ function crearComentario() {
 }
 
 function cargaDeDatosInicial() {
-  console.log(listaComentario);
-  console.log(listaComentario.log);
+
   if (listaComentario.length > 0) {
     //recorre el array y en cada iten del array llama la funcion dibujar para poder dibujar las filas correspondientes
     {
