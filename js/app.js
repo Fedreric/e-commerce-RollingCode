@@ -2,7 +2,7 @@ const enlaceCompleto = window.location.href;
 const nombArchivo = enlaceCompleto.substring(enlaceCompleto.lastIndexOf('/')+1);
 const usuario = JSON.parse(sessionStorage.getItem('user'));
 
-const contenedorCarritoCompras = document.getElementById('contenedorCarrito');
+const contenedorCarritoCompras = document.getElementById('carrito');
 const contenedorListaDeseados = document.getElementById('contenedorDeseados');
 const contenedorEnlaceAdministrador = document.getElementById('contenedorAdministrador');
 const inicioLogout = document.getElementById('btnIniciarSecion');
