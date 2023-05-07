@@ -1,4 +1,5 @@
 import Producto from "./class-Producto.js";
+import { conjuntoValidaciones } from "./helpers.js";
 
 const formularioAdministrador = document.getElementById(
   "formAdministrarProducto"
@@ -9,8 +10,9 @@ const inputDescripcion = document.getElementById("inputDescripcionArticulo");
 const inputImagen = document.getElementById("inputImagenArticulo");
 const inputCategoria = document.getElementById("inputCategoriaArticulo");
 const inputStock = document.getElementById("inputStockArticulo");
-const inputPreio = document.getElementById("inputPrecioArticulo");
+const inputPrecio = document.getElementById("inputPrecioArticulo");
 const btnAgregar = document.getElementById("btnAgregar");
+const msjFormulario = document.getElementById('msjFormulario');
 
 let estadoProducto = true; // se crea el producto en 'true', se edita el producto en 'false'
 
@@ -43,29 +45,44 @@ function cargaProductos(e) {
   
 }
 
-function crearProducto (){
-  let nuevoProducto = new Producto(
-    undefined,
-    inputNombre.value,
-    inputDescripcion.value,
-    inputImagen.value,
-    inputCategoria.value,
-    inputStock.value,
-    inputPreio.value
-  );
-  listaProductos.push(nuevoProducto);
-  guardarProductosLocalStorage();
-  limpiarFormulario();
-  //cerrar formulario
-  modalProducto.hide();
-  //cargamos la ultima fila en la tabla para actualizar la misma que se muestra
-  dibujarFilasProductos(nuevoProducto);
-
+function crearProducto() {
+  let validaciones = conjuntoValidaciones(inputNombre, inputDescripcion, inputImagen, inputCategoria, inputStock, inputPrecio);
+  if (validaciones.length === 0) {
+    let nuevoProducto = new Producto(
+      undefined,
+      inputNombre.value,
+      inputDescripcion.value,
+      inputImagen.value,
+      inputCategoria.value,
+      inputStock.value,
+      inputPrecio.value
+    );
+    listaProductos.push(nuevoProducto);
+    guardarProductosLocalStorage();
+    limpiarFormulario();
+    //cerrar formulario
+    modalProducto.hide();
+    //cargamos la ultima fila en la tabla para actualizar la misma que se muestra
+    dibujarFilasProductos(nuevoProducto);
+    Swal.fire(
+      'Producto cargado',
+      'El producto fue agregado con éxito',
+      'success'
+    )
+  } else {
+    msjFormulario.className = 'alert alert-danger mt-3';
+    msjFormulario.innerHTML = validaciones;
+    setTimeout(() => {
+      msjFormulario.style.display = 'none'
+    }, 3000)
+    msjFormulario.style.display = 'block'
+  }
 }
 //funcion para guardar los datos en la key lista producto
 function guardarProductosLocalStorage() {
   localStorage.setItem("listaProductos", JSON.stringify(listaProductos));
 }
+
 //nos sirve para resetar los datos del formulario
 function limpiarFormulario() {
   formularioAdministrador.reset();
@@ -123,7 +140,6 @@ function dibujarFilasProductos(prod) {
 </tr>`;
 }
 //fin del READ
-
 //Eliminar producto
 window.eliminarProducto = (codigo) => {
   Swal.fire({
@@ -158,7 +174,7 @@ window.editarProducto = (codigoUnico) => {
   inputImagen.value = producto.imagen;
   inputCategoria.value = producto.categoria;
   inputStock.value = producto.stock;
-  inputPreio.value = producto.precio;
+  inputPrecio.value = producto.precio;
   
   // cambio el estado de la variable bandera
   estadoProducto = false;
@@ -176,7 +192,7 @@ function actualizarProducto(){
  listaProductos[posicionProducto].imagen = inputImagen.value;
  listaProductos[posicionProducto].categoria = inputCategoria.value;
  listaProductos[posicionProducto].stock = inputStock.value;
- listaProductos[posicionProducto].precio = inputPreio.value;
+ listaProductos[posicionProducto].precio = inputPrecio.value;
  
 
  //actuaizar el localstorage
@@ -188,7 +204,7 @@ datosTabla.children[posicionProducto].children[0].innerHTML= `<img src="${inputI
 datosTabla.children[posicionProducto].children[1].innerHTML= inputNombre.value;
 datosTabla.children[posicionProducto].children[2].innerHTML= inputCategoria.value;
 datosTabla.children[posicionProducto].children[3].innerHTML= inputDescripcion.value;
-datosTabla.children[posicionProducto].children[4].innerHTML= inputPreio.value;
+datosTabla.children[posicionProducto].children[4].innerHTML= inputPrecio.value;
 datosTabla.children[posicionProducto].children[5].innerHTML= inputStock.value;
 
 //mostrar mensaje
