@@ -74,8 +74,8 @@ function crearProducto() {
     msjFormulario.innerHTML = validaciones;
     setTimeout(() => {
       msjFormulario.style.display = 'none'
-    }, 3000)
-    msjFormulario.style.display = 'block'
+    }, 15000)
+msjFormulario.style.display = 'block'
   }
 }
 //funcion para guardar los datos en la key lista producto
