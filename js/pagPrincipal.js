@@ -74,63 +74,67 @@ function crearCardProductos(producto) {
   }
 }
 window.detalleProducto = (codigo) => {
-  window.location.href = window.location.origin + '/pages/detalle.html?codigo='+codigo;
-}
-
+  window.location.href =
+    window.location.origin + "/pages/detalle.html?codigo=" + codigo;
+};
 
 const inputBuscador = document.getElementById("buscador");
 const resultadoBusqueda = document.getElementById("resultado");
 const botonBuscar = document.getElementById("botonBuscar");
 
-botonBuscar.addEventListener("click", function(event) {
-  event.preventDefault(); 
+botonBuscar.addEventListener("click", function (event) {
+  event.preventDefault();
   buscar();
   inputBuscador.focus();
 });
 
-inputBuscador.addEventListener("input", function() {
+inputBuscador.addEventListener("input", function () {
   buscar();
 });
 
 function buscar() {
   const terminoBusc = inputBuscador.value.toLowerCase();
-  
-  if (terminoBusc === '') {
+
+  if (terminoBusc === "") {
     resultadoBusqueda.innerHTML = `<p class="mt-3 text-center fs-3 fw-light">Ingresa un término de búsqueda</p>`;
     return;
   }
-  
-  const arrayFiltrado = listaProductos.filter(producto =>
+
+  const arrayFiltrado = listaProductos.filter((producto) =>
     producto.nombre.toLowerCase().includes(terminoBusc)
   );
-  
+
   mostrarProductosBuscados(arrayFiltrado);
 }
 
 function mostrarProductosBuscados(arrayFiltrado) {
-  resultadoBusqueda.innerHTML = '';
+  resultadoBusqueda.innerHTML = "";
 
   if (arrayFiltrado.length > 0) {
-    resultadoBusqueda.classList.add('row', 'justify-content-center');
-    arrayFiltrado.forEach(producto => {
-        resultadoBusqueda.innerHTML += `
+    resultadoBusqueda.classList.add("row", "justify-content-center");
+    arrayFiltrado.forEach((producto) => {
+      resultadoBusqueda.innerHTML += `
         <div class="col-12 col-md-3 col-lg-3 card text-bg-light mx-4 my-3 p-0 border border-2 d-flex flex-column h-100">
            <div class="text-center">
              <p class="fw-light">${producto.categoria.toUpperCase()}</p>
-             <button class="btn btn-link" onclick="window.detalleProducto('${producto.codigo}')">
+             <button class="btn btn-link" onclick="window.detalleProducto('${
+               producto.codigo
+             }')">
                <div class="card-img-overlay">
                 <h5 class="card-title mt-3">${producto.nombre.toUpperCase()}</h5>
                </div>
              </button>
            </div>
-              <img src="${producto.imagen}" alt="${producto.nombre}" class="img-fluid mt-5">
+              <img src="${producto.imagen}" alt="${
+        producto.nombre
+      }" class="img-fluid mt-5">
         </div>
          `;
     });
     resultadoBusqueda.innerHTML += `
         <hr class= "text-dark m-5 border-3">
             `;
-} else {
+  } else {
     resultadoBusqueda.innerHTML = `<p class="mt-3 text-center fs-3 fw-bold">No se encontraron productos asociados con: ${inputBuscador.value}</p>`;
-}
+  }
 }
