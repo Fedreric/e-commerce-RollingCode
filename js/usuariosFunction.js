@@ -145,15 +145,16 @@ function limpiarFormularioRegistro()
 function iniciaSecion(e)
 {
     e.preventDefault();
-    console.log(correoSesion.value);
-    console.log(contraseniaSesion.value);
+    //console.log(correoSesion.value);
+    //console.log(contraseniaSesion.value);
     let validacionSecion = validaSesion(correoSesion.value, contraseniaSesion.value);
-    console.log(validacionSecion);
+    //console.log(validacionSecion);
     if(validacionSecion.length === 0)
     {
-        console.log('Se ingresa con un usuario');
+        //console.log('Se ingresa con un usuario');
         btnIniciarSecion.innerHTML = 'Cerrar Sesion';
         modalLogin.hide();
+        location.reload();
     }else
     {
         msj_Error_Login.className = 'alert alert-danger mt-2';
@@ -167,5 +168,6 @@ function cerrarSesion()
 {
     sessionStorage.removeItem('user');
     btnIniciarSecion.innerHTML = 'Ingresar';
-    console.log('Se esta por cerrar la sesion');
+    window.location.href = '../index.html';
+    //console.log('Se esta por cerrar la sesion');
 }
