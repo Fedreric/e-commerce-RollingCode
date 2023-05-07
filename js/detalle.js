@@ -10,6 +10,7 @@ let contadorCarrito = document.getElementById("contadorCarrito");
 const btnAgregarCarrito = document.getElementById('btnAgregarCarrito');
 const agotado = document.getElementById('stock')
 
+
 readDetalle();
 contadorCarritoAct();
 function readDetalle(){
@@ -89,3 +90,82 @@ function agregarProductoCarritoLocalStorage(){
 function contadorCarritoAct(){
     contadorCarrito.innerText = listaCarrito.length;
   }
+
+  // logica comentarios
+  const formularioComentairo=document.getElementById('formularioComentario');
+  const inputNombre=document.getElementById('nameComentario');
+  const inputComentario=document.getElementById('comentario');
+
+  let listaComentario=JSON.parse(localStorage.getItem("listaComentario")) || [];
+  let date = new Date().toDateString();
+  let horas= new Date();
+  let horaActual=horas.getHours()+' : '+horas.getMinutes()+' : '+horas.getSeconds();
+  
+  formularioComentairo.addEventListener('submit',cargaComentario)
+  
+    // logica comentarios
+    class Cometarios{
+      constructor(nombre,codigo,comentario ,fecha ,hora){
+          this.nombre=nombre;
+          this.codigo=codigo;
+          this.comentario=comentario;
+          this.fecha=fecha;
+          this.hora=hora;
+      }
+  }
+  
+  
+  cargaDeDatosInicial();
+  function cargaComentario(e) {
+      e.preventDefault();
+      crearComentario(); 
+    }
+    function cargarComentariosLocalStorage(){
+          localStorage.setItem("listaComentario", JSON.stringify(listaComentario));
+    }
+    function limpiarFormulario() {
+      formularioComentairo.reset();
+    }
+    
+    function crearComentario() {
+        let nuevoComentario = new Cometarios(inputNombre.value,codigoProd.get('codigo'),inputComentario.value,date,horaActual);
+        listaComentario.push(nuevoComentario);
+        cargarComentariosLocalStorage();
+        limpiarFormulario();
+         
+        dibujarComentarios(nuevoComentario)   
+    }
+    
+  
+  
+    function cargaDeDatosInicial() {
+      console.log(listaComentario);
+      console.log(listaComentario.log);
+      if (listaComentario.length > 0) {
+        //recorre el array y en cada iten del array llama la funcion dibujar para poder dibujar las filas correspondientes
+        {
+        
+          listaComentario.map((coment) =>{if(coment.codigo== codigoProd.get('codigo')) {dibujarComentarios(coment)}})
+        
+        
+        }
+        
+      }
+    }
+    //funcion para dibujar las filas de los producto
+    function dibujarComentarios(coment) {
+      let datosComentarios = document.getElementById("contenedorComentarios");
+      //aqui se dubuja la tabla
+      
+      datosComentarios.innerHTML += `<hr><div class="comentario my-1 m-5">
+      <h6 class="m-0 p-0"> ${coment.nombre}</h6>
+      <p class="m-0 p-0 fst-italic ">
+      ${coment.hora} ${coment.fecha} 
+      </p>
+      <p class="m-0 mt-2 p-0">
+        ${coment.comentario}
+      </p>
+    </div>
+     `;
+    }
+  
