@@ -28,71 +28,36 @@
     <header>
       <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container">
-          <a class="navbar-brand" href="../index.html"
-            ><img
-              src="../img/logo.png"
-              alt="logo Tecnotuc componentes"
-              class="logo"
-          /></a>
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
+          <a class="navbar-brand" href="../index.html"><img src="../img/logo.png" alt="logo Tecnotuc componentes"
+              class="logo" /></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a
-                  class="nav-link active"
-                  aria-current="page"
-                  href="../index.html"
-                  >Inicio</a
-                >
+                <a class="nav-link active" aria-current="page" href="../index.html">Inicio</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="sobreNosotros.html">Sobre nosotros</a>
               </li>
-              <li class="nav-item">
+              <li class="nav-item" id="contenedorAdministrador">
                 <a class="nav-link" href="administrador.html">Administrador</a>
               </li>
               <li class="nav-item">
-                <button
-                  class="nav-link"
-                  data-bs-toggle="modal"
-                  data-bs-target="#inicioSecion"
-                >
-                  Ingresar
-                </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="../index.html">Inicio</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="sobreNosotros.html">Sobre nosotros</a>
-                        </li>
-                        <li class="nav-item" id="contenedorAdministrador">
-                            <a class="nav-link" href="administrador.html">Administrador</a>
-                        </li>
-                        <li class="nav-item">
-                            <button class="nav-link" id="btnIniciarSecion">Ingresar</button>
-                        </li>
-                        <li class="nav-item p-1" id="contenedorCarrito">
-                            <a href="carritoCompras.html" class="btn-carrito"><i class="bi bi-cart fs-5 text-light"></i><span id="contadorCarrito">0</span></a>
-                        </li>
-                        <li class="nav-item p-1" id="contenedorDeseados">
-                            <a href="" class="btn-carrito" data-bs-toggle="modal" data-bs-target="#modalDeseados"><i class="bi bi-bookmark-heart-fill fs-5 text-light"></i></a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
+                <button class="nav-link" id="btnIniciarSecion">Ingresar</button>
+              </li>
+              <li class="nav-item p-1" id="contenedorCarrito">
+                <a href="carritoCompras.html" class="btn-carrito"><i class="bi bi-cart fs-5 text-light"></i><span
+                    id="contadorCarrito">0</span></a>
+              </li>
+              <li class="nav-item p-1" id="contenedorDeseados">
+                <a href="" class="btn-carrito" data-bs-toggle="modal" data-bs-target="#modalDeseados"><i class="bi bi-bookmark-heart-fill fs-5 text-light"></i></a>
+              </li>
+            </ul>
+          </div>
+      </nav>
     </header>
     <main>
       <section class="container my-4 table-responsive">
