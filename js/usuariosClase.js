@@ -1,137 +1,126 @@
-export class Usuario
-{
-    #idUsuario;
-    #nombreUsuario;
-    #contrasenia;
-    #email;
-    #pais;
-    #provincia;
-    #localidad;
-    #codPostal;
-    #direccion;
-    #tipo;
-    constructor(idUsuario = uuidv4(), nombreUsuario, contrasenia, email, pais, provincia, localidad, codPostal, direccion, tipo)
-    {
-        this.#idUsuario = idUsuario;
-        this.#nombreUsuario = nombreUsuario;
-        this.#email = email;
-        this.#direccion = direccion;
-        this.#contrasenia = contrasenia;
-        this.#tipo = tipo;
-        this.#pais = pais;
-        this.#provincia = provincia;
-        this.#localidad = localidad;
-        this.#codPostal = codPostal;
-    }
-    //Metodos getter y setter
-    get idUsuario()
-    {
-        return this.#idUsuario;
-    }
+export class Usuario {
+  #idUsuario;
+  #nombreUsuario;
+  #contrasenia;
+  #email;
+  #pais;
+  #provincia;
+  #localidad;
+  #codPostal;
+  #direccion;
+  #tipo;
+  constructor(
+    idUsuario = uuidv4(),
+    nombreUsuario,
+    contrasenia,
+    email,
+    pais,
+    provincia,
+    localidad,
+    codPostal,
+    direccion,
+    tipo
+  ) {
+    this.#idUsuario = idUsuario;
+    this.#nombreUsuario = nombreUsuario;
+    this.#email = email;
+    this.#direccion = direccion;
+    this.#contrasenia = contrasenia;
+    this.#tipo = tipo;
+    this.#pais = pais;
+    this.#provincia = provincia;
+    this.#localidad = localidad;
+    this.#codPostal = codPostal;
+  }
+  //Metodos getter y setter
+  get idUsuario() {
+    return this.#idUsuario;
+  }
 
-    get nombreUsuario()
-    {
-        return this.#nombreUsuario;
-    }
+  get nombreUsuario() {
+    return this.#nombreUsuario;
+  }
 
-    set nombreUsuario(value)
-    {
-        this.#nombreUsuario = value;
-    }
+  set nombreUsuario(value) {
+    this.#nombreUsuario = value;
+  }
 
-    get email()
-    {
-        return this.#email;
-    }
+  get email() {
+    return this.#email;
+  }
 
-    set email(value)
-    {
-        this.#email = value;
-    }
+  set email(value) {
+    this.#email = value;
+  }
 
-    get direccion()
-    {
-        return this.#direccion;
-    }
+  get direccion() {
+    return this.#direccion;
+  }
 
-    set direccion(value)
-    {
-        this.#direccion = value;
-    }
+  set direccion(value) {
+    this.#direccion = value;
+  }
 
-    get contrasenia()
-    {
-        return this.#contrasenia;
-    }
+  get contrasenia() {
+    return this.#contrasenia;
+  }
 
-    set contrasenia(value)
-    {
-        return this.#contrasenia = value;
-    }
+  set contrasenia(value) {
+    return (this.#contrasenia = value);
+  }
 
-    get tipo()
-    {
-        return this.#tipo;
-    }
+  get tipo() {
+    return this.#tipo;
+  }
 
-    set tipo(value)
-    {
-        this.#tipo = value;
-    }
+  set tipo(value) {
+    this.#tipo = value;
+  }
 
-    get pais()
-    {
-        return this.#pais;
-    }
-    
-    set pais(value)
-    {
-        this.#pais = value;
-    }
+  get pais() {
+    return this.#pais;
+  }
 
-    get provincia()
-    {
-        return this.#provincia;
-    }
+  set pais(value) {
+    this.#pais = value;
+  }
 
-    set provincia(value)
-    {
-        this.#provincia = value;
-    }
+  get provincia() {
+    return this.#provincia;
+  }
 
-    get localidad()
-    {
-        return this.#localidad;
-    }
+  set provincia(value) {
+    this.#provincia = value;
+  }
 
-    set localidad(value)
-    {
-        this.#localidad = value;
-    }
+  get localidad() {
+    return this.#localidad;
+  }
 
-    get codPostal()
-    {
-        return this.#codPostal;
-    }
+  set localidad(value) {
+    this.#localidad = value;
+  }
 
-    set codPostal(value)
-    {
-        this.#codPostal = value;
-    }
+  get codPostal() {
+    return this.#codPostal;
+  }
 
-    toJSON()
-    {
-        return {
-            idUsuario: this.idUsuario,
-            nombreUsuario: this.nombreUsuario,
-            contrasenia: this.contrasenia,
-            email: this.email,
-            pais: this.pais,
-            provincia: this.provincia,
-            localidad: this.localidad,
-            codPostal: this.codPostal,
-            direccion: this.direccion,
-            tipo: this.tipo
-        };
-    }
+  set codPostal(value) {
+    this.#codPostal = value;
+  }
+
+  toJSON() {
+    return {
+      idUsuario: this.idUsuario,
+      nombreUsuario: this.nombreUsuario,
+      contrasenia: this.contrasenia,
+      email: this.email,
+      pais: this.pais,
+      provincia: this.provincia,
+      localidad: this.localidad,
+      codPostal: this.codPostal,
+      direccion: this.direccion,
+      tipo: this.tipo,
+    };
+  }
 }

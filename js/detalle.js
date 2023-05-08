@@ -146,7 +146,6 @@ function crearComentario() {
 }
 
 function cargaDeDatosInicial() {
-
   if (listaComentario.length > 0) {
     //recorre el array y en cada iten del array llama la funcion dibujar para poder dibujar las filas correspondientes
     {
@@ -161,7 +160,7 @@ function cargaDeDatosInicial() {
 //funcion para dibujar las filas de los producto
 function dibujarComentarios(coment) {
   let datosComentarios = document.getElementById("contenedorComentarios");
-  //aqui se dubuja la tabla
+  //aqui se dibuja la tabla
 
   datosComentarios.innerHTML += `<hr><div class="comentario my-1 m-5">
       <h6 class="m-0 p-0"> ${coment.nombre}</h6>
