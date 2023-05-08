@@ -42,6 +42,6 @@ Link de netlify :
 ### Autores 👣
 + Aixa Filsinger [GitHub](https://github.com/AixaFilsinger)
 + Federico Luciano Ledesma [GitHub](https://github.com/Fedreric)
-+ Mauro Santilli [GitHub](https://github.com/MauroDiazSantilli)
++ Mauro Diaz Santilli [GitHub](https://github.com/MauroDiazSantilli)
 + Martin Serrano [GitHub](https://github.com/Martinserrano724)
 + Agustin Lobo [GitHub](https://github.com/Agustin978)
