@@ -12,7 +12,7 @@ const inputCategoria = document.getElementById("inputCategoriaArticulo");
 const inputStock = document.getElementById("inputStockArticulo");
 const inputPrecio = document.getElementById("inputPrecioArticulo");
 const btnAgregar = document.getElementById("btnAgregar");
-const msjFormulario = document.getElementById('msjFormulario');
+const msjFormulario = document.getElementById("msjFormulario");
 
 let estadoProducto = true; // se crea el producto en 'true', se edita el producto en 'false'
 
@@ -28,25 +28,29 @@ const modalProducto = new bootstrap.Modal(
 
 //funcion que nos permite mostrar el modal
 function mostrarModalProducto() {
-  estadoProducto= true;
+  estadoProducto = true;
   //modalProducto nos sirve para crear un instancia de un modal desde JS
   modalProducto.show();
 }
 //funcion para cargar los datos en el local storage
 function cargaProductos(e) {
   e.preventDefault();
-  if(estadoProducto){
-     crearProducto();
-
-  }else{
-
+  if (estadoProducto) {
+    crearProducto();
+  } else {
     actualizarProducto();
   }
-  
 }
 
 function crearProducto() {
-  let validaciones = conjuntoValidaciones(inputNombre, inputDescripcion, inputImagen, inputCategoria, inputStock, inputPrecio);
+  let validaciones = conjuntoValidaciones(
+    inputNombre,
+    inputDescripcion,
+    inputImagen,
+    inputCategoria,
+    inputStock,
+    inputPrecio
+  );
   if (validaciones.length === 0) {
     let nuevoProducto = new Producto(
       undefined,
@@ -65,15 +69,14 @@ function crearProducto() {
     //cargamos la ultima fila en la tabla para actualizar la misma que se muestra
     dibujarFilasProductos(nuevoProducto);
     Swal.fire(
-      'Producto cargado',
-      'El producto fue agregado con éxito',
-      'success'
-    )
+      "Producto cargado",
+      "El producto fue agregado con éxito",
+      "success"
+    );
   } else {
-    msjFormulario.className = 'alert alert-danger mt-3';
+    msjFormulario.className = "alert alert-danger mt-3";
     msjFormulario.innerHTML = validaciones;
-    msjFormulario.style.display = 'block'
-      
+    msjFormulario.style.display = "block";
   }
 }
 //funcion para guardar los datos en la key lista producto
@@ -164,7 +167,7 @@ window.eliminarProducto = (codigo) => {
 
 //Editar producto
 window.editarProducto = (codigoUnico) => {
-  const producto = listaProductos.find(prod => prod.codigo === codigoUnico);
+  const producto = listaProductos.find((prod) => prod.codigo === codigoUnico);
   modalProducto.show();
   inputCodigo.value = producto.codigo;
   inputNombre.value = producto.nombre;
@@ -173,51 +176,69 @@ window.editarProducto = (codigoUnico) => {
   inputCategoria.value = producto.categoria;
   inputStock.value = producto.stock;
   inputPrecio.value = producto.precio;
-  
+
   // cambio el estado de la variable bandera
   estadoProducto = false;
 };
- 
-function actualizarProducto(){
+
+function actualizarProducto() {
+  //necesito el producto que estoy editando
+  let posicionProducto = listaProductos.findIndex(
+    (prod) => prod.codigo === inputCodigo.value
+  );
+
   //validar los datos
- //necesito el producto que estoy editando
- let posicionProducto = listaProductos.findIndex( prod => prod.codigo === inputCodigo.value);
- console.log(posicionProducto)
+  let validaciones = conjuntoValidaciones(
+    inputNombre,
+    inputDescripcion,
+    inputImagen,
+    inputCategoria,
+    inputStock,
+    inputPrecio
+  );
+  if (validaciones.length === 0) {
+    // actualizar las propiedades de ese producto
+    listaProductos[posicionProducto].nombre = inputNombre.value;
+    listaProductos[posicionProducto].detalle = inputDescripcion.value;
+    listaProductos[posicionProducto].imagen = inputImagen.value;
+    listaProductos[posicionProducto].categoria = inputCategoria.value;
+    listaProductos[posicionProducto].stock = inputStock.value;
+    listaProductos[posicionProducto].precio = inputPrecio.value;
 
- // actualizar las propiedades de ese producto
- listaProductos[posicionProducto].nombre = inputNombre.value;
- listaProductos[posicionProducto].detalle = inputDescripcion.value;
- listaProductos[posicionProducto].imagen = inputImagen.value;
- listaProductos[posicionProducto].categoria = inputCategoria.value;
- listaProductos[posicionProducto].stock = inputStock.value;
- listaProductos[posicionProducto].precio = inputPrecio.value;
- 
+    //actuaizar el localstorage
+    guardarProductosLocalStorage();
 
- //actuaizar el localstorage
-  guardarProductosLocalStorage();
+    // actualizar la tabla
+    let datosTabla = document.getElementById("tablaAdministrador");
+    datosTabla.children[
+      posicionProducto
+    ].children[0].innerHTML = `<img src="${inputImagen.value}" alt="${inputImagen.value}" width="80px" height="80px">`;
+    datosTabla.children[posicionProducto].children[1].innerHTML =
+      inputNombre.value;
+    datosTabla.children[posicionProducto].children[2].innerHTML =
+      inputCategoria.value;
+    datosTabla.children[posicionProducto].children[3].innerHTML =
+      inputDescripcion.value;
+    datosTabla.children[posicionProducto].children[4].innerHTML =
+      inputPrecio.value;
+    datosTabla.children[posicionProducto].children[5].innerHTML =
+      inputStock.value;
 
-// actualizar la tabla
-let datosTabla = document.getElementById("tablaAdministrador");
-datosTabla.children[posicionProducto].children[0].innerHTML= `<img src="${inputImagen.value}" alt="${inputImagen.value}" width="80px" height="80px">`
-datosTabla.children[posicionProducto].children[1].innerHTML= inputNombre.value;
-datosTabla.children[posicionProducto].children[2].innerHTML= inputCategoria.value;
-datosTabla.children[posicionProducto].children[3].innerHTML= inputDescripcion.value;
-datosTabla.children[posicionProducto].children[4].innerHTML= inputPrecio.value;
-datosTabla.children[posicionProducto].children[5].innerHTML= inputStock.value;
+    //mostrar mensaje
 
-//mostrar mensaje
+    Swal.fire(
+      "Producto editado",
+      "El producto fue editado con exito",
+      "success"
+    );
 
-Swal.fire(
-  "Producto editado",
-  "El producto fue editado con exito",
-  "success"
-);
-
-//limpiar form
-  limpiarFormulario();
-//cerrar modal
-modalProducto.hide();
-
-
- 
+    //limpiar form
+    limpiarFormulario();
+    //cerrar modal
+    modalProducto.hide();
+  } else {
+    msjFormulario.className = "alert alert-danger mt-3";
+    msjFormulario.innerHTML = validaciones;
+    msjFormulario.style.display = "block";
+  }
 }
