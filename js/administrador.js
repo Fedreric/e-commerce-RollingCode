@@ -242,3 +242,15 @@ function actualizarProducto() {
     msjFormulario.style.display = "block";
   }
 }
+//contador de caracteres
+const inputContador = document.getElementById('inputDescripcionArticulo');
+const contadorDescripcion = document.getElementById('contadorCaracteres');
+
+inputContador.addEventListener('input', cargaCaracteresTextArea);
+
+function cargaCaracteresTextArea() {
+  let resta=500-inputContador.value.length
+  if(resta >= 0)
+  contadorDescripcion.innerHTML =resta;
+  
+}
