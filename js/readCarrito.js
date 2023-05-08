@@ -4,6 +4,7 @@ let contenedorCarrito = document.getElementById("contenedorCarrito");
 let contenedorSubtotal = document.getElementById("contenedorSubtotal");
 let contadorCarrito = document.getElementById("contadorCarrito");
 let estadoDes = false;
+
 readCarrito();
 
 function readCarrito() {
@@ -24,26 +25,14 @@ function readCarrito() {
       />
     </aside>
     <aside class="col-8 col-md-8 text-center">
-      <h3 class="display-6 fs-4">${producto.categoria} - ${producto.nombre}</h3>
-      <button
-        class="border-0 bi bi-chevron-down btn-desplegar-desc"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#${producto.codigo}"
-        aria-expanded="false"
-        aria-controls="${producto.codigo}"
-        id="btn-desplegar-desc"
-        onclick="btnDesplegarDesc()"
-      ></button>
-      <div class="collapse" id="${producto.codigo}">
-        <p class="card card-body">
+      <h3 class="display-6 fs-5">${producto.categoria} - ${producto.nombre}</h3>
+      <p class="d-none d-sm-none d-md-block">
           ${producto.detalle}
-        </p>
-      </div>
+      </p>
     </aside>
     <aside class="col-2 text-center p-0">
       <h3 class="display-6 fs-6 p-0 m-0">Precio</h3>
-      <p class="p-0 m-0">$${producto.precio}</p>
+      <p class="p-0 m-0 my-3 fs-3">$${producto.precio}</p>
       <button
         class="btn-eliminar-carrito"
         onclick="eliminarProductoCarrito('${producto.codigo}')"
@@ -60,7 +49,7 @@ function readCarrito() {
       total = total + parseInt(producto.precio);
     });
     contenedorSubtotal.innerHTML = `
-                    <p class="precio-poducto fs-4">Sub Total: $${total}</p>
+                    <p class="fs-4">Total: <span class="precio-poducto fs-2">$${total}</span></p>
             `;
   }
 }
@@ -106,13 +95,3 @@ function contadorCarritoAct() {
   contadorCarrito.innerText = listaCarrito.length;
 }
 
-function btnDesplegarDesc(){
-  const botonDesplegar = document.getElementById('btn-desplegar-desc');
-  if(estadoDes === false){
-    estadoDes = true;
-    botonDesplegar.className = 'border-0 bi bi-chevron-up';
-  }else{
-    estadoDes = false;
-    botonDesplegar.className = 'border-0 bi bi-chevron-down';
-  }
-}
