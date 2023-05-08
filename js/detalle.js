@@ -129,6 +129,7 @@ function limpiarFormulario() {
 }
 
 function crearComentario() {
+  if(inputNombre.value!='' && inputComentario.value!=''){
   let nuevoComentario = new Cometarios(
     inputNombre.value,
     codigoProd.get("codigo"),
@@ -141,6 +142,7 @@ function crearComentario() {
   limpiarFormulario();
 
   dibujarComentarios(nuevoComentario);
+}
 }
 
 function cargaDeDatosInicial() {
