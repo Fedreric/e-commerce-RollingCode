@@ -29,7 +29,7 @@ const modalProducto = new bootstrap.Modal(
 //funcion que nos permite mostrar el modal
 function mostrarModalProducto() {
   estadoProducto= true;
-  //modalPelicula nos sirve para crear un intancia de un modal desde JS
+  //modalProducto nos sirve para crear un instancia de un modal desde JS
   modalProducto.show();
 }
 //funcion para cargar los datos en el local storage
@@ -72,10 +72,8 @@ function crearProducto() {
   } else {
     msjFormulario.className = 'alert alert-danger mt-3';
     msjFormulario.innerHTML = validaciones;
-    setTimeout(() => {
-      msjFormulario.style.display = 'none'
-    }, 3000)
     msjFormulario.style.display = 'block'
+      
   }
 }
 //funcion para guardar los datos en la key lista producto
@@ -111,7 +109,7 @@ function cargaDeDatosInicial() {
     listaProductos.map((prod) => dibujarFilasProductos(prod));
   }
 }
-//funcion para dibujar las filas de los producto
+//funcion para dibujar las filas de los productos
 function dibujarFilasProductos(prod) {
   let datosTabla = document.getElementById("tablaAdministrador");
   //aqui se dubuja la tabla
