@@ -3,6 +3,6 @@ let contadorCarrito = document.getElementById("contadorCarrito");
 
 contadorCarritoAct();
 
-function contadorCarritoAct(){
-    contadorCarrito.innerText = listaCarrito.length;
+function contadorCarritoAct() {
+  contadorCarrito.innerText = listaCarrito.length;
 }
