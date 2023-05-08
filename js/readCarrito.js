@@ -95,3 +95,6 @@ function contadorCarritoAct() {
   contadorCarrito.innerText = listaCarrito.length;
 }
 
+function realizarCompra(){
+  window.location.href = window.location.origin + "/pages/error404.html";
+}
