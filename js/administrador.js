@@ -67,6 +67,7 @@ function crearProducto() {
     limpiarFormulario();
     //cerrar formulario
     modalProducto.hide();
+    msjFormulario.style.display = "none"
     //cargamos la ultima fila en la tabla para actualizar la misma que se muestra
     dibujarFilasProductos(nuevoProducto);
     Swal.fire(
