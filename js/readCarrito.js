@@ -3,6 +3,7 @@ let listaProductos = JSON.parse(localStorage.getItem("listaProductos")) || [];
 let contenedorCarrito = document.getElementById("contenedorCarrito");
 let contenedorSubtotal = document.getElementById("contenedorSubtotal");
 let contadorCarrito = document.getElementById("contadorCarrito");
+let estadoDes = false;
 
 readCarrito();
 
@@ -13,29 +14,33 @@ function readCarrito() {
   // se muestra en pantalla cada producto cargado al carrito
   listaCarrito.forEach((producto) => {
     contenedorCarrito.innerHTML += `
-        <tr>
-        <td class="w-25">
-            <img
-            src="${producto.imagen}"
-            class="img-fluid rounded float-start w-75 mx-auto"
-            alt="${producto.nombre}"
-          />
-        </td>
-        <td class="align-middle">
-          <p class="text-secondary text-truncate">
-            ${producto.detalle}
-          </p>
-        </td>
-        <td class="align-middle">
-          <p class="precio-poducto fs-5">$${producto.precio}</p>
-        </td>
-        <td class="align-middle">
-          <button
-          class="bi bi-x-lg boton-Eliminar-Administrador btn"
-          onclick="eliminarProductoCarrito('${producto.codigo}')"
-          ></button>
-        </td>
-      </tr>        `;
+    <article
+    class="row justify-content-between container align-items-center contenedor-prd-carrito my-3 p-0 m-0"
+  >
+    <aside class="col-2 col-md-2 text-center">
+      <img
+        src="${producto.imagen}"
+        alt="${producto.imagen}"
+        class="img-fluid"
+      />
+    </aside>
+    <aside class="col-8 col-md-8 text-center">
+      <h3 class="display-6 fs-5">${producto.categoria} - ${producto.nombre}</h3>
+      <p class="d-none d-sm-none d-md-block">
+          ${producto.detalle}
+      </p>
+    </aside>
+    <aside class="col-2 text-center p-0">
+      <h3 class="display-6 fs-6 p-0 m-0">Precio</h3>
+      <p class="p-0 m-0 my-3 fs-3">$${producto.precio}</p>
+      <button
+        class="btn-eliminar-carrito"
+        onclick="eliminarProductoCarrito('${producto.codigo}')"
+      >
+        Eliminar
+      </button>
+    </aside>
+  </article>      `;
   });
   //se muestra la suma total de los precios de producto
   subTotalCarrito();
@@ -44,7 +49,7 @@ function readCarrito() {
       total = total + parseInt(producto.precio);
     });
     contenedorSubtotal.innerHTML = `
-                    <p class="precio-poducto fs-4">Sub Total: $${total}</p>
+                    <p class="fs-4">Total: <span class="precio-poducto fs-2">$${total}</span></p>
             `;
   }
 }
@@ -88,4 +93,8 @@ function eliminarProductoCarrito(codigo) {
 //modifica el span en el maquetado con la cantidad de productos cargados en el carrito
 function contadorCarritoAct() {
   contadorCarrito.innerText = listaCarrito.length;
+}
+
+function realizarCompra(){
+  window.location.href = window.location.origin + "/pages/error404.html";
 }
