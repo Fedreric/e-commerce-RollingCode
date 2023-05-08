@@ -16,13 +16,22 @@ body {
   display: flex;
   flex-direction: column;
 }
+header{
+  background-color:rgb(255, 255, 254, 0.9);
+  width: 100%;
+  position: fixed;
+  z-index: 100;
+}
 @media all and (min-width: 992px){
   .carrusel{
   height: 700px;
   object-fit: cover;
 }
 }
-
+.imgCard{
+  height: 292px;
+  object-fit: cover;
+}
 .card{
   border-color: var(--detalles);
   border-width: 1px;
