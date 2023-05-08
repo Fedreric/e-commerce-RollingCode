@@ -87,6 +87,15 @@ textarea{
 #contadorCarrito{
   color: var(--resaltados);
 }
+.contenedor-prd-carrito{
+  border-bottom: 1px solid var(--detalles);
+}
+.btn-eliminar-carrito{
+  color: var(--resaltados);
+  border: none;
+  cursor: pointer;
+  padding: 0px;
+}
 /* Footer */
 .lista-footer {
   list-style: none;
@@ -152,6 +161,8 @@ footer {
   .gif-fondo {
     background-image: url("../img/error404/Error404.gif");
   }
-
+  .btn-desplegar-desc{
+    display: none;
+  }
 }
 

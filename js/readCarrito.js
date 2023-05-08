@@ -3,7 +3,7 @@ let listaProductos = JSON.parse(localStorage.getItem("listaProductos")) || [];
 let contenedorCarrito = document.getElementById("contenedorCarrito");
 let contenedorSubtotal = document.getElementById("contenedorSubtotal");
 let contadorCarrito = document.getElementById("contadorCarrito");
-
+let estadoDes = false;
 readCarrito();
 
 function readCarrito() {
@@ -13,29 +13,45 @@ function readCarrito() {
   // se muestra en pantalla cada producto cargado al carrito
   listaCarrito.forEach((producto) => {
     contenedorCarrito.innerHTML += `
-        <tr>
-        <td class="w-25">
-            <img
-            src="${producto.imagen}"
-            class="img-fluid rounded float-start w-75 mx-auto"
-            alt="${producto.nombre}"
-          />
-        </td>
-        <td class="align-middle">
-          <p class="text-secondary text-truncate">
-            ${producto.detalle}
-          </p>
-        </td>
-        <td class="align-middle">
-          <p class="precio-poducto fs-5">$${producto.precio}</p>
-        </td>
-        <td class="align-middle">
-          <button
-          class="bi bi-x-lg boton-Eliminar-Administrador btn"
-          onclick="eliminarProductoCarrito('${producto.codigo}')"
-          ></button>
-        </td>
-      </tr>        `;
+    <article
+    class="row justify-content-between container align-items-center contenedor-prd-carrito my-3 p-0 m-0"
+  >
+    <aside class="col-2 col-md-2 text-center">
+      <img
+        src="${producto.imagen}"
+        alt="${producto.imagen}"
+        class="img-fluid"
+      />
+    </aside>
+    <aside class="col-8 col-md-8 text-center">
+      <h3 class="display-6 fs-4">${producto.categoria} - ${producto.nombre}</h3>
+      <button
+        class="border-0 bi bi-chevron-down btn-desplegar-desc"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#${producto.codigo}"
+        aria-expanded="false"
+        aria-controls="${producto.codigo}"
+        id="btn-desplegar-desc"
+        onclick="btnDesplegarDesc()"
+      ></button>
+      <div class="collapse" id="${producto.codigo}">
+        <p class="card card-body">
+          ${producto.detalle}
+        </p>
+      </div>
+    </aside>
+    <aside class="col-2 text-center p-0">
+      <h3 class="display-6 fs-6 p-0 m-0">Precio</h3>
+      <p class="p-0 m-0">$${producto.precio}</p>
+      <button
+        class="btn-eliminar-carrito"
+        onclick="eliminarProductoCarrito('${producto.codigo}')"
+      >
+        Eliminar
+      </button>
+    </aside>
+  </article>      `;
   });
   //se muestra la suma total de los precios de producto
   subTotalCarrito();
@@ -88,4 +104,15 @@ function eliminarProductoCarrito(codigo) {
 //modifica el span en el maquetado con la cantidad de productos cargados en el carrito
 function contadorCarritoAct() {
   contadorCarrito.innerText = listaCarrito.length;
+}
+
+function btnDesplegarDesc(){
+  const botonDesplegar = document.getElementById('btn-desplegar-desc');
+  if(estadoDes === false){
+    estadoDes = true;
+    botonDesplegar.className = 'border-0 bi bi-chevron-up';
+  }else{
+    estadoDes = false;
+    botonDesplegar.className = 'border-0 bi bi-chevron-down';
+  }
 }
