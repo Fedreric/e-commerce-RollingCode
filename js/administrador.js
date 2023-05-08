@@ -12,7 +12,8 @@ const inputCategoria = document.getElementById("inputCategoriaArticulo");
 const inputStock = document.getElementById("inputStockArticulo");
 const inputPrecio = document.getElementById("inputPrecioArticulo");
 const btnAgregar = document.getElementById("btnAgregar");
-const msjFormulario = document.getElementById("msjFormulario");
+const msjFormulario = document.getElementById('msjFormulario');
+const contadorDescripcion = document.getElementById('contadorCaracteres');
 
 let estadoProducto = true; // se crea el producto en 'true', se edita el producto en 'false'
 
@@ -243,13 +244,12 @@ function actualizarProducto() {
   }
 }
 //contador de caracteres
-const inputContador = document.getElementById('inputDescripcionArticulo');
-const contadorDescripcion = document.getElementById('contadorCaracteres');
 
-inputContador.addEventListener('input', cargaCaracteresTextArea);
+
+inputDescripcion.addEventListener('input', cargaCaracteresTextArea);
 
 function cargaCaracteresTextArea() {
-  let resta=500-inputContador.value.length
+  let resta=500-inputDescripcion.value.length
   if(resta >= 0)
   contadorDescripcion.innerHTML =resta;
   
