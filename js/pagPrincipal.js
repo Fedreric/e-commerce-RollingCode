@@ -39,15 +39,16 @@ function crearCardProductos(producto) {
     datosProductos.innerHTML += `
     <aside class="col-md-6 col-lg-4 my-3">
                   <div class="card h-100 opacity-75">
-                    <img src="${producto.imagen}" class="card-img-top" alt="${producto.nombre}">
+                    <img src="${producto.imagen}" class="card-img-top imgCard" alt="${producto.nombre}">
                     <div class="card-body">
                       <h5 class="card-title">${producto.nombre}</h5>
                       <div class="d-flex mb-3 text-secondary-emphasis fw-semibold fs-5 card-text">
                         <p class="me-auto p-2">Precio: $${producto.precio} </p>
                         <p class="p-2">Stock: ${producto.stock}</p>
                       </div>
-                      <button class="btn boton fs-5" onClick="detalleProducto('${producto.codigo}')">Ver más</button>
-                      <button class="btn boton" onClick="listaDeseados('${producto.codigo}')" id="btnListaDeseados"><i class="bi bi-bookmark-heart-fill fs-5"></i></button>
+                      <button class=" boton fs-5 btnHover"  onClick="detalleProducto('${producto.codigo}')">Ver más</button>
+                      <a href="./pages/error404.html" class="btnHover boton fs-5"><i class="bi bi-bookmark-heart-fill fs-5"> </i></a>
+                      
                     </div>
                   </div>
                 </aside>`;
@@ -56,7 +57,7 @@ function crearCardProductos(producto) {
         <aside class="col-md-6 col-lg-4 my-3">
                       <div class="card h-100">
                       
-                        <img src="${producto.imagen}" class="card-img-top" alt="${producto.nombre}">
+                        <img src="${producto.imagen}" class="card-img-top imgCard" alt="${producto.nombre}">
                         <div class="card-body">
                           <h5 class="card-title">${producto.nombre}</h5>
                           <div class="d-flex mb-3 text-secondary-emphasis fw-semibold fs-5 card-text">
@@ -64,8 +65,8 @@ function crearCardProductos(producto) {
                             <p class="p-2">Stock: ${producto.stock}</p>
                           </div>
                           <div>
-                          <button class="btn boton fs-5" onClick="detalleProducto('${producto.codigo}')" id="btnDetalleProducto">Ver más</button>
-                          <button class="btn boton" onClick="listaDeseados('${producto.codigo}')" id="btnListaDeseados"><i class="bi bi-bookmark-heart-fill fs-5"></i></button>
+                          <button class="btnHover boton fs-5" onClick="detalleProducto('${producto.codigo}')" id="btnDetalleProducto">Ver más</button>
+                          <a href="./pages/error404.html" class="btnHover boton fs-5"><i class="bi bi-bookmark-heart-fill fs-5"> </i></a>
                         </div>
                           
                           
