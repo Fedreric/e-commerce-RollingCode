@@ -130,6 +130,10 @@ footer {
   color: var(--detalles);
 }
 
+.icono-rs:hover{
+  color: #ffc0cb;
+}
+
 .enlace-hover{
   color: #2b2c34;
 }
