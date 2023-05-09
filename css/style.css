@@ -7,6 +7,7 @@
   --resaltados: #e45858;
 }
 main {
+  padding-top: 55px;
   flex-grow: 1;
   background-color: var(--fondo);
 }
@@ -61,6 +62,19 @@ hr{
   font-size: 16px;
   cursor: pointer;
 }
+            
+.btnHover{
+    transition: .5s, color .10s;
+    -webkit-transition: .5s, color .10s;
+    -moz-transition: .5s, color .10s;
+}
+.btnHover:hover{
+    box-shadow: 0 7px 7px 0 #bebbbc,0 7px 7px 0 #adadab;
+    transform: translate(0px,4px);
+    -webkit-transform: translate(0px,4px);
+    -moz-transform:translate(0px,4px);
+}
+              
 nav {
   border-bottom: 1px solid var(--detalles);
 }

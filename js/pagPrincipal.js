@@ -46,8 +46,9 @@ function crearCardProductos(producto) {
                         <p class="me-auto p-2">Precio: $${producto.precio} </p>
                         <p class="p-2">Stock: ${producto.stock}</p>
                       </div>
-                      <button class="btn boton fs-5" onClick="detalleProducto('${producto.codigo}')">Ver más</button>
-                      <button class="btn boton" onClick="listaDeseados('${producto.codigo}')" id="btnListaDeseados"><i class="bi bi-bookmark-heart-fill fs-5"></i></button>
+                      <button class=" boton fs-5 btnHover"  onClick="detalleProducto('${producto.codigo}')">Ver más</button>
+                      <a href="./pages/error404.html" class="btnHover boton fs-5"><i class="bi bi-bookmark-heart-fill fs-5"> </i></a>
+                      
                     </div>
                   </div>
                 </aside>`;
@@ -64,8 +65,8 @@ function crearCardProductos(producto) {
                             <p class="p-2">Stock: ${producto.stock}</p>
                           </div>
                           <div>
-                          <button class="btn boton fs-5" onClick="detalleProducto('${producto.codigo}')" id="btnDetalleProducto">Ver más</button>
-                          <button class="btn boton" onClick="listaDeseados('${producto.codigo}')" id="btnListaDeseados"><i class="bi bi-bookmark-heart-fill fs-5"></i></button>
+                          <button class="btnHover boton fs-5" onClick="detalleProducto('${producto.codigo}')" id="btnDetalleProducto">Ver más</button>
+                          <a href="./pages/error404.html" class="btnHover boton fs-5"><i class="bi bi-bookmark-heart-fill fs-5"> </i></a>
                         </div>
                           
                           

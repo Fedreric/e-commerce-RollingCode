@@ -122,54 +122,54 @@ export function sumarioValidaciones(
 ) {
   let resumen = "";
   if (!cantidadCaracteres(nombUsuario, 3, 100)) {
-    resumen += "-> Se ingreso un nombre de usuario no valido.</br>";
+    resumen += "-> Se ingreso un nombre de usuario inválido.</br>";
   } else if (existeUsuario(nombUsuario)) {
-    resumen += "-> El nombre de usuario ingresado ya esta siendo usado.</br>";
+    resumen += "-> El nombre de usuario ingresado ya esta en uso.</br>";
   }
   if (!validaContrasenia(contrasenia)) {
     resumen +=
-      "-> La contraseña ingresada no es valida (la misma debe contener al menos 1 mayuscula; 1 caracter especia; 1 numero).</br>";
+      "-> La contraseña ingresada no es valida (Debe contener al menos 1 mayuscula, 1 caracter especial, 1 número).</br>";
   }
   if (!validaCorreo(correo)) {
-    resumen += "-> Se ingreso un correo invalido.</br>";
+    resumen += "-> Se ingreso un correo inválido.</br>";
   } else if (existeCorreo(correo)) {
     resumen += "-> El correo ingresado ya esta en uso por otro usuario.</br>";
   }
   if (!validarPais(pais)) {
     resumen +=
-      "-> Error en el campo pais. Recuerde que debe encontrarse en Latino América (aqui somos racistas a la inversa :) ).</br>";
+      "-> Error en el campo Pais. Recuerde que debe encontrarse en Latino América.</br>";
   }
   if (!cantidadCaracteres(provincia, 4, 50)) {
-    resumen += "-> Error  en el campo provincia.</br>";
+    resumen += "-> Error en el campo Provincia.</br>";
   }
   if (!cantidadCaracteres(localidad, 4, 50)) {
-    resumen += "-> Error en el campo localidad.</br>";
+    resumen += "-> Error en el campo Localidad.</br>";
   }
   if (!cantidadCaracteres(codPostal, 4, 10)) {
     resumen +=
-      "-> Error en el campo de codigo postal. Asegurese de ingresar correectamente el codigo. </br>";
+      "-> Error en el campo Codigo Postal. Asegurese de ingresar correctamente el código. </br>";
   }
   if (!cantidadCaracteres(calle, 4, 100)) {
-    resumen += "-> Error en el ingreso de la calle.</br>";
+    resumen += "-> Error en el campo Calle.</br>";
   }
   if (!validaNumeros(alt_calle, 50000)) {
     //Segun una investigacion que realice, la calle mas larga de Latino America esta en Mexico y llega hasta la numeracion 50000
-    resumen += "-> Se ingreso una numeracion de calle erronea.</br>";
+    resumen += "-> Se ingreso una numeración erronea.</br>";
   }
   if (pisoDpto != "" && !validaNumeros(pisoDpto, 64)) {
     resumen +=
-      "-> Error en el campo piso. Se ingreso una numeracion invalida.</br>";
+      "-> Error en el campo Piso. Se ingreso una numeración inválida.</br>";
   }
   if (nroDpto != "" && !validaNumeros(nroDpto, 20)) {
     resumen +=
-      "-> Error en el campo de Nro. departamento. Se ingreso una numeracion invalida.</br>";
+      "-> Error en el campo Nro. de Departamento. Se ingreso una numeración inválida.</br>";
   }
   if (
     (pisoDpto != "" && nroDpto === "") ||
     (pisoDpto === "" && nroDpto != "")
   ) {
     resumen +=
-      "->Error al ingresar el piso y el numero del departamento. Ambos campos deben llenarse.";
+      "-> Error deben completarse los campos Piso y Departamento";
   }
   return resumen;
 }
@@ -178,7 +178,7 @@ export function validaSesion(value, contrasenia) {
   let resumen = "";
   if (!existeUsuario(value) && !existeCorreo(value)) {
     resumen +=
-      "El usuario " + value + " no se encuentra registrado en la pagina.";
+      "El usuario " + value + " no se encuentra registrado en la página.";
   } else {
     let buscoUsuario = usuariosAlmacenados.find((usuario) => {
       if (usuario.nombreUsuario === value || usuario.email === value) {
@@ -187,7 +187,7 @@ export function validaSesion(value, contrasenia) {
     });
 
     if (buscoUsuario.contrasenia != contrasenia) {
-      resumen += "Error al ingresar el correo/usuario o la contraseña.";
+      resumen += "Error al ingresar el correo/Usuario o la contraseña.";
     } else {
       //Se almacena el usuario ingresado en el sessionstorage
 
