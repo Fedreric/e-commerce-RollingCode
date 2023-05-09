@@ -1,4 +1,4 @@
-let listaCarrito = JSON.parse(localStorage.getItem("listaCarrito")) || [];
+let listaCarrito = JSON.parse(localStorage.getItem("listaCarrito/"+usuario.nombreUsuario)) || [];
 let contadorCarrito = document.getElementById("contadorCarrito");
 
 contadorCarritoAct();
