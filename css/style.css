@@ -130,6 +130,13 @@ footer {
   color: var(--detalles);
 }
 
+.enlace-hover{
+  color: #2b2c34;
+}
+.enlace-hover:hover{
+color: #6246ea;
+}
+
 /*Error 404 */
 .gif-fondo {
   background-image: url("../img/error404/Error404.gif");
