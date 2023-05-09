@@ -200,7 +200,7 @@ function cerrarSesion() {
     showCancelButton: true,
     confirmButtonColor: "#6246ea",
     cancelButtonColor: "#e45858",
-    confirmButtonText: "Ok",
+    confirmButtonText: "Salir",
     cancelButtonText: "Cancelar",
   }).then((result) => {
     if(result.isConfirmed)
