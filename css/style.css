@@ -153,6 +153,16 @@ textarea{
 #contadorCarrito{
   color: var(--resaltados);
 }
+.contenedor-prd-carrito{
+  border-bottom: 1px solid var(--detalles);
+}
+.btn-eliminar-carrito{
+  color: var(--resaltados);
+  border: none;
+  cursor: pointer;
+  padding: 0px;
+  margin-bottom: 5px;
+}
 /* Footer */
 .lista-footer {
   list-style: none;
