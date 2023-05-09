@@ -29,42 +29,22 @@ header{
   position: fixed;
   z-index: 100;
 }
+
+
 @media all and (min-width: 280px){
   .carrusel{
- height: 80px;
-  
-  }
-}
-@media all and (min-width: 360px){
-  .carrusel{
- height: 100px;
-  
-  
-}}
-@media all and (min-width: 411px){
-  .carrusel{
- height: 150px;
-  
-  
-}}
-@media all and (min-width: 539px){
-  .carrusel{
- height: 150px;
-  
-  
-}}
-@media all and (min-width: 767px){
-  .carrusel{
  height: 300px;
+ 
   
-  
-}}
+}
+}
 @media all and (min-width: 992px){
   .carrusel{
- height: 300px;
+ height: 400px;
   
 }
 }
+
 @media all and (min-width: 1407px){
   .carrusel{
  height: 500px;
