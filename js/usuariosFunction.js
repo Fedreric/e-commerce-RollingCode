@@ -151,12 +151,19 @@ function creaUsuario(e) {
         nroDpto.value,
       "usuario"
     );
+    Swal.fire({
+      position: "top-center",
+      icon: "success",
+      title: 'Usuario Creado!',
+      showConfirmButton: false,
+      timer: 1500,
+    });
     listadoUsuarios.push(nuevoUsuario);
     guardaEnLocalStorage(); //Se almacena el nuevo usuario
     limpiarFormularioRegistro();
     modalRegistrarse.hide();
-    location.reload();
-    mostrarModalLogin();
+    // location.reload();
+    mostrarModalLogin();  
   } else {
     msj_Error_Registro.className = "alert alert-danger mt-2";
     msj_Error_Registro.innerHTML = resumen;
