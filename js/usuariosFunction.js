@@ -194,7 +194,20 @@ function iniciaSecion(e) {
 }
 
 function cerrarSesion() {
-  sessionStorage.removeItem("user");
-  btnIniciarSecion.innerHTML = "Ingresar";
-  window.location.href = "../index.html";
+  Swal.fire({
+    title: "Cerrando sesion.",
+    icon: "waring",
+    showCancelButton: true,
+    confirmButtonColor: "#6246ea",
+    cancelButtonColor: "#e45858",
+    confirmButtonText: "Ok",
+    cancelButtonText: "Cancelar",
+  }).then((result) => {
+    if(result.isConfirmed)
+    {
+      sessionStorage.removeItem("user");
+      btnIniciarSecion.innerHTML = "Ingresar";
+      window.location.href = "../index.html";
+    }
+  })
 }
