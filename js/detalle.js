@@ -141,7 +141,28 @@ class Cometarios {
 cargaDeDatosInicial();
 function cargaComentario(e) {
   e.preventDefault();
-  crearComentario();
+  let usuario = JSON.parse(verificaUsuarioEnSesion());
+  if(usuario)
+  {
+    crearComentario();
+  }else
+  {
+    Swal.fire({
+      title: "Debe iniciar sesion antes de agregar una consulta a cerca del producto.",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#6246ea",
+      cancelButtonColor: "#e45858",
+      confirmButtonText: "Iniciar Sesion.",
+      cancelButtonText: "Cancelar.",
+    }).then((result) => {
+      if(result.isConfirmed)
+      {
+        modalLogin.show();
+      }
+    })
+  }
+  
 }
 function cargarComentariosLocalStorage() {
   localStorage.setItem("listaComentario", JSON.stringify(listaComentario));
