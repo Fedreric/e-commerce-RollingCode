@@ -1,5 +1,6 @@
 //extraer el codigo del producto del url
 const codigoProd = new URLSearchParams(window.location.search);
+const modalLogin = new bootstrap.Modal(document.getElementById("inicioSecion"));
 //buscar producto
 let listaProductos = JSON.parse(localStorage.getItem("listaProductos")) || [];
 let listaCarrito = JSON.parse(localStorage.getItem("listaCarrito")) || [];
@@ -95,8 +96,29 @@ function agregarCarrito() {
     contadorCarritoAct();
   }
 }
+
 function agregarProductoCarritoLocalStorage() {
-  localStorage.setItem("listaCarrito", JSON.stringify(listaCarrito));
+  let usuario = JSON.parse(verificaUsuarioEnSesion());
+  if(usuario)
+  {
+    localStorage.setItem("listaCarrito/"+usuario.nombreUsuario, JSON.stringify(listaCarrito));
+  }else
+  {
+    Swal.fire({
+      title: "Debe iniciar sesion antes de agregar productos al carrito.",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#6246ea",
+      cancelButtonColor: "#e45858",
+      confirmButtonText: "Iniciar Sesion.",
+      cancelButtonText: "Cancelar.",
+    }).then((result) => {
+      if(result.isConfirmed)
+      {
+        modalLogin.show();
+      }
+    })
+  }
 }
 
 //modifica el span en el maquetado con la cantidad de productos cargados en el carrito
@@ -119,7 +141,28 @@ class Cometarios {
 cargaDeDatosInicial();
 function cargaComentario(e) {
   e.preventDefault();
-  crearComentario();
+  let usuario = JSON.parse(verificaUsuarioEnSesion());
+  if(usuario)
+  {
+    crearComentario();
+  }else
+  {
+    Swal.fire({
+      title: "Debe iniciar sesion antes de agregar una consulta a cerca del producto.",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#6246ea",
+      cancelButtonColor: "#e45858",
+      confirmButtonText: "Iniciar Sesion.",
+      cancelButtonText: "Cancelar.",
+    }).then((result) => {
+      if(result.isConfirmed)
+      {
+        modalLogin.show();
+      }
+    })
+  }
+  
 }
 function cargarComentariosLocalStorage() {
   localStorage.setItem("listaComentario", JSON.stringify(listaComentario));
@@ -172,4 +215,10 @@ function dibujarComentarios(coment) {
       </p>
     </div>
      `;
+}
+
+function verificaUsuarioEnSesion()
+{
+  let usuario = sessionStorage.getItem('user');
+  return usuario;
 }

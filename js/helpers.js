@@ -30,11 +30,11 @@ function validarCategoria(texto) {
       texto === "Monitor" ||
       texto === "Mouse" ||
       texto === "Fuente" ||
-      texto === "Combo Teclado + Mouse" ||
+      texto === "Combo" ||
       texto === "Memorias Ram" ||
       texto === "Parlante" ||
       texto === "Auricular" ||
-      texto === "Disco Duro")
+      texto === "Discos-Duros")
   ) {
     return true;
   } else {
