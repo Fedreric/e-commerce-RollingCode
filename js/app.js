@@ -11,7 +11,6 @@ const contenedorEnlaceAdministrador = document.getElementById(
 );
 const inicioLogout = document.getElementById("btnIniciarSecion");
 verificaUsuario();
-//nombArchivo === 'index.html' || nombArchivo === 'sobreNosotros.html' || nombArchivo === 'error404.html' || nombArchivo === 'detalle.html'
 
 function verificaUsuario() {
   if (!usuario) {
@@ -67,4 +66,11 @@ function verificaUsuario() {
   } else {
     inicioLogout.innerHTML = "Cerrar Sesion";
   }
+}
+
+function error404 (){
+  window.location.href = window.location.origin + "/pages/error404.html";
+}
+function carritoCompras (){
+  window.location.href = window.location.origin + "/pages/carritoCompras.html";
 }
