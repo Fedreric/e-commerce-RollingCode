@@ -129,7 +129,7 @@ function mostrarProductosBuscados(arrayFiltrado) {
            </div>
               <img src="${producto.imagen}" alt="${
         producto.nombre
-      }" class="img-fluid mt-5">
+      }" class="img-fluid mt-5 img-filtro">
         </div>
          `;
     });
