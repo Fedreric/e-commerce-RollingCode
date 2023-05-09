@@ -3,7 +3,6 @@ const codigoProd = new URLSearchParams(window.location.search);
 const modalLogin = new bootstrap.Modal(document.getElementById("inicioSecion"));
 //buscar producto
 let listaProductos = JSON.parse(localStorage.getItem("listaProductos")) || [];
-let listaCarrito = JSON.parse(localStorage.getItem("listaCarrito/"+usuario.nombreUsuario)) || [];
 const producto = listaProductos.find(
   (prod) => prod.codigo === codigoProd.get("codigo")
 );
@@ -20,12 +19,12 @@ const inputComentario = document.getElementById("comentario");
 let listaComentario = JSON.parse(localStorage.getItem("listaComentario")) || [];
 let date = new Date().toDateString();
 let horas = new Date();
-let horaActual =
-  horas.getHours() + " : " + horas.getMinutes() + " : " + horas.getSeconds();
+let horaActual = horas.getHours() + " : " + horas.getMinutes() + " : " + horas.getSeconds();
 
 formularioComentairo.addEventListener("submit", cargaComentario);
 
 readDetalle();
+let listaCarrito = JSON.parse(localStorage.getItem("listaCarrito/"+usuario.nombreUsuario)) || [];
 contadorCarritoAct();
 function readDetalle() {
   if (parseInt(producto.stock) === 0) {
@@ -75,33 +74,32 @@ function readDetalle() {
   }
 }
 
-function agregarCarrito() {
-  let productoStock = parseInt(producto.stock);
-  //confirma que haya productos en el stock y recien carga el prod al carrito
-  if (productoStock > 0) {
-    Swal.fire({
-      position: "top-end",
-      icon: "success",
-      title: 'Listo <i class="bi bi-cart"></i>',
-      showConfirmButton: false,
-      timer: 1500,
-    });
-    listaCarrito.push(producto);
-    agregarProductoCarritoLocalStorage();
-    //se resta en uno el stock
-    producto.stock = productoStock - 1;
-    //se guarda el nuevo valor en el local storage
-    localStorage.setItem("listaProductos", JSON.stringify(listaProductos));
-    readDetalle();
-    contadorCarritoAct();
-  }
-}
 
-function agregarProductoCarritoLocalStorage() {
+
+function agregarCarrito() {
   let usuario = JSON.parse(verificaUsuarioEnSesion());
+  let productoStock = parseInt(producto.stock);
+  //confirma que haya un usuario logeado
   if(usuario)
   {
-    localStorage.setItem("listaCarrito/"+usuario.nombreUsuario, JSON.stringify(listaCarrito));
+    //confirma que haya productos en el stock y recien carga el prod al carrito
+    if (productoStock > 0) {
+      Swal.fire({
+        position: "top-end",
+        icon: "success",
+        title: 'Listo <i class="bi bi-cart"></i>',
+        showConfirmButton: false,
+        timer: 1500,
+      });
+      listaCarrito.push(producto);
+      agregarProductoCarritoLocalStorage();
+      //se resta en uno el stock
+      producto.stock = productoStock - 1;
+      //se guarda el nuevo valor en el local storage
+      localStorage.setItem("listaProductos", JSON.stringify(listaProductos));
+      readDetalle();
+      contadorCarritoAct();
+    }
   }else
   {
     Swal.fire({
@@ -119,6 +117,12 @@ function agregarProductoCarritoLocalStorage() {
       }
     })
   }
+}
+
+function agregarProductoCarritoLocalStorage() {
+
+  localStorage.setItem("listaCarrito/"+usuario.nombreUsuario, JSON.stringify(listaCarrito));
+  
 }
 
 //modifica el span en el maquetado con la cantidad de productos cargados en el carrito
