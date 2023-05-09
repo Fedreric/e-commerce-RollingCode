@@ -99,6 +99,7 @@ hr{
               
 nav {
   border-bottom: 1px solid var(--detalles);
+  height: 66px;
 }
 .navbar-toggler {
   color: var(--detalles);
