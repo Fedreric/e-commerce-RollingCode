@@ -1,6 +1,8 @@
 import Producto from "./class-Producto.js";
 
 let listaProductos = localStorage.getItem("listaProductos");
+let tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+let tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
 
 if (!listaProductos) {
   //si lista productos no existe en Localstorage
@@ -41,7 +43,7 @@ function crearCardProductos(producto) {
                   <div class="card h-100 opacity-75">
                     <img src="${producto.imagen}" class="card-img-top imgCard" alt="${producto.nombre}">
                     <div class="card-body">
-                      <h5 class="card-title text-truncate">${producto.nombre}</h5>
+                      <h5 data-bs-toggle="tooltip" data-bs-placement="top" title="hola" class="card-title text-truncate">${producto.nombre}</h5>
                       <div class="d-flex mb-3 text-secondary-emphasis fw-semibold fs-5 card-text">
                         <p class="me-auto p-2">Precio: $${producto.precio} </p>
                         <p class="p-2">Stock: ${producto.stock}</p>

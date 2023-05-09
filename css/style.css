@@ -11,7 +11,7 @@
   padding-top: 0px;
 }
 main {
-  padding-top: 59px;
+  padding-top: 55px;
   font-family: 'Carlito', sans-serif;
   flex-grow: 1;
   background-color: var(--fondo);
@@ -74,7 +74,7 @@ header{
 }}
 .imgCard{
   height: 292px;
-  object-fit: cover;
+  object-fit: fill;
 }
 .card{
   border-color: var(--detalles);
