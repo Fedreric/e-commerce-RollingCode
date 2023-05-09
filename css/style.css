@@ -8,8 +8,8 @@
   --resaltados: #e45858;
 }
 main {
+  padding-top: 59px;
   font-family: 'Carlito', sans-serif;
-  padding-top: 55px;
   flex-grow: 1;
   background-color: var(--fondo);
 }
@@ -26,12 +26,49 @@ header{
   position: fixed;
   z-index: 100;
 }
+@media all and (min-width: 280px){
+  .carrusel{
+ height: 80px;
+  object-fit: cover;
+  
+}
+@media all and (min-width: 360px){
+  .carrusel{
+ height: 100px;
+  object-fit: cover;
+  
+}}
+@media all and (min-width: 411px){
+  .carrusel{
+ height: 150px;
+  object-fit: cover;
+  
+}}
+@media all and (min-width: 539px){
+  .carrusel{
+ height: 150px;
+  object-fit: cover;
+  
+}}
+@media all and (min-width: 767px){
+  .carrusel{
+ height: 250px;
+  object-fit: cover;
+  
+}}
 @media all and (min-width: 992px){
   .carrusel{
-  height: 700px;
+ height: 300px;
   object-fit: cover;
+  
 }
 }
+@media all and (min-width: 1407px){
+  .carrusel{
+ height: 450px;
+  object-fit: cover;
+  
+}}
 .imgCard{
   height: 292px;
   object-fit: cover;
@@ -112,15 +149,6 @@ textarea{
 /*CARRITO DE COMPRAS*/
 #contadorCarrito{
   color: var(--resaltados);
-}
-.contenedor-prd-carrito{
-  border-bottom: 1px solid var(--detalles);
-}
-.btn-eliminar-carrito{
-  color: var(--resaltados);
-  border: none;
-  cursor: pointer;
-  padding: 0px;
 }
 /* Footer */
 .lista-footer {
@@ -205,5 +233,6 @@ color: #6246ea;
   .gif-fondo {
     background-image: url("../img/error404/Error404.gif");
   }
+
 }
 
