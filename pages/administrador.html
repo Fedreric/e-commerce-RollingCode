@@ -4,13 +4,16 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="keywords" content="" />
-    <meta name="description" content="Pagina de venta de componentes para PC e insumos"/>
+    <meta
+      name="description"
+      content="Pagina de venta de componentes para PC e insumos"
+    />
     <meta name="keywords" content="PC, Componentes, Insumos varios, Gaming" />
-    <meta name="author1" content="Ledesma Federico"/>
-    <meta name="author2" content="Finsinger Aixa"/>
-    <meta name="author3" content="Diaz Santilli Mauro"/>
-    <meta name="author4" content="Serrano Martin"/>
-    <meta name="author5" content="Lobo Agustin"/>
+    <meta name="author1" content="Ledesma Federico" />
+    <meta name="author2" content="Finsinger Aixa" />
+    <meta name="author3" content="Diaz Santilli Mauro" />
+    <meta name="author4" content="Serrano Martin" />
+    <meta name="author5" content="Lobo Agustin" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
@@ -56,16 +59,27 @@
                 >
               </li>
               <li class="nav-item" id="contenedorAdministrador">
-                <a class="nav-link active" href="./administrador.html">Administrador</a>
+                <a class="nav-link active" href="./administrador.html"
+                  >Administrador</a
+                >
               </li>
               <li class="nav-item">
                 <button class="nav-link" id="btnIniciarSecion">Ingresar</button>
               </li>
               <li class="nav-item p-1" id="carrito">
-                <a href="carritoCompras.html" class="btn-carrito"><i class="bi bi-cart fs-5 text-light"></i><span id="contadorCarrito">0</span></a>
+                <a href="carritoCompras.html" class="btn-carrito"
+                  ><i class="bi bi-cart fs-5 text-light"></i
+                  ><span id="contadorCarrito">0</span></a
+                >
               </li>
               <li class="nav-item p-1" id="contenedorDeseados">
-                <a href="" class="btn-carrito" data-bs-toggle="modal" data-bs-target="#modalDeseados"><i class="bi bi-bookmark-heart-fill fs-5 text-light"></i></a>
+                <a
+                  href=""
+                  class="btn-carrito"
+                  data-bs-toggle="modal"
+                  data-bs-target="#modalDeseados"
+                  ><i class="bi bi-bookmark-heart-fill fs-5 text-light"></i
+                ></a>
               </li>
             </ul>
           </div>
@@ -95,94 +109,35 @@
               ></button>
             </div>
             <div class="modal-body">
-              <iframe class="" src="./registro.html" frameborder="0" width="100%" height="500px" id="iframe_registroUsuario"></iframe>
+              <iframe
+                class=""
+                src="./registro.html"
+                frameborder="0"
+                width="100%"
+                height="500px"
+                id="iframe_registroUsuario"
+              ></iframe>
             </div>
-            <div class="modal-footer d-flex justify-content-center"><div class="alert alert-danger d-none" role="alert" id="msjErrorFormRegistro"></div></div>
-          </div>
-        </div>
-      </div>
-
-      <!--Modal Login-->
-      <div
-        class="modal fade"
-        id="inicioSecion"
-        tabindex="-1"
-        role="dialog"
-        aria-labelledby="inicioSecionlLabel"
-        aria-hidden="true"
-      >
-        <div
-          class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg"
-          role="document"
-        >
-          <div class="modal-content">
-            <div class="modal-header">
-              <button
-                type="button"
-                class="btn-close"
-                data-bs-dismiss="modal"
-                aria-label="Close"
-              ></button>
-            </div>
-            <div class="modal-body">
-              <iframe src="./login.html" width="100%" height="300px" style="overflow:hidden;" id="iframe_loginUsuario"></iframe>
-            </div>
-            <div class="modal-footer container">
-              <div class="alert alert-danger d-none" role="alert" id="msjErrorFormLogin"></div>
-              <p>Aún no se registro?</p>
-              <div class="justify-content-start">
-                <button type="button" class="btn btn-primary" id="btnRegistrarse">Registrarse</button>
-              </div>
+            <div class="modal-footer d-flex justify-content-center">
+              <div
+                class="alert alert-danger d-none"
+                role="alert"
+                id="msjErrorFormRegistro"
+              ></div>
             </div>
           </div>
         </div>
       </div>
 
-      <!--Modal----registro -->
-      <div class="container mt-5">
-        <h2 class="text-center">Lista de productos</h2>
-        <hr />
-        <section>
-          <p>
-            Agregar:
-            <button
-              type="button"
-              class="boton"
-              id="btnAgregar"
-            >
-              <i class="bi bi-clipboard-plus"></i>
-            </button>
-          </p>
-        </section>
-        <aside class="table-responsive">
-          <table class="table tabla-Administrador table-striped ">
-            <thead>
-              <tr>
-                <th>Imagen</th>
-                <th>Nombre</th>
-                <th>Categoría</th>
-                <th>Detalle</th>
-                <th>Precio</th>
-                <th>Stock</th>
-                <th>#</th>
-              </tr>
-            </thead>
-            <tbody id="tablaAdministrador">
-             
-            </tbody>
-          </table>
-        </aside>
-      </div>
       <div>
-        <!-- Button trigger modal -->
+        
         <!-- Modal -->
         <div
           class="modal fade"
           id="modalRegistroProductos"
           tabindex="-1"
-          aria-labelledby="exampleModalLabel"
+          aria-labelledby="modalRegistroProductos"
           aria-hidden="true"
-         
         >
           <div class="modal-dialog">
             <div class="modal-content">
@@ -229,7 +184,8 @@
                       <span class="text-muted text-sm">
                         Disponible:
                         <span id="contadorCaracteres">500</span></span
-                      ></label>
+                      ></label
+                    >
                     <textarea
                       class="form-control"
                       placeholder="Breve descripcion de los detalles del producto"
@@ -264,21 +220,11 @@
                       <option value="Monitor">Monitor</option>
                       <option value="Mouse">Mouse</option>
                       <option value="Fuente">Fuente</option>
-                      <option value="Combo">
-                        Combo Teclado + Mouse
-                      </option>
-                      <option value="Memorias Ram">
-                        Memorias Ram
-                      </option>
-                      <option value="Parlante">
-                        Parlante
-                      </option>
-                      <option value="Auricular">
-                        Auricular
-                      </option>
-                      <option value="Discos-Duros">
-                        Disco Duro
-                      </option>
+                      <option value="Combo">Combo Teclado + Mouse</option>
+                      <option value="Memorias Ram">Memorias Ram</option>
+                      <option value="Parlante">Parlante</option>
+                      <option value="Auricular">Auricular</option>
+                      <option value="Discos-Duros">Disco Duro</option>
                     </select>
                   </div>
                   <div class="mb-3">
@@ -360,21 +306,37 @@
           <aside class="col-lg-4 my-md-5">
             <div class="text-center">
               <a href="../index.html">
-                <img src="../img/logo.png" alt="logo de RollCode Video" alt="logo de TecnoTuc componentes"
-                  class="w-100 h-auto m-0" />
+                <img
+                  src="../img/logo.png"
+                  alt="logo de RollCode Video"
+                  alt="logo de TecnoTuc componentes"
+                  class="w-100 h-auto m-0"
+                />
               </a>
             </div>
           </aside>
           <aside class="col-md-6 col-lg-4 text-center">
             <ul class="p-0 lista-footer">
               <li>
-                <a href="sobreNosotros.html" class="text-decoration-none enlace-hover">¿Quienes Somos?</a>
+                <a
+                  href="sobreNosotros.html"
+                  class="text-decoration-none enlace-hover"
+                  >¿Quienes Somos?</a
+                >
               </li>
               <li>
-                <a href="error404.html" class="text-decoration-none enlace-hover">Cómo cuidamos tu privacidad</a>
+                <a
+                  href="error404.html"
+                  class="text-decoration-none enlace-hover"
+                  >Cómo cuidamos tu privacidad</a
+                >
               </li>
               <li>
-                <a href="error404.html" class="text-decoration-none enlace-hover">Terminos y condiciones</a>
+                <a
+                  href="error404.html"
+                  class="text-decoration-none enlace-hover"
+                  >Terminos y condiciones</a
+                >
               </li>
             </ul>
           </aside>
@@ -385,16 +347,19 @@
               </li>
               <div class="d-flex justify-content-around">
                 <li>
-                  <a href="error404.html" class="text-decoration-none text-dark"><i
-                      class="bi bi-instagram fs-2 icono-rs"></i></a>
+                  <a href="error404.html" class="text-decoration-none text-dark"
+                    ><i class="bi bi-instagram fs-2 icono-rs"></i
+                  ></a>
                 </li>
                 <li>
-                  <a href="error404.html" class="text-decoration-none text-dark"><i
-                      class="bi bi-twitter fs-2 icono-rs"></i></a>
+                  <a href="error404.html" class="text-decoration-none text-dark"
+                    ><i class="bi bi-twitter fs-2 icono-rs"></i
+                  ></a>
                 </li>
                 <li>
-                  <a href="error404.html" class="text-decoration-none text-dark"><i
-                      class="bi bi-facebook fs-2 icono-rs"></i></a>
+                  <a href="error404.html" class="text-decoration-none text-dark"
+                    ><i class="bi bi-facebook fs-2 icono-rs"></i
+                  ></a>
                 </li>
               </div>
             </ul>
@@ -415,6 +380,6 @@
     <script src="../js/usuariosFunction.js" type="module"></script>
     <script src="https://cdn.jsdelivr.net/npm/uuid@latest/dist/umd/uuidv4.min.js"></script>
     <script type="module" src="../js/administrador.js"></script>
-    <script src="../js/contadorCarrito.js"></script>   
+    <script src="../js/contadorCarrito.js"></script>
   </body>
 </html>

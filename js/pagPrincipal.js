@@ -1,6 +1,8 @@
 import Producto from "./class-Producto.js";
 
 let listaProductos = localStorage.getItem("listaProductos");
+let tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+let tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
 
 if (!listaProductos) {
   //si lista productos no existe en Localstorage
@@ -41,13 +43,13 @@ function crearCardProductos(producto) {
                   <div class="card h-100 opacity-75">
                     <img src="${producto.imagen}" class="card-img-top imgCard" alt="${producto.nombre}">
                     <div class="card-body">
-                      <h5 class="card-title">${producto.nombre}</h5>
+                      <h5 data-bs-toggle="tooltip" data-bs-placement="top" title="hola" class="card-title text-truncate">${producto.nombre}</h5>
                       <div class="d-flex mb-3 text-secondary-emphasis fw-semibold fs-5 card-text">
                         <p class="me-auto p-2">Precio: $${producto.precio} </p>
                         <p class="p-2">Stock: ${producto.stock}</p>
-                      </div>
+                      </div> 
                       <button class=" boton fs-5 btnHover"  onClick="detalleProducto('${producto.codigo}')">Ver más</button>
-                      <a href="./pages/error404.html" class="btnHover boton fs-5"><i class="bi bi-bookmark-heart-fill fs-5"> </i></a>
+                      <button class=" boton fs-5 btnHover"  onClick="listaDeseados('${producto.codigo}')"><i class="bi bi-bookmark-heart-fill fs-5"> </i></button>
                       
                     </div>
                   </div>
@@ -59,14 +61,14 @@ function crearCardProductos(producto) {
                       
                         <img src="${producto.imagen}" class="card-img-top imgCard" alt="${producto.nombre}">
                         <div class="card-body">
-                          <h5 class="card-title">${producto.nombre}</h5>
+                          <h5 class="card-title text-truncate">${producto.nombre}</h5>
                           <div class="d-flex mb-3 text-secondary-emphasis fw-semibold fs-5 card-text">
                             <p class="me-auto p-2">Precio: $${producto.precio} </p>
                             <p class="p-2">Stock: ${producto.stock}</p>
                           </div>
                           <div>
                           <button class="btnHover boton fs-5" onClick="detalleProducto('${producto.codigo}')" id="btnDetalleProducto">Ver más</button>
-                          <a href="./pages/error404.html" class="btnHover boton fs-5"><i class="bi bi-bookmark-heart-fill fs-5"> </i></a>
+                          <button class=" boton fs-5 btnHover"  onClick="listaDeseados('${producto.codigo}')"><i class="bi bi-bookmark-heart-fill fs-5"> </i></button>
                         </div>
                           
                           
@@ -78,6 +80,10 @@ function crearCardProductos(producto) {
 window.detalleProducto = (codigo) => {
   window.location.href =
     window.location.origin + "/pages/detalle.html?codigo=" + codigo;
+};
+window.listaDeseados = (codigo) => {
+  window.location.href =
+    window.location.origin + "/pages/error404.html?codigo=" + codigo;
 };
 
 const inputBuscador = document.getElementById("buscador");
@@ -140,3 +146,7 @@ function mostrarProductosBuscados(arrayFiltrado) {
     resultadoBusqueda.innerHTML = `<p class="mt-3 text-center fs-3 fw-bold">No se encontraron productos asociados con: ${inputBuscador.value}</p>`;
   }
 }
+
+
+
+
