@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Carlito&family=Libre+Baskerville&display=swap');
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css");
 * {
   --fondo: #fffffe;
@@ -7,7 +8,8 @@
   --resaltados: #e45858;
 }
 main {
-  padding-top: 55px;
+  padding-top: 59px;
+  font-family: 'Carlito', sans-serif;
   flex-grow: 1;
   background-color: var(--fondo);
 }
@@ -18,17 +20,55 @@ body {
   flex-direction: column;
 }
 header{
+  font-family: 'Libre Baskerville', serif;
   background-color:rgb(255, 255, 254, 0.9);
   width: 100%;
   position: fixed;
   z-index: 100;
 }
+@media all and (min-width: 280px){
+  .carrusel{
+ height: 80px;
+  object-fit: cover;
+  
+}
+@media all and (min-width: 360px){
+  .carrusel{
+ height: 100px;
+  object-fit: cover;
+  
+}}
+@media all and (min-width: 411px){
+  .carrusel{
+ height: 150px;
+  object-fit: cover;
+  
+}}
+@media all and (min-width: 539px){
+  .carrusel{
+ height: 150px;
+  object-fit: cover;
+  
+}}
+@media all and (min-width: 767px){
+  .carrusel{
+ height: 250px;
+  object-fit: cover;
+  
+}}
 @media all and (min-width: 992px){
   .carrusel{
-  height: 700px;
+ height: 300px;
   object-fit: cover;
+  
 }
 }
+@media all and (min-width: 1407px){
+  .carrusel{
+ height: 450px;
+  object-fit: cover;
+  
+}}
 .imgCard{
   height: 292px;
   object-fit: cover;
@@ -110,15 +150,6 @@ textarea{
 #contadorCarrito{
   color: var(--resaltados);
 }
-.contenedor-prd-carrito{
-  border-bottom: 1px solid var(--detalles);
-}
-.btn-eliminar-carrito{
-  color: var(--resaltados);
-  border: none;
-  cursor: pointer;
-  padding: 0px;
-}
 /* Footer */
 .lista-footer {
   list-style: none;
@@ -128,6 +159,17 @@ footer {
 }
 .icono-rs {
   color: var(--detalles);
+}
+
+.icono-rs:hover{
+  color: #ffc0cb;
+}
+
+.enlace-hover{
+  color: #2b2c34;
+}
+.enlace-hover:hover{
+color: #6246ea;
 }
 
 /*Error 404 */
@@ -158,6 +200,13 @@ footer {
   justify-content: center;
 }
 
+/*Filtro de busqueda*/
+
+.img-filtro{
+  width: 300px;
+  height: 150px;
+}
+
 /*Administrador*/
 
 .tabla-Administrador td {
@@ -184,5 +233,6 @@ footer {
   .gif-fondo {
     background-image: url("../img/error404/Error404.gif");
   }
+
 }
 
