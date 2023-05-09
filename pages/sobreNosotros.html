@@ -27,11 +27,11 @@
   </head>
   <body>
     <header>
-      <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <nav class="navbar navbar-expand-lg">
         <div class="container">
           <a class="navbar-brand" href="../index.html"
             ><img
-              src="../img/logo.png"
+              src="../img/logo.png" 
               alt="logo Tecnotuc componentes"
               class="logo"
           /></a>
@@ -47,7 +47,7 @@
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-center">
               <li class="nav-item">
                 <a class="nav-link" aria-current="page" href="../index.html"
                   >Inicio</a
@@ -59,25 +59,26 @@
                 >
               </li>
               <li class="nav-item" id="contenedorAdministrador">
-                <a class="nav-link" href="administrador.html">Administrador</a>
+                <a class="nav-link" href="administrador.html"
+                  >Administrador</a
+                >
               </li>
               <li class="nav-item">
                 <button class="nav-link" id="btnIniciarSecion">Ingresar</button>
               </li>
+
               <li class="nav-item p-1" id="carrito">
-                <a href="carritoCompras.html" class="btn-carrito"
+                <button class="btn-carrito" onclick="carritoCompras()"
                   ><i class="bi bi-cart fs-5 text-light"></i
-                  ><span id="contadorCarrito">0</span></a
-                >
+                  ><span id="contadorCarrito"></span
+                ></button>
               </li>
               <li class="nav-item p-1" id="contenedorDeseados">
-                <a
-                  href=""
+                <button
                   class="btn-carrito"
-                  data-bs-toggle="modal"
-                  data-bs-target="#modalDeseados"
+                  onclick="error404()"
                   ><i class="bi bi-bookmark-heart-fill fs-5 text-light"></i
-                ></a>
+                ></button>
               </li>
             </ul>
           </div>

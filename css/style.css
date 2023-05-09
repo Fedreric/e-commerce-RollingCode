@@ -11,7 +11,7 @@
   padding-top: 0px;
 }
 main {
-  padding-top: 55px;
+  padding-top: 66px;
   font-family: 'Carlito', sans-serif;
   flex-grow: 1;
   background-color: var(--fondo);
@@ -99,6 +99,7 @@ hr{
               
 nav {
   border-bottom: 1px solid var(--detalles);
+  height: 66px;
 }
 .navbar-toggler {
   color: var(--detalles);
@@ -154,14 +155,14 @@ footer {
 }
 
 .icono-rs:hover{
-  color: #ffc0cb;
+  color: #7a63e9;
 }
 
 .enlace-hover{
   color: #2b2c34;
 }
 .enlace-hover:hover{
-color: #6246ea;
+color: var(--detalles);
 }
 
 /*Error 404 */
@@ -228,4 +229,3 @@ color: #6246ea;
 
 }
 
-}
