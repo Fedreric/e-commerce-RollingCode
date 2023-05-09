@@ -32,44 +32,43 @@ header{
 @media all and (min-width: 280px){
   .carrusel{
  height: 80px;
-  object-fit: cover;
+  
   }
 }
 @media all and (min-width: 360px){
   .carrusel{
  height: 100px;
-  object-fit: cover;
+  
   
 }}
 @media all and (min-width: 411px){
   .carrusel{
  height: 150px;
-  object-fit: cover;
+  
   
 }}
 @media all and (min-width: 539px){
   .carrusel{
  height: 150px;
-  object-fit: cover;
+  
   
 }}
 @media all and (min-width: 767px){
   .carrusel{
- height: 250px;
-  object-fit: cover;
+ height: 300px;
+  
   
 }}
 @media all and (min-width: 992px){
   .carrusel{
  height: 300px;
-  object-fit: cover;
   
 }
 }
 @media all and (min-width: 1407px){
   .carrusel{
- height: 450px;
-  object-fit: cover;
+ height: 500px;
+  
   
 }}
 .imgCard{

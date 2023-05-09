@@ -49,7 +49,8 @@ function crearCardProductos(producto) {
                         <p class="p-2">Stock: ${producto.stock}</p>
                       </div> 
                       <button class=" boton fs-5 btnHover"  onClick="detalleProducto('${producto.codigo}')">Ver más</button>
-                      <a href="./pages/error404.html" class="btnHover boton fs-5"><i class="bi bi-bookmark-heart-fill fs-5"> </i></a>
+                      <button class=" boton fs-5 btnHover"  onClick="listaDeseados('${producto.codigo}')"><i class="bi bi-bookmark-heart-fill fs-5"> </i></button>
+                      
                     </div>
                   </div>
                 </aside>`;
@@ -67,7 +68,7 @@ function crearCardProductos(producto) {
                           </div>
                           <div>
                           <button class="btnHover boton fs-5" onClick="detalleProducto('${producto.codigo}')" id="btnDetalleProducto">Ver más</button>
-                          <a href="./pages/error404.html" class="btnHover boton fs-5"><i class="bi bi-bookmark-heart-fill fs-5"> </i></a>
+                          <button class=" boton fs-5 btnHover"  onClick="listaDeseados('${producto.codigo}')"><i class="bi bi-bookmark-heart-fill fs-5"> </i></button>
                         </div>
                           
                           
@@ -79,6 +80,10 @@ function crearCardProductos(producto) {
 window.detalleProducto = (codigo) => {
   window.location.href =
     window.location.origin + "/pages/detalle.html?codigo=" + codigo;
+};
+window.listaDeseados = (codigo) => {
+  window.location.href =
+    window.location.origin + "/pages/error404.html?codigo=" + codigo;
 };
 
 const inputBuscador = document.getElementById("buscador");
@@ -141,3 +146,7 @@ function mostrarProductosBuscados(arrayFiltrado) {
     resultadoBusqueda.innerHTML = `<p class="mt-3 text-center fs-3 fw-bold">No se encontraron productos asociados con: ${inputBuscador.value}</p>`;
   }
 }
+
+
+
+
