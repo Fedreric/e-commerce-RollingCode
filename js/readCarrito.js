@@ -76,7 +76,7 @@ function eliminarProductoCarrito(codigo) {
         (prod) => prod.codigo === codigo
       );
       listaCarrito.splice(posicionProducto, 1);
-      localStorage.setItem("listaCarrito", JSON.stringify(listaCarrito));
+      localStorage.setItem("listaCarrito/"+usuario.nombreUsuario, JSON.stringify(listaCarrito));
       let productosCarrito = document.getElementById("contenedorCarrito");
       productosCarrito.removeChild(productosCarrito.children[posicionProducto]);
       //se agrega de nuevo el producto al stock

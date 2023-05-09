@@ -3,7 +3,7 @@ const codigoProd = new URLSearchParams(window.location.search);
 const modalLogin = new bootstrap.Modal(document.getElementById("inicioSecion"));
 //buscar producto
 let listaProductos = JSON.parse(localStorage.getItem("listaProductos")) || [];
-let listaCarrito = JSON.parse(localStorage.getItem("listaCarrito")) || [];
+let listaCarrito = JSON.parse(localStorage.getItem("listaCarrito/"+usuario.nombreUsuario)) || [];
 const producto = listaProductos.find(
   (prod) => prod.codigo === codigoProd.get("codigo")
 );
@@ -46,7 +46,7 @@ function readDetalle() {
         <div class="my-3">
             <span class="precio-poducto">$${producto.precio}</span>
         </div>
-        <button class="boton text-light my-3 btn-deshabilitado" onClick="agregarCarrito('${producto.codigo}')" id="btnAgregarCarrito">Agregar al carrito</button>
+        <button class="boton text-light my-3 btn-deshabilitado" onClick="agregarCarrito()" id="btnAgregarCarrito">Agregar al carrito</button>
         <span class="stock" id="stock">AGOTADO!</span>
     </aside> 
     `;
