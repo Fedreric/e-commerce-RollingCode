@@ -196,7 +196,7 @@ function iniciaSecion(e) {
 function cerrarSesion() {
   Swal.fire({
     title: "Cerrando sesion.",
-    icon: "waring",
+    icon: "warning",
     showCancelButton: true,
     confirmButtonColor: "#6246ea",
     cancelButtonColor: "#e45858",

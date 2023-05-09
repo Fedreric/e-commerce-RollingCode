@@ -1,4 +1,6 @@
-let listaCarrito = JSON.parse(localStorage.getItem("listaCarrito")) || [];
+//let usuario = JSON.parse(sessionStorage.getItem('user'));
+
+let listaCarrito = JSON.parse(localStorage.getItem("listaCarrito/"+usuario.nombreUsuario)) || [];
 let listaProductos = JSON.parse(localStorage.getItem("listaProductos")) || [];
 let contenedorCarrito = document.getElementById("contenedorCarrito");
 let contenedorSubtotal = document.getElementById("contenedorSubtotal");
