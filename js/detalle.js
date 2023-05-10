@@ -7,6 +7,7 @@ const producto = listaProductos.find(
   (prod) => prod.codigo === codigoProd.get("codigo")
 );
 //mostrar los datos del producto
+
 const detalle = document.getElementById("contenedorDetalle");
 let contadorCarrito = document.getElementById("contadorCarrito");
 const btnAgregarCarrito = document.getElementById("btnAgregarCarrito");
