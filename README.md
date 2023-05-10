@@ -1,5 +1,5 @@
 # **_Proyecto fin de modulo 2 de Rolling School Code_**
-## **E-commerce: "TecTuc"**
+## **E-commerce: "TecnoTuc"**
 <p align="left">
    <img src="https://img.shields.io/badge/STATUS-En%20Proceso...-green">
 </p>
