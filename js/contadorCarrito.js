@@ -6,3 +6,4 @@ contadorCarritoAct();
 function contadorCarritoAct() {
   contadorCarrito.innerText = listaCarrito.length;
 }
+

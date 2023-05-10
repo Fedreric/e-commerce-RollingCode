@@ -41,6 +41,7 @@ export class Usuario {
     return this.#nombreUsuario;
   }
 
+  
   set nombreUsuario(value) {
     this.#nombreUsuario = value;
   }
