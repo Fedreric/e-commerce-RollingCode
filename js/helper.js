@@ -23,7 +23,6 @@ const paisesLatinoamerica = [
   "VENEZUELA",
 ];
 
-
 let usuariosAlmacenados = localStorage.getItem("listadoUsuarios");
 //Realizo la carga de los usuarios almacenados
 if (usuariosAlmacenados) {

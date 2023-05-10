@@ -1,6 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Carlito&family=Libre+Baskerville&display=swap");
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css");
-<<<<<<< HEAD
 * {
   --fondo: #fffffe;
   --texto: #2b2c34;
@@ -220,12 +219,3 @@ footer {
     height: 500px;
   }
 }
-=======
-*{
-    --fondo: #fffffe;
-    --texto: #2b2c34;
-    --fondo-cards: #d1d1e9;
-    --detalles: #6246ea;
-    --resaltados: #e45858;
-}
->>>>>>> main

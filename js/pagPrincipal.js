@@ -23,7 +23,6 @@ if (!listaProductos) {
   );
 }
 
-
 cargarCards();
 
 function cargarCards() {
