@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Carlito&family=Libre+Baskerville&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Carlito&family=Libre+Baskerville&display=swap");
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css");
 * {
   --fondo: #fffffe;
@@ -7,12 +7,12 @@
   --detalles: #6246ea;
   --resaltados: #e45858;
 }
-.main-login{
+.main-login {
   padding-top: 0px;
 }
 main {
   padding-top: 66px;
-  font-family: 'Carlito', sans-serif;
+  font-family: "Carlito", sans-serif;
   flex-grow: 1;
   background-color: var(--fondo);
 }
@@ -22,46 +22,24 @@ body {
   display: flex;
   flex-direction: column;
 }
-header{
-  font-family: 'Libre Baskerville', serif;
-  background-color:rgb(255, 255, 254, 0.9);
+header {
+  font-family: "Libre Baskerville", serif;
+  background-color: rgb(255, 255, 254, 0.9);
   width: 100%;
   position: fixed;
   z-index: 100;
 }
 
-
-@media all and (min-width: 280px){
-  .carrusel{
- height: 300px;
- 
-  
-}
-}
-@media all and (min-width: 992px){
-  .carrusel{
- height: 400px;
-  
-}
-}
-
-@media all and (min-width: 1407px){
-  .carrusel{
- height: 500px;
-  
-  
-}}
-.imgCard{
+.imgCard {
   height: 292px;
   object-fit: fill;
 }
-.card{
+.card {
   border-color: var(--detalles);
   border-width: 1px;
   background-color: var(--fondo-cards);
-  
 }
-hr{
+hr {
   color: var(--detalles);
 }
 .logo {
@@ -84,60 +62,61 @@ hr{
   font-size: 16px;
   cursor: pointer;
 }
-            
-.btnHover{
-    transition: .5s, color .10s;
-    -webkit-transition: .5s, color .10s;
-    -moz-transition: .5s, color .10s;
+
+.btnHover {
+  transition: 0.5s, color 0.1s;
+  -webkit-transition: 0.5s, color 0.1s;
+  -moz-transition: 0.5s, color 0.1s;
 }
-.btnHover:hover{
-    box-shadow: 0 7px 7px 0 #bebbbc,0 7px 7px 0 #adadab;
-    transform: translate(0px,4px);
-    -webkit-transform: translate(0px,4px);
-    -moz-transform:translate(0px,4px);
+.btnHover:hover {
+  box-shadow: 0 7px 7px 0 #bebbbc, 0 7px 7px 0 #adadab;
+  transform: translate(0px, 4px);
+  -webkit-transform: translate(0px, 4px);
+  -moz-transform: translate(0px, 4px);
 }
-              
+
 .navbar-toggler {
   color: var(--detalles);
 }
 /* PAGINA DE DETALLE */
-textarea{
+textarea {
   resize: none;
 }
-.comentario{
+.comentario {
   background-color: var(--fondo-cards);
   padding: 10px;
   border-radius: 4px;
 }
-.precio-poducto{
+.precio-poducto {
   font-size: 2.5rem;
   color: var(--resaltados);
 }
-.stock{
+.stock {
   font-size: 1.5rem;
   margin-left: 20px;
   color: var(--resaltados);
 }
-.link-volver{
+.link-volver {
   font-size: 2rem;
   color: var(--detalles);
 }
-.btn-deshabilitado{
-  pointer-events:none;
+.btn-deshabilitado {
+  pointer-events: none;
 }
 /*CARRITO DE COMPRAS*/
-#contadorCarrito{
+#contadorCarrito {
   color: var(--resaltados);
 }
-.contenedor-prd-carrito{
+.contenedor-prd-carrito {
   border-bottom: 1px solid var(--detalles);
 }
-.btn-eliminar-carrito{
+.btn-eliminar-carrito {
   color: var(--resaltados);
   border: none;
   cursor: pointer;
   padding: 0px;
   margin-bottom: 5px;
+  background: none;
 }
 /* Footer */
 .lista-footer {
@@ -150,15 +129,15 @@ footer {
   color: var(--detalles);
 }
 
-.icono-rs:hover{
+.icono-rs:hover {
   color: #7a63e9;
 }
 
-.enlace-hover{
+.enlace-hover {
   color: #2b2c34;
 }
-.enlace-hover:hover{
-color: var(--detalles);
+.enlace-hover:hover {
+  color: var(--detalles);
 }
 
 /*Error 404 */
@@ -170,11 +149,11 @@ color: var(--detalles);
   height: 100vh;
 }
 
-.link-404-inicio{ 
-  color: #ffc0cb 
+.link-404-inicio {
+  color: #ffc0cb;
 }
 
-.error-404-texto{
+.error-404-texto {
   color: #ffc0cb;
   font-weight: bold;
 }
@@ -191,7 +170,7 @@ color: var(--detalles);
 
 /*Filtro de busqueda*/
 
-.img-filtro{
+.img-filtro {
   width: 300px;
   height: 150px;
 }
@@ -201,20 +180,20 @@ color: var(--detalles);
 .tabla-Administrador td {
   max-width: 200px;
 }
-.boton-Eliminar-Administrador{
-  background-color:var(--resaltados);
+.boton-Eliminar-Administrador {
+  background-color: var(--resaltados);
   color: #fffffe;
 }
-.boton-Eliminar-Administrador:hover{
-  background-color:#e06868;
+.boton-Eliminar-Administrador:hover {
+  background-color: #e06868;
   color: #fffffe;
 }
-.boton-Editar-Administrador{
-  background-color:var(--detalles);
+.boton-Editar-Administrador {
+  background-color: var(--detalles);
   color: #fffffe;
 }
-.boton-Editar-Administrador:hover{
-  background-color:#7c64f7;
+.boton-Editar-Administrador:hover {
+  background-color: #7c64f7;
   color: #fffffe;
 }
 
@@ -222,6 +201,21 @@ color: var(--detalles);
   .gif-fondo {
     background-image: url("../img/error404/Error404.gif");
   }
-
 }
 
+@media all and (min-width: 360px) {
+  .carrusel {
+    height: 300px;
+  }
+}
+@media all and (min-width: 992px) {
+  .carrusel {
+    height: 400px;
+  }
+}
+
+@media all and (min-width: 1407px) {
+  .carrusel {
+    height: 500px;
+  }
+}
