@@ -68,6 +68,7 @@ let listadoUsuarios = localStorage.getItem("listadoUsuarios");
 if (!listadoUsuarios) {
   listadoUsuarios = [];
   cargaAdministrador(); //Si no hay ningun usuario cargado entonces crea y almacena el usuario admin en localStorage
+  location.reload(); //soluciona un error que no permitia crear una cuenta en primera instancia 
 } else {
   listadoUsuarios = JSON.parse(listadoUsuarios).map((usuario) => {
     return new Usuario(
@@ -133,37 +134,40 @@ function creaUsuario(e) {
     nroDpto.value
   );
   if (resumen.length === 0) {
-    let nuevoUsuario = new Usuario(
-      undefined,
-      nombreUsuario.value,
-      contrasenia.value,
-      correo.value,
-      pais.value,
-      provincia.value,
-      localidad.value,
-      codPostal.value,
-      calle.value +
-        ";" +
-        altura_calle.value +
-        ";" +
-        pisoDpto.value +
-        ";" +
-        nroDpto.value,
-      "usuario"
-    );
     Swal.fire({
-      position: "top-center",
+      title: "Usuario creado!",
       icon: "success",
-      title: 'Usuario Creado!',
-      showConfirmButton: false,
-      timer: 1500,
-    });
-    listadoUsuarios.push(nuevoUsuario);
-    guardaEnLocalStorage(); //Se almacena el nuevo usuario
-    limpiarFormularioRegistro();
-    modalRegistrarse.hide();
-    // location.reload();
-    mostrarModalLogin();  
+      confirmButtonColor: "#6246ea",
+      confirmButtonText: "Aceptar",
+    }).then((result) => {
+      if(result.isConfirmed)
+      {
+        let nuevoUsuario = new Usuario(
+          undefined,
+          nombreUsuario.value,
+          contrasenia.value,
+          correo.value,
+          pais.value,
+          provincia.value,
+          localidad.value,
+          codPostal.value,
+          calle.value +
+            ";" +
+            altura_calle.value +
+            ";" +
+            pisoDpto.value +
+            ";" +
+            nroDpto.value,
+          "usuario"
+        );
+        listadoUsuarios.push(nuevoUsuario);
+        guardaEnLocalStorage(); //Se almacena el nuevo usuario
+        limpiarFormularioRegistro();
+        modalRegistrarse.hide();
+        location.reload();
+        mostrarModalLogin();  
+      }
+    })
   } else {
     msj_Error_Registro.className = "alert alert-danger mt-2";
     msj_Error_Registro.innerHTML = resumen;
