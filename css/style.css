@@ -97,10 +97,6 @@ hr{
     -moz-transform:translate(0px,4px);
 }
               
-nav {
-  border-bottom: 1px solid var(--detalles);
-  height: 66px;
-}
 .navbar-toggler {
   color: var(--detalles);
 }

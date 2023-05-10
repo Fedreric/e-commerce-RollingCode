@@ -34,11 +34,12 @@ La tematica elegida para el e-commerce fue la de una tienda virtual de component
 
 ## Para clonar el repositorio 💻
 
-bash
-git clone Link del repositorio
+```bash
+git clone https://github.com/Fedreric/e-commerce-RollingCode.git
+```
 
 ## Sitio Web 💻
-Link de netlify : 
+Link de netlify : https://tecnotuc-componentes.netlify.app/
 ### Autores 👣
 + Aixa Filsinger [GitHub](https://github.com/AixaFilsinger)
 + Federico Luciano Ledesma [GitHub](https://github.com/Fedreric)
