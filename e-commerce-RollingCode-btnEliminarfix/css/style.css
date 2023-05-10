@@ -1,0 +1,221 @@
+@import url("https://fonts.googleapis.com/css2?family=Carlito&family=Libre+Baskerville&display=swap");
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css");
+* {
+  --fondo: #fffffe;
+  --texto: #2b2c34;
+  --fondo-cards: #d1d1e9;
+  --detalles: #6246ea;
+  --resaltados: #e45858;
+}
+.main-login {
+  padding-top: 0px;
+}
+main {
+  padding-top: 66px;
+  font-family: "Carlito", sans-serif;
+  flex-grow: 1;
+  background-color: var(--fondo);
+}
+body {
+  color: var(--texto);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+header {
+  font-family: "Libre Baskerville", serif;
+  background-color: rgb(255, 255, 254, 0.9);
+  width: 100%;
+  position: fixed;
+  z-index: 100;
+}
+
+.imgCard {
+  height: 292px;
+  object-fit: fill;
+}
+.card {
+  border-color: var(--detalles);
+  border-width: 1px;
+  background-color: var(--fondo-cards);
+}
+hr {
+  color: var(--detalles);
+}
+.logo {
+  width: 120px;
+}
+.btn-carrito {
+  border: none;
+  border-radius: 10%;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  background-color: var(--detalles);
+  text-decoration: none;
+}
+.boton {
+  background-color: #6246ea;
+  color: var(--fondo);
+  border: none;
+  border-radius: 4px;
+  padding: 5px 10px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.btnHover {
+  transition: 0.5s, color 0.1s;
+  -webkit-transition: 0.5s, color 0.1s;
+  -moz-transition: 0.5s, color 0.1s;
+}
+.btnHover:hover {
+  box-shadow: 0 7px 7px 0 #bebbbc, 0 7px 7px 0 #adadab;
+  transform: translate(0px, 4px);
+  -webkit-transform: translate(0px, 4px);
+  -moz-transform: translate(0px, 4px);
+}
+
+.navbar-toggler {
+  color: var(--detalles);
+}
+/* PAGINA DE DETALLE */
+textarea {
+  resize: none;
+}
+.comentario {
+  background-color: var(--fondo-cards);
+  padding: 10px;
+  border-radius: 4px;
+}
+.precio-poducto {
+  font-size: 2.5rem;
+  color: var(--resaltados);
+}
+.stock {
+  font-size: 1.5rem;
+  margin-left: 20px;
+  color: var(--resaltados);
+}
+.link-volver {
+  font-size: 2rem;
+  color: var(--detalles);
+}
+.btn-deshabilitado {
+  pointer-events: none;
+}
+/*CARRITO DE COMPRAS*/
+#contadorCarrito {
+  color: var(--resaltados);
+}
+.contenedor-prd-carrito {
+  border-bottom: 1px solid var(--detalles);
+}
+.btn-eliminar-carrito {
+  color: var(--resaltados);
+  border: none;
+  cursor: pointer;
+  padding: 0px;
+  margin-bottom: 5px;
+  background: none;
+}
+/* Footer */
+.lista-footer {
+  list-style: none;
+}
+footer {
+  background-color: var(--fondo);
+}
+.icono-rs {
+  color: var(--detalles);
+}
+
+.icono-rs:hover {
+  color: #7a63e9;
+}
+
+.enlace-hover {
+  color: #2b2c34;
+}
+.enlace-hover:hover {
+  color: var(--detalles);
+}
+
+/*Error 404 */
+.gif-fondo {
+  background-image: url("../img/error404/Error404.gif");
+  background-size: cover;
+  background-repeat: repeat;
+  background-position: center center;
+  height: 100vh;
+}
+
+.link-404-inicio {
+  color: #ffc0cb;
+}
+
+.error-404-texto {
+  color: #ffc0cb;
+  font-weight: bold;
+}
+
+/*Color de texto violeta (color principal de la pagina)*/
+.texto-violeta {
+  color: #6246ea;
+}
+
+/*Cards de sobre nosotros centradas*/
+.sobreNosotros-card {
+  justify-content: center;
+}
+
+/*Filtro de busqueda*/
+
+.img-filtro {
+  width: 300px;
+  height: 150px;
+}
+
+/*Administrador*/
+
+.tabla-Administrador td {
+  max-width: 200px;
+}
+.boton-Eliminar-Administrador {
+  background-color: var(--resaltados);
+  color: #fffffe;
+}
+.boton-Eliminar-Administrador:hover {
+  background-color: #e06868;
+  color: #fffffe;
+}
+.boton-Editar-Administrador {
+  background-color: var(--detalles);
+  color: #fffffe;
+}
+.boton-Editar-Administrador:hover {
+  background-color: #7c64f7;
+  color: #fffffe;
+}
+
+@media (max-width: 768px) {
+  .gif-fondo {
+    background-image: url("../img/error404/Error404.gif");
+  }
+}
+
+@media all and (min-width: 360px) {
+  .carrusel {
+    height: 300px;
+  }
+}
+@media all and (min-width: 992px) {
+  .carrusel {
+    height: 400px;
+  }
+}
+
+@media all and (min-width: 1407px) {
+  .carrusel {
+    height: 500px;
+  }
+}

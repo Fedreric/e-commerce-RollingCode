@@ -1,10 +1,13 @@
 # **_Proyecto fin de modulo 2 de RollingCode School_**
 ## **E-commerce: "TecnoTuc"**
+<<<<<<< HEAD
 
 # **_Proyecto fin de modulo 2 de Rolling Code School _**
 ## **E-commerce: "TecnoTuc Componente"**
 
 
+=======
+>>>>>>> 18a46b6980a2dff7e103efe1862cc198c9b91620
 <p align="left">
    <img src="https://img.shields.io/badge/STATUS-En%20Proceso...-green">
 </p>
