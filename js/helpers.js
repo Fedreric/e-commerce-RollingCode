@@ -23,7 +23,6 @@ function validarStock(value) {
   }
 }
 
-
 function validarCategoria(texto) {
   if (
     texto.length > 0 &&

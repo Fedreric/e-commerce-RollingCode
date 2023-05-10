@@ -54,7 +54,6 @@ function readCarrito() {
   }
 }
 
-
 function eliminarProductoCarrito(codigo) {
   //variables necesarias para el manejo del stock
   let indiceProducto = listaProductos.findIndex(

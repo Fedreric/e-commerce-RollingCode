@@ -253,4 +253,5 @@ function cargaCaracteresTextArea() {
   let resta=500-inputDescripcion.value.length
   if(resta >= 0)
   contadorDescripcion.innerHTML =resta;
+  
 }

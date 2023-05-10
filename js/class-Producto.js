@@ -7,7 +7,6 @@ export default class Producto {
   #stock;
   #precio;
 
-  
   constructor(
     codigo = uuidv4(),
     nombre,
