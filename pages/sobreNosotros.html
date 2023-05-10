@@ -1,0 +1,396 @@
+<<<<<<< HEAD
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Pagina de venta de componentes para PC e insumos"
+    />
+    <meta name="keywords" content="PC, Componentes, Insumos varios, Gaming" />
+    <meta name="author1" content="Ledesma Federico" />
+    <meta name="author2" content="Finsinger Aixa" />
+    <meta name="author3" content="Diaz Santilli Mauro" />
+    <meta name="author4" content="Serrano Martin" />
+    <meta name="author5" content="Lobo Agustin" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="icon" href="../img/icono.png" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <title>TecnoTuc-Componentes</title>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg">
+        <div class="container">
+          <a class="navbar-brand" href="../index.html"
+            ><img
+              src="../img/logo.png" 
+              alt="logo Tecnotuc componentes"
+              class="logo"
+          /></a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-center">
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="../index.html"
+                  >Inicio</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="sobreNosotros.html"
+                  >Sobre nosotros</a
+                >
+              </li>
+              <li class="nav-item" id="contenedorAdministrador">
+                <a class="nav-link" href="administrador.html"
+                  >Administrador</a
+                >
+              </li>
+              <li class="nav-item">
+                <button class="nav-link" id="btnIniciarSecion">Ingresar</button>
+              </li>
+
+              <li class="nav-item p-1" id="carrito">
+                <button class="btn-carrito" onclick="carritoCompras()"
+                  ><i class="bi bi-cart fs-5 text-light"></i
+                  ><span id="contadorCarrito"></span
+                ></button>
+              </li>
+              <li class="nav-item p-1" id="contenedorDeseados">
+                <button
+                  class="btn-carrito"
+                  onclick="error404()"
+                  ><i class="bi bi-bookmark-heart-fill fs-5 text-light"></i
+                ></button>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main class="container">
+      <section class="my-5">
+        <h1 class="display-4 text-center texto-violeta">¿Quiénes somos?</h1>
+        <p class="text-center fw-bold fst-italic">
+          "Junto a nuestro equipo, el objetivo principal es crear una plataforma
+          en línea donde todos los usuarios puedan acceder a los mejores
+          componentes gaming del mercado para sus PCs. Sabemos que los gamers
+          somos muy exigentes en cuanto a la calidad y el desempeño de nuestras
+          computadoras, y es por eso que queremos ofrecerles una variedad de
+          opciones para personalizar su equipo, mejorar su desempeño y llegar a
+          los limites de nuestras computadoras y de nuestra capacidad de juego."
+        </p>
+        <p class="text-center fw-semibold">
+          Nuestra página web ofrece una amplia gama de componentes gaming para
+          PC, desde tarjetas gráficas hasta monitores de alta definición. Los
+          usuarios podrán navegar por nuestras categorías y encontrar los
+          productos que mejor se adapten a sus necesidades. Además, la página
+          web contará con una sección de opiniones y recomendaciones de otros
+          usuarios, lo que permitirá a nuestros clientes tomar decisiones
+          informadas sobre sus compras.
+        </p>
+      </section>
+      <hr />
+      <section class="container bg-body-tertiary">
+        <h1 class="display-6 text-center texto-violeta mb-4">
+          Miembros del equipo
+        </h1>
+        <article class="row sobreNosotros-card">
+          <div class="col-12 col-md-5 card mb-3 mx-1 p-1">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img
+                  src="../img/sobreNosotros/FedericoLedesmaIcon.jpeg"
+                  class="img-fluid rounded-circle"
+                  alt="Icon Federico Ledesma"
+                />
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title">Federico Ledesma</h5>
+                  <p class="card-text">
+                    Tiene 22 años, actualmente es estudiante en RollingSchoolCode. Se encargo de desarrollar el "Carrito de compras".
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-5 card mb-3 mx-1 p-1">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img
+                  src="../img/sobreNosotros/AixaFilsingerIcon.jpeg"
+                  class="img-fluid rounded-circle"
+                  alt="Icon Aixa Filsinger"
+                />
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title">Aixa Macarena Filsinger</h5>
+                  <p class="card-text">
+                    Tiene 23 años es estudiante en RollingSchoolCode y en Tecnicatura Universitaria en Programación. Se encargo de hacer la pagina "Inicio".
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-5 card mb-3 mx-1 p-1">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img
+                  src="../img/sobreNosotros/MauroSantilliIcon.jpeg"
+                  class="img-fluid rounded-circle"
+                  alt="Icon Mauro Santilli"
+                />
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title">Mauro Diaz Santilli</h5>
+                  <p class="card-text">
+                    Tiene 26 años es estudiante en RollingSchoolCode y en Profesorado de Ingles. Se encargo de hacer la "Barra de busqueda" e impedir que se ingresen datos erroneos en los formularios.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-5 card mb-3 mx-1 p-1">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img
+                  src="../img/sobreNosotros/MartinSerranoIcon.jpeg"
+                  class="img-fluid rounded-circle"
+                  alt="Icon Martin Serrano"
+                />
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title">Martin Serrano</h5>
+                  <p class="card-text">
+                     Tiene 24 años, actualmente es estudiante en RollingSchoolCode y en Ingeniería en Sistema, trabaja en un call center. Se encargo de hacer la pagina "Administrador".
+                  </p>
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-5 card mb-3 mx-1 p-1">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img
+                  src="../img/sobreNosotros/IconAgustinLobo.jpeg"
+                  class="img-fluid rounded-circle"
+                  alt="Icon Aguntin lobo"
+                />
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title">Agustin Lobo</h5>
+                  <p class="card-text">
+                    Tiene 23 años es estudiante en RollingSchoolCode y en Ingeniería Informática. Se encargo de diseñar el "Iniciar Sesión", la pagina para "Registrarse" y "Sobre Nosotros".
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+      </section>
+      <section
+        class="modal fade"
+        id="modalDeseados"
+        abindex="-1"
+        aria-labelledby="agregarModalLabel"
+        aria-hidden="true"
+      >
+        <article class="modal-dialog">
+          <div class="modal-content" id="agregaCards">
+            <div class="card text-bg-warning">
+              <div class="card-body">
+                <h5 class="card-title">
+                  Aún no se a ingresado ningun articulo a la lista de deseados
+                </h5>
+                <p class="card-text">
+                  Navegué por nuestro basto catálogo para hallar los componentes
+                  que mejor se adapten a su necesidad al mejor precio.
+                </p>
+              </div>
+            </div>
+          </div>
+        </article>
+      </section>
+      <!--modal----registro -->
+      <!-- Modal -->
+      <div
+        class="modal fade"
+        id="registro"
+        data-bs-backdrop="static"
+        data-bs-keyboard="false"
+        tabindex="-1"
+        aria-labelledby="staticBackdropLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-xl">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <iframe
+                class=""
+                src="./registro.html"
+                frameborder="0"
+                width="100%"
+                height="500px"
+                id="iframe_registroUsuario"
+              ></iframe>
+            </div>
+            <div class="modal-footer d-flex justify-content-center">
+              <div
+                class="alert alert-danger d-none"
+                role="alert"
+                id="msjErrorFormRegistro"
+              ></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--Modal Login-->
+      <div
+        class="modal fade"
+        id="inicioSecion"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="inicioSecionlLabel"
+        aria-hidden="true"
+      >
+        <div
+          class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg"
+          role="document"
+        >
+          <div class="modal-content">
+            <div class="modal-header">
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <iframe
+                src="./login.html"
+                width="100%"
+                height="300px"
+                style="overflow: hidden"
+                id="iframe_loginUsuario"
+              ></iframe>
+            </div>
+            <div class="modal-footer container">
+              <div
+                class="alert alert-danger d-none"
+                role="alert"
+                id="msjErrorFormLogin"
+              ></div>
+              <p>Aún no se registro?</p>
+              <div class="justify-content-start">
+                <button
+                  type="button"
+                  class="boton"
+                  id="btnRegistrarse"
+                >
+                  Registrarse
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <section class="container">
+        <article class="row align-items-center my-4">
+          <aside class="col-lg-4 my-md-5">
+            <div class="text-center">
+              <a href="../index.html">
+                <img src="../img/logo.png" alt="logo de RollCode Video" alt="logo de TecnoTuc componentes"
+                  class="w-100 h-auto m-0" />
+              </a>
+            </div>
+          </aside>
+          <aside class="col-md-6 col-lg-4 text-center">
+            <ul class="p-0 lista-footer">
+              <li>
+                <a href="sobreNosotros.html" class="text-decoration-none enlace-hover">¿Quienes Somos?</a>
+              </li>
+              <li>
+                <a href="error404.html" class="text-decoration-none enlace-hover">Cómo cuidamos tu privacidad</a>
+              </li>
+              <li>
+                <a href="error404.html" class="text-decoration-none enlace-hover">Terminos y condiciones</a>
+              </li>
+            </ul>
+          </aside>
+          <aside class="col-md-6 col-lg-4 text-center">
+            <ul class="p-0 lista-footer">
+              <li>
+                <h4 class="text-decoration-none text-dark">Redes sociales</h4>
+              </li>
+              <div class="d-flex justify-content-around">
+                <li>
+                  <a href="error404.html" class="text-decoration-none text-dark"><i
+                      class="bi bi-instagram fs-2 icono-rs"></i></a>
+                </li>
+                <li>
+                  <a href="error404.html" class="text-decoration-none text-dark"><i
+                      class="bi bi-twitter fs-2 icono-rs"></i></a>
+                </li>
+                <li>
+                  <a href="error404.html" class="text-decoration-none text-dark"><i
+                      class="bi bi-facebook fs-2 icono-rs"></i></a>
+                </li>
+              </div>
+            </ul>
+          </aside>
+        </article>
+        <hr class="text-dark fs-5" />
+        <p class="text-center text-dark">
+          TecnoTuc&copy; Todos los derechos reservados
+        </p>
+      </section>
+    </footer>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/uuid@latest/dist/umd/uuidv4.min.js"></script>
+    <script src="../js/app.js"></script>
+    <script src="../js/usuariosFunction.js" type="module"></script>
+    <script src="../js/contadorCarrito.js"></script>
+  </body>
+</html>
+=======
+>>>>>>> main
