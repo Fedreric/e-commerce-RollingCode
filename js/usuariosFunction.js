@@ -1,5 +1,5 @@
 import { Usuario } from "./usuariosClase.js";
-import { sumarioValidaciones, validaSesion } from "./helper.js";
+import { sumarioValidaciones, validaSesion } from "./helper_Usuarios.js";
 
 //Boton para iniciar secion
 const btnIniciarSecion = document.getElementById("btnIniciarSecion");

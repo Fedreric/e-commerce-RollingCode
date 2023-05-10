@@ -1,5 +1,5 @@
 import Producto from "./class-Producto.js";
-import { conjuntoValidaciones } from "./helpers.js";
+import { conjuntoValidaciones } from "./helper_Productos.js";
 
 const formularioAdministrador = document.getElementById(
   "formAdministrarProducto"
